@@ -1,0 +1,39 @@
+.app-header {
+    color: $clr-primary-black;
+    background-color: white;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 27px;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
+
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-self: flex-end;
+
+            .active {
+                border-bottom: 1px solid $secondary-clr-gold;
+            }
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+    }
+}

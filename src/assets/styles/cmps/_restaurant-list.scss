@@ -1,0 +1,23 @@
+.restaurant-list-container {
+    display: flex;
+    flex-direction: column;
+
+    .restaurant-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+    }
+
+    .restaurant-list-title {
+        text-transform: uppercase;
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .all-link {
+        align-self: flex-end;
+        margin-top: 40px;
+        font-size: 24px;
+    }
+}

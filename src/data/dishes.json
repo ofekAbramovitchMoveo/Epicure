@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "name": "Pad Ki Mao",
+        "iconUrl": "src/assets/imgs/spicy.png",
+        "ingredients": [
+            "Shrimps",
+            "Glass Noodles",
+            "Kemiri Nuts",
+            "Shallots",
+            "Lemon Grass",
+            "Magic Chili Brown Coconut"
+        ],
+        "price": 88,
+        "imgUrl": "src/assets/imgs/pad-ki-mao.png"
+    },
+    {
+        "id": 2,
+        "name": "Garbanzo Frito",
+        "iconUrl": "src/assets/imgs/spicy.png",
+        "ingredients": [
+            "Polenta fingers",
+            "veal cheek",
+            "magic chili cured lemon cream",
+            "yellow laksa"
+        ],
+        "price": 98,
+        "imgUrl": "src/assets/imgs/garbanzo.png"
+    },
+    {
+        "id": 3,
+        "name": "Smoked Pizza",
+        "iconUrl": "src/assets/imgs/vegan.png",
+        "ingredients": [
+            "Basil dough",
+            "cashew \"butter\"",
+            "demi-glace",
+            "bison & radish"
+        ],
+        "price": 65,
+        "imgUrl": "src/assets/imgs/pizza.png"
+    }
+]

@@ -1,0 +1,80 @@
+.home-page {
+
+    .hero-container {
+
+        .hero-img {
+            width: 100%;
+            max-height: 696px;
+        }
+
+        .hero-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color:white;
+            opacity: 0.88;
+            width: 776px;
+            height: 221px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 18px;
+
+            .hero-text {
+                font-size: 32px;
+            }
+
+            .input-container {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                input {
+                    border-radius: 4px;
+                    width: 505px;
+                    height: 48px;
+                    padding: 6px 12px;
+                    border: 0.5px solid;
+                    font-size: 24px;
+                }
+
+                .search-icon {
+                    position: absolute;
+                    left: 150px;
+                }
+            }
+        }
+    }
+
+
+
+    @media (max-width: 780px) {
+        .hero-container {
+
+            .hero-title {
+
+                font-size: 4em;
+            }
+        }
+
+        .code-blocks {
+
+            .title {
+                font-size: 2.5rem;
+                margin: 3rem 0;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        .code-blocks {
+
+            .title {
+                margin: 0 0 3rem 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Claro",
+        "chef": "Ran Shmueli",
+        "rating": 4,
+        "imgUrl": "src/assets/imgs/claro.png"
+    },
+    {
+        "id": 2,
+        "name": "Lumina",
+        "chef": "Meir Adoni",
+        "rating": 3,
+        "imgUrl": "src/assets/imgs/lumina.png"
+    },
+    {
+        "id": 3,
+        "name": "Tiger Lilly",
+        "chef": "Yanir Green",
+        "rating": 4,
+        "imgUrl": "src/assets/imgs/tigerlily.png"
+    }
+]
