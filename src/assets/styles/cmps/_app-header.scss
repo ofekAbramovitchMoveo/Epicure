@@ -40,6 +40,44 @@
             display: flex;
             align-items: center;
             gap: 24px;
+            
+            button {
+                padding: 0;
+                background-color: transparent;
+                border: none;
+            }
         }
+    }
+}
+
+.bag-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 586px;
+    width: 497px;
+    box-shadow: 2px 4px 10px 0px #AFAFAF40;
+    background-color: white;
+    padding: 44px;
+
+    .empty-bag {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        flex: 1;
+        justify-content: center;
+
+        h4 {
+            text-align: center;
+            letter-spacing: 1.97px;
+        }
+    }
+
+    .order-btn {
+        border: 1px solid black;
+        padding: 5px 15px;
+        letter-spacing: 2.67px;
     }
 }
