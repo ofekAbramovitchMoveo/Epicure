@@ -10,6 +10,10 @@
         grid-column: 1/-1;
     }
 
+    @include for-mobile-layout {
+        @include layoutGTC($break-narrow);
+    }
+
     @include for-narrow-layout {
         @include layoutGTC($break-narrow);
     }

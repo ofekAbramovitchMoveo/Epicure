@@ -7,12 +7,22 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 24px;
         margin-top: 40px;
+
+        &.chef {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 231px));
+            gap: 16px;
+        }
     }
 
     .restaurant-list-title {
         text-transform: uppercase;
         margin-top: 80px;
         text-align: center;
+
+        &-chef {
+            margin-top: 45px;
+            font-size: 30px;
+        }
     }
 
     .all-link {

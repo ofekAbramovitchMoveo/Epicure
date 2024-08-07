@@ -1,0 +1,12 @@
+.app-footer {
+    height: 85px;
+    display: flex;
+    border-top: 0.2px solid $clr-primary-gray;
+    justify-content: center;
+    align-items: center;
+
+    .links {
+        display: flex;
+        gap: 40px;
+    }
+}

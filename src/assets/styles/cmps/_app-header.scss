@@ -1,10 +1,16 @@
 .app-header {
     color: $clr-primary-black;
     background-color: white;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    gap: 32px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    .app-header-container {
+        height: 64px;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
 
     .logo-container {
         display: flex;
@@ -19,7 +25,7 @@
         justify-content: space-between;
         flex-grow: 1;
 
-        
+
         .nav-links {
             display: flex;
             gap: 32px;

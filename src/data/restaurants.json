@@ -2,22 +2,146 @@
     {
         "id": 1,
         "name": "Claro",
-        "chef": "Ran Shmueli",
+        "chefId": 1,
         "rating": 4,
-        "imgUrl": "src/assets/imgs/claro.png"
+        "imgUrl": "src/assets/imgs/claro.png",
+        "dishes": [
+            {
+                "id": 1,
+                "name": "Pad Ki Mao",
+                "iconUrl": "src/assets/imgs/spicy.png",
+                "ingredients": [
+                    "Shrimps",
+                    "Glass Noodles",
+                    "Kemiri Nuts",
+                    "Shallots",
+                    "Lemon Grass",
+                    "Magic Chili Brown Coconut"
+                ],
+                "price": 88,
+                "imgUrl": "src/assets/imgs/pad-ki-mao.png",
+                "isSignature": true
+            },
+            {
+                "id": 2,
+                "name": "",
+                "isSignature": false
+            }
+        ]
     },
     {
         "id": 2,
         "name": "Lumina",
-        "chef": "Meir Adoni",
+        "chefId": 2,
         "rating": 3,
-        "imgUrl": "src/assets/imgs/lumina.png"
+        "imgUrl": "src/assets/imgs/lumina.png",
+        "dishes": [
+            {
+                "id": 1,
+                "name": "Garbanzo Frito",
+                "iconUrl": "src/assets/imgs/spicy.png",
+                "ingredients": [
+                    "Polenta fingers",
+                    "veal cheek",
+                    "magic chili cured lemon cream",
+                    "yellow laksa"
+                ],
+                "price": 98,
+                "imgUrl": "src/assets/imgs/garbanzo.png",
+                "isSignature": true
+            }
+        ]
     },
     {
         "id": 3,
         "name": "Tiger Lilly",
-        "chef": "Yanir Green",
+        "chefId": 3,
         "rating": 4,
-        "imgUrl": "src/assets/imgs/tigerlily.png"
+        "imgUrl": "src/assets/imgs/tigerlily.png",
+        "dishes": [
+            {
+                "id": 1,
+                "name": "Smoked Pizza",
+                "iconUrl": "src/assets/imgs/vegan.png",
+                "ingredients": [
+                    "Basil dough",
+                    "cashew \"butter\"",
+                    "demi-glace",
+                    "bison & radish"
+                ],
+                "price": 65,
+                "imgUrl": "src/assets/imgs/pizza.png",
+                "isSignature": true
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Onza",
+        "chefId": 4,
+        "rating": 2,
+        "imgUrl": "src/assets/imgs/onza.png",
+        "dishes": [
+            {
+                "id": 1,
+                "name": "Smoked Pizza",
+                "iconUrl": "src/assets/imgs/vegan.png",
+                "ingredients": [
+                    "Basil dough",
+                    "cashew \"butter\"",
+                    "demi-glace",
+                    "bison & radish"
+                ],
+                "price": 65,
+                "imgUrl": "src/assets/imgs/pizza.png",
+                "isSignature": true
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Kitchen Market",
+        "chefId": 4,
+        "rating": 2,
+        "imgUrl": "src/assets/imgs/pizza.png",
+        "dishes": [
+            {
+                "id": 1,
+                "name": "Smoked Pizza",
+                "iconUrl": "src/assets/imgs/vegan.png",
+                "ingredients": [
+                    "Basil dough",
+                    "cashew \"butter\"",
+                    "demi-glace",
+                    "bison & radish"
+                ],
+                "price": 65,
+                "imgUrl": "src/assets/imgs/pizza.png",
+                "isSignature": true
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Mashya",
+        "chefId": 4,
+        "rating": 2,
+        "imgUrl": "src/assets/imgs/mashya.png",
+        "dishes": [
+            {
+                "id": 1,
+                "name": "Smoked Pizza",
+                "iconUrl": "src/assets/imgs/vegan.png",
+                "ingredients": [
+                    "Basil dough",
+                    "cashew \"butter\"",
+                    "demi-glace",
+                    "bison & radish"
+                ],
+                "price": 65,
+                "imgUrl": "src/assets/imgs/pizza.png",
+                "isSignature": true
+            }
+        ]
     }
 ]

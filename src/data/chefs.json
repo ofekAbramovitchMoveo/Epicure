@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Ran Shmueli",
+        "imgUrl": "",
+        "isChefOfTheWeek": false
+    },
+    {
+        "id": 2,
+        "name": "Meir Adoni",
+        "imgUrl": "",
+        "isChefOfTheWeek": false
+    },
+    {
+        "id": 3,
+        "name": "Yanir Green",
+        "imgUrl": "",
+        "isChefOfTheWeek": false
+    },
+    {
+        "id": 4,
+        "name": "Yossi Shitrit",
+        "imgUrl": "src/assets/imgs/yossi.png",
+        "isChefOfTheWeek": true
+    }
+]

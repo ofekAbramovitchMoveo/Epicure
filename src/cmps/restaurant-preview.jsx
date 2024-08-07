@@ -2,17 +2,21 @@
 import { Link } from "react-router-dom"
 import { utilService } from "../services/util.service"
 
-export default function RestaurantPreview({ restaurant }) {
+export default function RestaurantPreview({ restaurant, chefName, isChefRestaurants }) {
 
     return (
-        <Link className="restaurant-preview" to={`/restaurant/${restaurant.id}`}>
-            <img src={restaurant.imgUrl} alt="" className="restaurant-img" />
-            <div className="restaurant-info">
+        <Link className={`restaurant-preview ${isChefRestaurants ? 'chef' : ''}`} to={`/restaurant/${restaurant.id}`}>
+            <img src={restaurant.imgUrl} alt="" className={`restaurant-img ${isChefRestaurants ? 'chef' : ''}`} />
+            <div className={`restaurant-info ${isChefRestaurants ? 'chef' : ''}`}>
                 <h2>{restaurant.name}</h2>
-                <p>{restaurant.chef}</p>
-                <div className="rating">
-                    {utilService.renderStars(restaurant.rating)}
-                </div>
+                {!isChefRestaurants &&
+                    <>
+                        <p>{chefName}</p>
+                        <div className="rating">
+                            {utilService.renderStars(restaurant.rating)}
+                        </div>
+                    </>
+                }
             </div>
         </Link>
     )

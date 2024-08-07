@@ -5,6 +5,10 @@
     .restaurant-img {
         width: 100%;
         height: 236px;
+
+        &.chef {
+            height: 224px;
+        }
     }
 
     .restaurant-info {
@@ -15,6 +19,16 @@
         align-items: center;
         height: 169px;
         gap: 8px;
+
+        &.chef {
+            padding-top: 20px;
+            height: 133px;
+            
+            h2 {
+                width: 85%;
+                text-align: center;
+            }
+        }
 
         h2 {
             font-size: 30px;
