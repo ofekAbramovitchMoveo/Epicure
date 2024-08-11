@@ -1,6 +1,5 @@
 .main-layout {
     display: grid;
-    grid-template-columns: $mobile-padding 1fr $mobile-padding;
 
     >* {
         grid-column: 2;
@@ -11,7 +10,7 @@
     }
 
     @include for-mobile-layout {
-        @include layoutGTC($break-narrow);
+        @include layoutGTC($break-mobile);
     }
 
     @include for-narrow-layout {

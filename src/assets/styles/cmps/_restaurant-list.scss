@@ -1,33 +1,67 @@
 .restaurant-list-container {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
-    .restaurant-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 24px;
-        margin-top: 40px;
-
-        &.chef {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 231px));
-            gap: 16px;
-        }
+    &.chef {
+        overflow: hidden;
     }
 
     .restaurant-list-title {
         text-transform: uppercase;
-        margin-top: 80px;
-        text-align: center;
+        margin-top: 48px;
+        font-size: 17px;
 
         &-chef {
-            margin-top: 45px;
-            font-size: 30px;
+            margin-top: 32px;
+            font-size: 20px;
         }
     }
 
+    .restaurant-list {
+        margin-top: 17px;
+    }
+
     .all-link {
-        align-self: flex-end;
-        margin-top: 40px;
-        font-size: 24px;
+        margin-top: 20px;
+        font-size: 18px;
     }
 }
+
+@include for-narrow-layout {}
+
+@include for-normal-layout {
+    .restaurant-list-container {
+
+        .restaurant-list-title {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 30px;
+
+            &-chef {
+                margin-top: 45px;
+                font-size: 30px;
+            }
+        }
+
+        .restaurant-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin-top: 40px;
+            gap: 24px;
+
+            &.chef {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 231px));
+                gap: 16px;
+            }
+        }
+
+        .all-link {
+            align-self: flex-end;
+            margin-top: 40px;
+            font-size: 24px;
+        }
+    }
+}
+
+@include for-wide-layout {}

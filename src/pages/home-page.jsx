@@ -13,10 +13,12 @@ import { loadChefs } from "../store/chef/chef.actions"
 import logo from '../assets/imgs/about-logo.svg'
 import googlePlayLogo from '../assets/imgs/google-play.svg'
 import AppFooter from "../cmps/app-footer"
+import { useMediaQuery } from "react-responsive"
 
 export default function HomePage() {
     const restaurants = useSelector(storeState => storeState.restaurantModule.restaurants)
     const chefs = useSelector(storeState => storeState.chefModule.chefs)
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
     useEffect(() => {
         loadRestaurants()
@@ -43,8 +45,8 @@ export default function HomePage() {
     if (!restaurants || !restaurants.length) return (<CircularProgress className="loader" color="secondary" />)
     return (
         <section className="home-page main-layout">
-            <div className="hero-container full">
-                <img className="hero-img" src={hero} alt="" />
+            <div className="hero-container full main-layout">
+                <img className="hero-img full" src={hero} alt="" />
                 <div className="hero-box">
                     <p className="hero-text">
                         Epicure works with the top <br />
@@ -96,8 +98,13 @@ export default function HomePage() {
                             <p className="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non
                                 eu ipsum. Cras porta malesuada eros, eget blandit
                                 turpis suscipit at.  Vestibulum sed massa in magna sodales porta.  Vivamus elit urna,
-                                dignissim a vestibulum. <br /><br />
-
+                                dignissim a vestibulum.
+                                {!isMobile &&
+                                    <>
+                                        <br />
+                                        <br />
+                                    </>
+                                }
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum no
                                 eu ipsum. Cras porta malesuada eros.
                             </p>
@@ -112,7 +119,7 @@ export default function HomePage() {
                                 </button>
                             </div>
                         </div>
-                        <img src={logo} alt="" />
+                        <img src={logo} alt="" className="about-logo" />
                     </div>
                 </div>
                 <AppFooter />

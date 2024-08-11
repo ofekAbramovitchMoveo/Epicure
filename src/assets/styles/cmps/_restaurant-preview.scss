@@ -4,38 +4,68 @@
 
     .restaurant-img {
         width: 100%;
-        height: 236px;
-
-        &.chef {
-            height: 224px;
-        }
+        height: 152px;
     }
 
     .restaurant-info {
         background-color: $secondary-clr-cream;
         display: flex;
         flex-direction: column;
-        padding: 24px 0;
-        align-items: center;
-        height: 169px;
+        align-items: flex-start;
         gap: 8px;
+        padding: 16px;
 
         &.chef {
-            padding-top: 20px;
-            height: 133px;
-            
-            h2 {
-                width: 85%;
-                text-align: center;
-            }
+            height: 81px;
         }
 
-        h2 {
-            font-size: 30px;
-        }
-
-        p {
-            font-size: 18px;
+        .rating {
+            display: none;
         }
     }
 }
+
+@include for-narrow-layout {}
+
+@include for-normal-layout {
+    .restaurant-preview {
+
+        .restaurant-img {
+            height: 236px;
+
+            &.chef {
+                height: 224px;
+            }
+        }
+
+        .restaurant-info {
+            align-items: center;
+            padding: 24px 0;
+            height: 169px;
+
+            &.chef {
+                padding-top: 20px;
+                height: 133px;
+
+                h2 {
+                    width: 85%;
+                    text-align: center;
+                }
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .rating {
+                display: block;
+            }
+        }
+    }
+}
+
+@include for-wide-layout {}

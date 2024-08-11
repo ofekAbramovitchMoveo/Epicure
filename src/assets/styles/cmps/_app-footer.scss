@@ -1,12 +1,39 @@
 .app-footer {
-    height: 85px;
-    display: flex;
     border-top: 0.2px solid $clr-primary-gray;
-    justify-content: center;
-    align-items: center;
+    height: 200px;
 
-    .links {
+    .footer-container {
         display: flex;
-        gap: 40px;
+        align-items: center;
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            li {
+                font-size: 18px;
+            }
+        }
     }
+}
+
+@include for-narrow-layout {}
+
+@include for-normal-layout {
+    .app-footer {
+        height: 85px;
+
+        .footer-container {
+            justify-content: center;
+
+            .links {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+@include for-wide-layout {
+    
 }

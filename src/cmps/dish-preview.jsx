@@ -14,7 +14,7 @@ export default function DishPreview({ dish }) {
                 <p>{dish.ingredients.join(', ')}</p>
                 <div className="price-container">
                     <hr className="line" />
-                    <span className="price">₪{dish.price}</span>
+                    <span className="price">₪ {dish.price}</span>
                     <hr className="line" />
                 </div>
             </div>

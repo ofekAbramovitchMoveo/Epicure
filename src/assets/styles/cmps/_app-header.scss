@@ -6,45 +6,56 @@
     z-index: 2;
 
     .app-header-container {
-        height: 64px;
-        display: flex;
-        align-items: center;
-        gap: 32px;
-    }
-
-    .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        font-size: 27px;
-    }
-
-    nav {
+        height: 46px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-grow: 1;
+        position: relative;
 
+        .menu-icon {
+            cursor: pointer;
+        }
 
-        .nav-links {
+        .logo-container {
             display: flex;
-            gap: 32px;
-            align-self: flex-end;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
 
-            .active {
-                border-bottom: 1px solid $secondary-clr-gold;
+            h3 {
+                display: none;
             }
         }
 
-        .actions {
+        nav {
             display: flex;
             align-items: center;
-            gap: 24px;
-            
-            button {
-                padding: 0;
-                background-color: transparent;
-                border: none;
+            justify-content: space-between;
+
+            .nav-links {
+                display: none;
+
+                .active {
+                    border-bottom: 1px solid $secondary-clr-gold;
+                }
+            }
+
+            .actions {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                button {
+                    padding: 0;
+                    background-color: transparent;
+                    border: none;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
             }
         }
     }
@@ -54,20 +65,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    height: 586px;
-    width: 497px;
-    box-shadow: 2px 4px 10px 0px #AFAFAF40;
+    justify-content: center;
     background-color: white;
-    padding: 44px;
+    height: 218px;
+    top: 46px;
+    width: 100%;
+    box-shadow: 2px 4px 10px 0px #AFAFAF40;
+
 
     .empty-bag {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 16px;
-        flex: 1;
         justify-content: center;
+        gap: 20px;
 
         h4 {
             text-align: center;
@@ -76,8 +87,101 @@
     }
 
     .order-btn {
-        border: 1px solid black;
-        padding: 5px 15px;
-        letter-spacing: 2.67px;
+        display: none;
     }
 }
+
+.menu-modal {
+    height: 413px;
+    border: 1px solid #F2F2F2;
+    width: 100%;
+    background-color: white;
+    padding-top: 11px;
+
+    .close-icon {
+        cursor: pointer;
+    }
+
+    .menu-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        a {
+            font-size: 18px;
+            width: fit-content;
+        }
+
+        .active {
+            border-bottom: 1px solid $secondary-clr-gold;
+        }
+    }
+}
+
+@include for-narrow-layout {}
+
+@include for-normal-layout {
+    .app-header {
+
+        .app-header-container {
+            height: 64px;
+            gap: 32px;
+            position: static;
+
+            .menu-icon {
+                display: none;
+            }
+
+            .logo-container {
+                gap: 15px;
+                font-size: 27px;
+                position: static;
+                transform: none;
+
+                h3 {
+                    display: block;
+                }
+            }
+
+            nav {
+                flex-grow: 1;
+
+                .nav-links {
+                    display: flex;
+                    align-self: flex-end;
+                    gap: 32px;
+                }
+
+                .actions {
+                    gap: 24px;
+
+                    button img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    .bag-modal {
+        height: 586px;
+        width: 497px;
+        padding: 44px;
+        top: 64px;
+
+        .empty-bag {
+            gap: 16px;
+            flex: 1;
+        }
+
+        .order-btn {
+            border: 1px solid black;
+            padding: 5px 15px;
+            letter-spacing: 2.67px;
+            display: block;
+        }
+    }
+}
+
+@include for-wide-layout {}

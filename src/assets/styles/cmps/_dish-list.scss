@@ -1,16 +1,36 @@
 .dish-list-container {
     display: flex;
     flex-direction: column;
-
-    .dish-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 24px;
-        margin-top: 40px;
-    }
+    overflow: hidden;
 
     .dish-list-title {
-        margin-top: 80px;
-        text-align: center;
+        margin-top: 48px;
+        font-size: 18px;
+    }
+
+    .dish-list {
+        margin-top: 16px;
     }
 }
+
+@include for-narrow-layout {}
+
+@include for-normal-layout {
+    .dish-list-container {
+
+        .dish-list-title {
+            margin-top: 80px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .dish-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+    }
+}
+
+@include for-wide-layout {}
