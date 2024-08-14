@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import RestaurantPreview from "./restaurant-preview"
 import { useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
@@ -9,18 +9,22 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 export default function RestaurantList({ restaurants, isChefRestaurants, chefId }) {
     const chefs = useSelector(storeState => storeState.chefModule.chefs)
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+    const location = useLocation()
 
     function getChefName(chefId) {
         const chef = chefs.find(chef => chef.id === chefId)
         return chef.name
     }
 
+    if (!restaurants || !restaurants.length) return <h2 className="no-restaurants">No restaurants found</h2>
     return (
         <section className={`restaurant-list-container ${isChefRestaurants ? 'chef' : ''}`}>
-            {!isChefRestaurants && <h2 className="restaurant-list-title">popular restaurants in epicure:</h2>}
+            {!isChefRestaurants && !location.pathname.includes('/restaurant') && (
+                <h2 className="restaurant-list-title">popular restaurants in epicure:</h2>
+            )}
             {isChefRestaurants && <h2 className="restaurant-list-title-chef">{getChefName(chefId).split(' ')[0]}{`'`}s Restaurants</h2>}
             <ul className={`restaurant-list ${isChefRestaurants ? 'chef' : ''}`}>
-                {isMobile ? (
+                {isMobile && !location.pathname.includes('/restaurant') ? (
                     <Carousel showArrows showThumbs={false} showStatus={false} showIndicators={false}>
                         {restaurants.map(restaurant => (
                             <div key={restaurant.id}>
@@ -37,7 +41,9 @@ export default function RestaurantList({ restaurants, isChefRestaurants, chefId 
                 )
                 }
             </ul>
-            {!isChefRestaurants && <Link className="all-link" to="/restaurant">{`All Restaurants >>`}</Link>}
+            {!isChefRestaurants && !location.pathname.includes('/restaurant') && (
+                <Link className="all-link" to="/restaurant">{`All Restaurants >>`}</Link>
+            )}
         </section>
     )
 }

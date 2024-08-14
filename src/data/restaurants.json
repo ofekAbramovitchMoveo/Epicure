@@ -4,12 +4,14 @@
         "name": "Claro",
         "chefId": 1,
         "rating": 4,
-        "imgUrl": "src/assets/imgs/claro.png",
+        "imgUrl": "/imgs/claro.png",
+        "createdAt": "2024-08-05T11:00:00Z",
+        "isOpenNow": true,
         "dishes": [
             {
                 "id": 1,
                 "name": "Pad Ki Mao",
-                "iconUrl": "src/assets/imgs/spicy.png",
+                "iconUrl": "/imgs/spicy.png",
                 "ingredients": [
                     "Shrimps",
                     "Glass Noodles",
@@ -19,7 +21,7 @@
                     "Magic Chili Brown Coconut"
                 ],
                 "price": 88,
-                "imgUrl": "src/assets/imgs/pad-ki-mao.png",
+                "imgUrl": "/imgs/pad-ki-mao.png",
                 "isSignature": true
             },
             {
@@ -34,12 +36,14 @@
         "name": "Lumina",
         "chefId": 2,
         "rating": 3,
-        "imgUrl": "src/assets/imgs/lumina.png",
+        "imgUrl": "/imgs/lumina.png",
+        "createdAt": "2024-08-05T11:10:00Z",
+        "isOpenNow": true,
         "dishes": [
             {
                 "id": 1,
                 "name": "Garbanzo Frito",
-                "iconUrl": "src/assets/imgs/spicy.png",
+                "iconUrl": "/imgs/spicy.png",
                 "ingredients": [
                     "Polenta fingers",
                     "veal cheek",
@@ -47,7 +51,7 @@
                     "yellow laksa"
                 ],
                 "price": 98,
-                "imgUrl": "src/assets/imgs/garbanzo.png",
+                "imgUrl": "/imgs/garbanzo.png",
                 "isSignature": true
             }
         ]
@@ -57,12 +61,14 @@
         "name": "Tiger Lilly",
         "chefId": 3,
         "rating": 4,
-        "imgUrl": "src/assets/imgs/tigerlily.png",
+        "imgUrl": "/imgs/tigerlily.png",
+        "createdAt": "2024-08-05T11:20:00Z",
+        "isOpenNow": true,
         "dishes": [
             {
                 "id": 1,
                 "name": "Smoked Pizza",
-                "iconUrl": "src/assets/imgs/vegan.png",
+                "iconUrl": "/imgs/vegan.png",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -70,7 +76,7 @@
                     "bison & radish"
                 ],
                 "price": 65,
-                "imgUrl": "src/assets/imgs/pizza.png",
+                "imgUrl": "/imgs/pizza.png",
                 "isSignature": true
             }
         ]
@@ -79,13 +85,15 @@
         "id": 4,
         "name": "Onza",
         "chefId": 4,
-        "rating": 2,
-        "imgUrl": "src/assets/imgs/onza.png",
+        "rating": 3,
+        "imgUrl": "/imgs/onza.png",
+        "createdAt": "2024-08-06T11:00:00Z",
+        "isOpenNow": true,
         "dishes": [
             {
                 "id": 1,
                 "name": "Smoked Pizza",
-                "iconUrl": "src/assets/imgs/vegan.png",
+                "iconUrl": "/imgs/vegan.png",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -93,7 +101,7 @@
                     "bison & radish"
                 ],
                 "price": 65,
-                "imgUrl": "src/assets/imgs/pizza.png",
+                "imgUrl": "/imgs/pizza.png",
                 "isSignature": true
             }
         ]
@@ -103,12 +111,14 @@
         "name": "Kitchen Market",
         "chefId": 4,
         "rating": 2,
-        "imgUrl": "src/assets/imgs/pizza.png",
+        "imgUrl": "/imgs/pizza.png",
+        "createdAt": "2024-08-06T11:10:00Z",
+        "isOpenNow": true,
         "dishes": [
             {
                 "id": 1,
                 "name": "Smoked Pizza",
-                "iconUrl": "src/assets/imgs/vegan.png",
+                "iconUrl": "/imgs/vegan.png",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -116,7 +126,7 @@
                     "bison & radish"
                 ],
                 "price": 65,
-                "imgUrl": "src/assets/imgs/pizza.png",
+                "imgUrl": "/imgs/pizza.png",
                 "isSignature": true
             }
         ]
@@ -126,12 +136,14 @@
         "name": "Mashya",
         "chefId": 4,
         "rating": 2,
-        "imgUrl": "src/assets/imgs/mashya.png",
+        "imgUrl": "/imgs/mashya.png",
+        "createdAt": "2024-08-06T11:20:00Z",
+        "isOpenNow": true,
         "dishes": [
             {
                 "id": 1,
                 "name": "Smoked Pizza",
-                "iconUrl": "src/assets/imgs/vegan.png",
+                "iconUrl": "/imgs/vegan.png",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -139,7 +151,107 @@
                     "bison & radish"
                 ],
                 "price": 65,
-                "imgUrl": "src/assets/imgs/pizza.png",
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": true
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Kab Kem",
+        "chefId": 5,
+        "rating": 1,
+        "imgUrl": "/imgs/kab-kem.png",
+        "createdAt": "2024-08-13T09:00:00Z",
+        "isOpenNow": true,
+        "dishes": [
+            {
+                "id": 1,
+                "name": "Smoked Pizza",
+                "iconUrl": "/imgs/vegan.svg",
+                "ingredients": [
+                    "Basil dough",
+                    "cashew \"butter\"",
+                    "demi-glace",
+                    "bison & radish"
+                ],
+                "price": 65,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": true
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Messa",
+        "chefId": 6,
+        "rating": 1,
+        "imgUrl": "/imgs/messa.png",
+        "createdAt": "2024-08-13T09:10:00Z",
+        "isOpenNow": false,
+        "dishes": [
+            {
+                "id": 1,
+                "name": "Smoked Pizza",
+                "iconUrl": "/imgs/vegan.svg",
+                "ingredients": [
+                    "Basil dough",
+                    "cashew \"butter\"",
+                    "demi-glace",
+                    "bison & radish"
+                ],
+                "price": 65,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": true
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Nitan Thai",
+        "chefId": 7,
+        "rating": 1,
+        "imgUrl": "/imgs/nitan-thai.png",
+        "createdAt": "2024-08-13T09:20:00Z",
+        "isOpenNow": false,
+        "dishes": [
+            {
+                "id": 1,
+                "name": "Smoked Pizza",
+                "iconUrl": "/imgs/vegan.svg",
+                "ingredients": [
+                    "Basil dough",
+                    "cashew \"butter\"",
+                    "demi-glace",
+                    "bison & radish"
+                ],
+                "price": 65,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": true
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Ya Pan",
+        "chefId": 8,
+        "rating": 2,
+        "imgUrl": "/imgs/yapan.png",
+        "createdAt": "2024-08-13T09:30:00Z",
+        "isOpenNow": false,
+        "dishes": [
+            {
+                "id": 1,
+                "name": "Smoked Pizza",
+                "iconUrl": "/imgs/vegan.svg",
+                "ingredients": [
+                    "Basil dough",
+                    "cashew \"butter\"",
+                    "demi-glace",
+                    "bison & radish"
+                ],
+                "price": 65,
+                "imgUrl": "/imgs/pizza.png",
                 "isSignature": true
             }
         ]

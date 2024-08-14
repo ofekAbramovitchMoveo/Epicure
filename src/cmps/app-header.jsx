@@ -1,12 +1,12 @@
 import { Link, NavLink } from "react-router-dom"
-import logo from '../assets/imgs/logo.png'
-import search from '../assets/imgs/search-icon.png'
-import bag from '../assets/imgs/bag-icon.png'
-import user from '../assets/imgs/user-icon.png'
+import logo from '/imgs/logo.png'
+import search from '/imgs/search-icon.png'
+import bag from '/imgs/bag-icon.png'
+import user from '/imgs/user-icon.png'
 import { useState } from "react"
 import { Box, Fade, Modal } from "@mui/material"
-import bagModal from '../assets/imgs/bag-modal.svg'
-import menu from '../assets/imgs/menu.png'
+import bagModal from '/imgs/bag-modal.svg'
+import menu from '/imgs/menu.png'
 import AppFooter from "./app-footer"
 import CloseIcon from '@mui/icons-material/Close'
 

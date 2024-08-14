@@ -1,0 +1,227 @@
+.restaurant-page-filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    background-color: $secondary-clr-offwhite;
+    height: 60px;
+
+    button {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        font-weight: 200;
+        font-size: 18px;
+        letter-spacing: 1.92px;
+        gap: 8px;
+        height: 100%;
+        padding: 0 22px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #D0CFCF;
+            transition: background-color 0.3s;
+        }
+    }
+
+}
+
+.filter-modal {
+    background-color: #fff;
+    box-shadow: 2px 4px 10px 0px #00000040;
+    width: 353px;
+}
+
+.price-container {
+    position: relative;
+    height: 100%;
+
+    .price-range-modal {
+        position: absolute;
+        top: 100%;
+        left: -50%;
+
+        .price-range-box {
+            height: 162px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 23px 23px;
+
+            h6 {
+                font-size: 18px;
+                letter-spacing: 1.92px;
+            }
+
+            p {
+                font-weight: 200;
+                font-size: 14px;
+                letter-spacing: 1.97px;
+            }
+
+            .slider-container {
+                width: 309px;
+                height: 56px;
+                background-color: $secondary-clr-cream;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 8px;
+                margin-top: 14px;
+                padding: 15px 25px 0;
+
+                .price-slider {
+                    width: 272px;
+                    color: black;
+
+                    .MuiSlider-track {
+                        color: $clr-primary-gray;
+                    }
+                }
+
+                .MuiSlider-valueLabel {
+                    background-color: transparent !important;
+                    color: black !important;
+                    padding: 0 !important;
+                    top: 0 !important;
+
+                    &::before {
+                        display: none !important;
+                    }
+
+                    .MuiSlider-valueLabelLabel {
+                        font-weight: 300;
+                        font-size: 14px;
+                        letter-spacing: 1.97px;
+
+                        &::before {
+                            content: "₪" !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.distance-container {
+    position: relative;
+    height: 100%;
+
+    .distance-modal {
+        position: absolute;
+        top: 100%;
+        left: -50%;
+
+        .distance-box {
+            height: 137px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px 23px 28px;
+            gap: 20px;
+
+            h6 {
+                font-size: 18px;
+                letter-spacing: 1.92px;
+            }
+
+            .slider-container {
+                width: 309px;
+                height: 56px;
+                background-color: $secondary-clr-cream;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 8px;
+                padding: 10px 15px 0;
+
+                .distance-slider {
+                    width: 272px;
+                    color: black;
+
+                    .MuiSlider-track {
+                        color: $clr-primary-gray;
+                    }
+
+                }
+
+                .MuiSlider-thumb[data-index="0"] {
+                    color: #C8C5C0 !important;
+                    width: 13px;
+                    height: 13px;
+                    cursor: default;
+
+                    .MuiSlider-valueLabel {
+                        left: 0;
+                        top: -3px !important;
+                    }
+                }
+
+                .MuiSlider-valueLabel {
+                    background-color: transparent !important;
+                    color: black !important;
+                    padding: 0 !important;
+                    top: 0 !important;
+
+                    &::before {
+                        display: none !important;
+                    }
+
+                    .MuiSlider-valueLabelLabel {
+                        font-weight: 300;
+                        font-size: 14px;
+                        letter-spacing: 1.97px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rating-container {
+    position: relative;
+    height: 100%;
+
+    .rating-modal {
+        position: absolute;
+        top: 100%;
+        left: -75%;
+
+        .rating-box {
+            height: 324px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 12px 51px 23px;
+            justify-content: center;
+
+            h6 {
+                font-size: 18px;
+                letter-spacing: 1.92px;
+            }
+
+            .rating-list {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                .MuiFormControlLabel-root {
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 17px;
+                    
+                    .MuiFormControlLabel-label {
+                        display: flex;
+                        gap: 4px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -20,7 +20,31 @@
     {
         "id": 4,
         "name": "Yossi Shitrit",
-        "imgUrl": "src/assets/imgs/yossi.png",
+        "imgUrl": "/imgs/yossi.png",
         "isChefOfTheWeek": true
+    },
+    {
+        "id": 5,
+        "name": "Yariv Malili",
+        "imgUrl": "/imgs/yossi.png",
+        "isChefOfTheWeek": false
+    },
+    {
+        "id": 6,
+        "name": "Aviv Moshe",
+        "imgUrl": "/imgs/yossi.png",
+        "isChefOfTheWeek": false
+    },
+    {
+        "id": 7,
+        "name": "Shahaf Shabtay",
+        "imgUrl": "/imgs/yossi.png",
+        "isChefOfTheWeek": false
+    },
+    {
+        "id": 8,
+        "name": "Yuval Ben Moshe",
+        "imgUrl": "/imgs/yossi.png",
+        "isChefOfTheWeek": false
     }
 ]

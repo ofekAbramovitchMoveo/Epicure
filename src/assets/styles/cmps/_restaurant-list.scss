@@ -48,7 +48,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             margin-top: 40px;
-            gap: 24px;
+            column-gap: 24px;
+            row-gap: 40px;
 
             &.chef {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 231px));

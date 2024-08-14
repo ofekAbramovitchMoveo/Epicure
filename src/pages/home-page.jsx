@@ -1,18 +1,17 @@
 import { useEffect } from "react"
-import hero from '../assets/imgs/hero.png'
-import search from '../assets/imgs/search-icon.png'
+import hero from '/imgs/hero.png'
+import search from '/imgs/search-icon.png'
 import RestaurantList from "../cmps/restaurant-list"
 import { loadRestaurants } from "../store/restaurant/restaurant.actions"
 import { useSelector } from "react-redux"
 import { CircularProgress } from "@mui/material"
 import DishList from "../cmps/dish-list"
-import spicy from '../assets/imgs/spicy-large.png'
-import vegan from '../assets/imgs/vegan-large.png'
-import vegitarian from '../assets/imgs/vegitarian.png'
+import spicy from '/imgs/spicy-large.png'
+import vegan from '/imgs/vegan-large.png'
+import vegitarian from '/imgs/vegitarian.png'
 import { loadChefs } from "../store/chef/chef.actions"
-import logo from '../assets/imgs/about-logo.svg'
-import googlePlayLogo from '../assets/imgs/google-play.svg'
-import AppFooter from "../cmps/app-footer"
+import logo from '/imgs/about-logo.svg'
+import googlePlayLogo from '/imgs/google-play.svg'
 import { useMediaQuery } from "react-responsive"
 
 export default function HomePage() {
@@ -122,7 +121,6 @@ export default function HomePage() {
                         <img src={logo} alt="" className="about-logo" />
                     </div>
                 </div>
-                <AppFooter />
             </div>
         </section>
     )

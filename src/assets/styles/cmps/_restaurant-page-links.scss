@@ -1,0 +1,16 @@
+.restaurant-page-links {
+    display: flex;
+    gap: 40px;
+    margin-top: 48px;
+    justify-content: center;
+    
+    a {
+        font-weight: 200;
+        font-size: 18px;
+        letter-spacing: 1.92px;
+
+        &.active {
+            font-weight: 400;
+        }
+    }
+}

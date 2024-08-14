@@ -9,6 +9,7 @@
 
 // Pages
 @import './pages/home-page';
+@import './pages/restaurant-page';
 
 // Components
 @import './cmps/app-header';
@@ -17,3 +18,5 @@
 @import './cmps/dish-list';
 @import './cmps/dish-preview';
 @import './cmps/app-footer';
+@import './cmps/restaurant-page-links';
+@import './cmps/restaurant-page-filters';
