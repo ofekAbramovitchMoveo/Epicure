@@ -10,11 +10,15 @@
     .restaurant-list-title {
         text-transform: uppercase;
         margin-top: 48px;
-        font-size: 17px;
-
+        font-weight: 200;
+        font-size: 18px;
+        
         &-chef {
+            text-transform: uppercase;
             margin-top: 32px;
-            font-size: 20px;
+            font-size: 16px;
+            font-weight: 200;
+            letter-spacing: 1.25px;
         }
     }
 
@@ -24,7 +28,8 @@
 
     .all-link {
         margin-top: 20px;
-        font-size: 18px;
+        font-size: 16px;
+        letter-spacing: 2px;
     }
 }
 
@@ -34,10 +39,11 @@
     .restaurant-list-container {
 
         .restaurant-list-title {
+            letter-spacing: 1.25px;
             margin-top: 80px;
             text-align: center;
             font-size: 30px;
-
+            
             &-chef {
                 margin-top: 45px;
                 font-size: 30px;
@@ -60,6 +66,7 @@
             align-self: flex-end;
             margin-top: 40px;
             font-size: 24px;
+            letter-spacing: 2px;
         }
     }
 }

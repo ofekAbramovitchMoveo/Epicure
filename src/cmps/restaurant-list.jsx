@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 import RestaurantPreview from "./restaurant-preview"
 import { useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
-import { Carousel } from "react-responsive-carousel"
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/swiper-bundle.css"
 
 export default function RestaurantList({ restaurants, isChefRestaurants, chefId }) {
     const chefs = useSelector(storeState => storeState.chefModule.chefs)
@@ -21,13 +21,13 @@ export default function RestaurantList({ restaurants, isChefRestaurants, chefId 
             {isChefRestaurants && <h2 className="restaurant-list-title-chef">{getChefName(chefId).split(' ')[0]}{`'`}s Restaurants</h2>}
             <ul className={`restaurant-list ${isChefRestaurants ? 'chef' : ''}`}>
                 {isMobile ? (
-                    <Carousel showArrows showThumbs={false} showStatus={false} showIndicators={false}>
+                    <Swiper spaceBetween={24} slidesPerView={1.33}>
                         {restaurants.map(restaurant => (
-                            <div key={restaurant.id}>
+                            <SwiperSlide key={restaurant.id}>
                                 <RestaurantPreview restaurant={restaurant} chefName={getChefName(restaurant.chefId)} isChefRestaurants={isChefRestaurants} />
-                            </div>
+                            </SwiperSlide>
                         ))}
-                    </Carousel>
+                    </Swiper>
                 ) : (
                     restaurants.map(restaurant => (
                         <li key={restaurant.id}>

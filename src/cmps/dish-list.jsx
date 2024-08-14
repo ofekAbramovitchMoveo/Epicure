@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useMediaQuery } from "react-responsive"
 import DishPreview from "./dish-preview"
-import { Carousel } from "react-responsive-carousel"
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/swiper-bundle.css"
 
 export default function DishList({ restaurants }) {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -12,15 +12,15 @@ export default function DishList({ restaurants }) {
             <h2 className="dish-list-title">SIGNATURE DISH OF:</h2>
             <ul className="dish-list">
                 {isMobile ? (
-                    <Carousel showArrows={true} showThumbs={false} showStatus={false} showIndicators={false}>
+                    <Swiper spaceBetween={24} slidesPerView={1.33}>
                         {restaurants.map(restaurant => (
                             restaurant.dishes.filter(dish => dish.isSignature).map(dish => (
-                                <div key={dish.id}>
+                                <SwiperSlide key={dish.id}>
                                     <DishPreview dish={dish} />
-                                </div>
+                                </SwiperSlide>
                             ))
                         ))}
-                    </Carousel>
+                    </Swiper>
                 ) : (
                     restaurants.map(restaurant => (
                         restaurant.dishes.filter(dish => dish.isSignature).map(dish => (

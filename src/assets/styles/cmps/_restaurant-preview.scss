@@ -15,8 +15,24 @@
         gap: 8px;
         padding: 16px;
 
+        h2 {
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 2.67px;
+        }
+
+        p {
+            font-weight: 200;
+            letter-spacing: 1.97px;
+        }
+
         &.chef {
             height: 81px;
+
+            h2 {
+                font-size: 18px;
+                letter-spacing: 2.67px;
+            }
         }
 
         .rating {
@@ -48,17 +64,18 @@
                 height: 133px;
 
                 h2 {
-                    width: 85%;
                     text-align: center;
+                    font-size: 30px;
+                    line-height: 47px;
                 }
             }
 
             h2 {
-                font-size: 30px;
+                font-size: 40px;
             }
 
             p {
-                font-size: 18px;
+                font-size: 24px;
             }
 
             .rating {
