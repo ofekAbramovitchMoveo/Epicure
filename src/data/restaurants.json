@@ -11,7 +11,7 @@
             {
                 "id": 1,
                 "name": "Pad Ki Mao",
-                "iconUrl": "/imgs/spicy.png",
+                "iconUrl": "src/assets/imgs/spicy.svg",
                 "ingredients": [
                     "Shrimps",
                     "Glass Noodles",
@@ -26,7 +26,7 @@
             },
             {
                 "id": 2,
-                "name": "",
+                "name": "hiiiii",
                 "isSignature": false
             }
         ]
@@ -43,7 +43,7 @@
             {
                 "id": 1,
                 "name": "Garbanzo Frito",
-                "iconUrl": "/imgs/spicy.png",
+                "iconUrl": "src/assets/imgs/spicy.svg",
                 "ingredients": [
                     "Polenta fingers",
                     "veal cheek",
@@ -68,7 +68,7 @@
             {
                 "id": 1,
                 "name": "Smoked Pizza",
-                "iconUrl": "/imgs/vegan.png",
+                "iconUrl": "src/assets/imgs/vegan.svg",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -93,7 +93,7 @@
             {
                 "id": 1,
                 "name": "Smoked Pizza",
-                "iconUrl": "/imgs/vegan.png",
+                "iconUrl": "src/assets/imgs/vegan.svg",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -118,7 +118,7 @@
             {
                 "id": 1,
                 "name": "Smoked Pizza",
-                "iconUrl": "/imgs/vegan.png",
+                "iconUrl": "src/assets/imgs/vegan.svg",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -243,7 +243,7 @@
             {
                 "id": 1,
                 "name": "Smoked Pizza",
-                "iconUrl": "/imgs/vegan.svg",
+                "iconUrl": "src/assets/imgs/vegan.svg",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",

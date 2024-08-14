@@ -85,6 +85,8 @@
         h4 {
             text-align: center;
             letter-spacing: 1.97px;
+            font-weight: 200;
+            line-height: 20px;
         }
     }
 
@@ -99,6 +101,9 @@
     width: 100%;
     background-color: white;
     padding-top: 11px;
+    font-weight: 200;
+    box-shadow: 2px 4px 10px 0px #AFAFAF40;
+
 
     .close-icon {
         cursor: pointer;
@@ -111,11 +116,88 @@
 
         a {
             font-size: 18px;
+            letter-spacing: 1.92px;
             width: fit-content;
         }
 
         .active {
             border-bottom: 1px solid $secondary-clr-gold;
+        }
+    }
+
+    .app-footer {
+        border-top: 1px solid #F2F2F2;
+    }
+}
+
+.search-modal {
+    height: 413px;
+    width: 100%;
+    background-color: white;
+    padding-top: 11px;
+    box-shadow: 2px 4px 10px 0px #AFAFAF40;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 37px;
+        align-items: center;
+
+        .heading {
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            .close-icon {
+                cursor: pointer;
+            }
+
+            .title {
+                font-weight: 200;
+                font-size: 18px;
+                letter-spacing: 1.92px;
+                text-align: center;
+                flex-grow: 1;
+            }
+        }
+
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            width: 315px;
+            border: 0.5px solid black;
+            border-radius: 4px;
+            padding: 0 12px;
+            
+            input {
+                width: 100%;
+                height: 30px;
+                border: none;
+                outline: none;
+
+                &::placeholder {
+                    text-align: center;
+                    font-weight: 200;
+                    font-size: 12px;
+                    letter-spacing: 1.29px;
+                }
+
+                &:focus::placeholder {
+                    opacity: 0.2;
+                    transition: opacity 0.3s;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            img {
+                margin-right: 6px;
+            }
+        }
+
+        .suggestions {
+            top: 25%;
+            padding: 16px 40px;
         }
     }
 }
@@ -128,7 +210,7 @@
 
         .app-header-container {
             gap: 32px;
-            position: static;
+            // position: static;
 
             .menu-icon {
                 display: none;
@@ -142,6 +224,9 @@
 
                 h3 {
                     display: block;
+                    font-weight: 200;
+                    font-size: 27px;
+                    letter-spacing: 1.35px;
                 }
             }
 
@@ -150,8 +235,13 @@
 
                 .nav-links {
                     display: flex;
-                    align-self: flex-end;
                     gap: 32px;
+
+                    a {
+                        font-size: 18px;
+                        font-weight: 200;
+                        letter-spacing: 1.92px;
+                    }
                 }
 
                 .actions {
@@ -161,7 +251,38 @@
                         width: 24px;
                         height: 24px;
                     }
+
+                    .search-icon {
+                        z-index: 10;
+                    }
                 }
+            }
+
+            input {
+                position: absolute;
+                display: flex;
+                width: 220px;
+                height: 41px;
+                border-radius: 4px;
+                border: 0.5px solid black;
+                font-weight: 200;
+                font-size: 18px;
+                letter-spacing: 1.29px;
+                padding: 6px 12px;
+                right: 90px;
+                text-overflow: ellipsis;
+
+                &:focus::placeholder {
+                    opacity: 0.2;
+                    transition: opacity 0.3s;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .suggestions {
+                right: 90px;
+                width: 220px;
+                padding: 16px 12px;
             }
         }
     }
@@ -179,11 +300,29 @@
 
         .order-btn {
             border: 1px solid black;
-            padding: 5px 15px;
             letter-spacing: 2.67px;
-            display: block;
+            display: flex;
+            font-size: 18px;
+            width: 206px;
+            height: 48px;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
 
-@include for-wide-layout {}
+@include for-wide-layout {
+    .app-header {
+
+        .app-header-container {
+
+            input {
+                width: 410px;
+            }
+
+            .suggestions {
+                width: 410px;
+            }
+        }
+    }
+}

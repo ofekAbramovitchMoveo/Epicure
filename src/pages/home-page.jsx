@@ -1,28 +1,20 @@
-import { useEffect } from "react"
-import hero from '/imgs/hero.png'
-import search from '/imgs/search-icon.png'
+/* eslint-disable react/prop-types */
+import hero from '../assets/imgs/hero.png'
+import search from '../assets/imgs/search-icon.svg'
 import RestaurantList from "../cmps/restaurant-list"
-import { loadRestaurants } from "../store/restaurant/restaurant.actions"
-import { useSelector } from "react-redux"
 import { CircularProgress } from "@mui/material"
 import DishList from "../cmps/dish-list"
-import spicy from '/imgs/spicy-large.png'
-import vegan from '/imgs/vegan-large.png'
-import vegitarian from '/imgs/vegitarian.png'
-import { loadChefs } from "../store/chef/chef.actions"
-import logo from '/imgs/about-logo.svg'
-import googlePlayLogo from '/imgs/google-play.svg'
+import spicy from '../assets/imgs/spicy-large.svg'
+import vegan from '../assets/imgs/vegan-large.svg'
+import vegitarian from '../assets/imgs/vegitarian-large.svg'
+import logo from '../assets/imgs/about-logo.svg'
+import googlePlayLogo from '../assets/imgs/google-play.svg'
+import AppFooter from "../cmps/app-footer"
 import { useMediaQuery } from "react-responsive"
+import SearchSuggestions from "../cmps/search-suggestions"
 
-export default function HomePage() {
-    const restaurants = useSelector(storeState => storeState.restaurantModule.restaurants)
-    const chefs = useSelector(storeState => storeState.chefModule.chefs)
+export default function HomePage({ suggestions, searchInput, setSearchInput, restaurants, chefs }) {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
-
-    useEffect(() => {
-        loadRestaurants()
-        loadChefs()
-    }, [])
 
     function getChefOfTheWeek() {
         if (!chefs || !chefs.length) return
@@ -34,7 +26,7 @@ export default function HomePage() {
         return restaurants.filter(restaurant => restaurant.chefId === getChefOfTheWeek().id)
     }
 
-    function getRandomTopRatedRestaurants() {
+    function getTopRatedRestaurants() {
         if (!restaurants || !restaurants.length) return []
         return [...restaurants]
             .sort((a, b) => b.rating - a.rating)
@@ -53,13 +45,15 @@ export default function HomePage() {
                     </p>
                     <div className="input-container">
                         <img src={search} alt="" className="search-icon" />
-                        <input type="text" placeholder="Search for restaurant cuisine, chef" />
+                        <input type="text" placeholder="Search for restaurant cuisine, chef"
+                            value={searchInput} onChange={({ target }) => setSearchInput(target.value)} />
+                        <SearchSuggestions suggestions={suggestions} />
                     </div>
                 </div>
             </div>
             <div className="main-content full main-layout">
-                <RestaurantList restaurants={getRandomTopRatedRestaurants()} isChefRestaurants={false} />
-                <DishList restaurants={getRandomTopRatedRestaurants()} />
+                <RestaurantList restaurants={getTopRatedRestaurants()} isChefRestaurants={false} />
+                <DishList restaurants={getTopRatedRestaurants()} />
                 <div className="icon-meaning full">
                     <h1>THE MEANING OF OUR ICONS:</h1>
                     <ul className="icon-list">

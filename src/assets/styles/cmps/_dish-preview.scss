@@ -19,11 +19,15 @@
         h3 {
             font-size: 18px;
             order: 1;
+            letter-spacing: 2.67px;
         }
 
         p {
             order: 2;
             text-align: left;
+            font-weight: 200;
+            letter-spacing: 1.97px;
+            line-height: 20px;
         }
 
         .dish-icon {
@@ -38,6 +42,11 @@
             justify-content: center;
             margin-top: auto;
             order: 4;
+            font-weight: 400;
+            
+            .price {
+                letter-spacing: 1.97px;
+            }
 
             .line {
                 display: none;
@@ -62,9 +71,8 @@
             align-items: center;
 
             h3 {
-                font-size: 30px;
+                font-size: 40px;
                 text-align: center;
-                width: 30%;
             }
 
             .dish-icon {
@@ -74,20 +82,22 @@
             }
 
             p {
-                font-size: 20px;
+                font-size: 24px;
                 text-align: center;
-                width: 50%;
+                line-height: 30px;
+                width: 85%;
                 order: 3;
             }
 
             .price-container {
                 width: 80%;
                 gap: 8px;
+                font-weight: 200;
 
                 .line {
-                    color: $clr-primary-gray;
                     flex: 1;
                     display: flex;
+                    border: 0.5px solid $clr-primary-gray;
                 }
 
                 .price {
