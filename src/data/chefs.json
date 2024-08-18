@@ -1,48 +1,48 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "name": "Ran Shmueli",
         "imgUrl": "",
         "isChefOfTheWeek": false
     },
     {
-        "id": 2,
+        "id": "2",
         "name": "Meir Adoni",
         "imgUrl": "",
         "isChefOfTheWeek": false
     },
     {
-        "id": 3,
+        "id": "3",
         "name": "Yanir Green",
         "imgUrl": "",
         "isChefOfTheWeek": false
     },
     {
-        "id": 4,
+        "id": "4",
         "name": "Yossi Shitrit",
         "imgUrl": "/imgs/yossi.png",
         "isChefOfTheWeek": true
     },
     {
-        "id": 5,
+        "id": "5",
         "name": "Yariv Malili",
         "imgUrl": "/imgs/yossi.png",
         "isChefOfTheWeek": false
     },
     {
-        "id": 6,
+        "id": "6",
         "name": "Aviv Moshe",
         "imgUrl": "/imgs/yossi.png",
         "isChefOfTheWeek": false
     },
     {
-        "id": 7,
+        "id": "7",
         "name": "Shahaf Shabtay",
         "imgUrl": "/imgs/yossi.png",
         "isChefOfTheWeek": false
     },
     {
-        "id": 8,
+        "id": "8",
         "name": "Yuval Ben Moshe",
         "imgUrl": "/imgs/yossi.png",
         "isChefOfTheWeek": false

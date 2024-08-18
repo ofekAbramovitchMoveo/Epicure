@@ -10,14 +10,17 @@
 // Pages
 @import './pages/home-page';
 @import './pages/restaurant-page';
+@import './pages/restaurant-details';
 
 // Components
 @import './cmps/app-header';
 @import './cmps/restaurant-list';
 @import './cmps/restaurant-preview';
-@import './cmps/dish-list';
+@import './cmps/home-page-dish-list';
 @import './cmps/dish-preview';
 @import './cmps/app-footer';
 @import './cmps/search-suggestions';
 @import './cmps/restaurant-page-links';
 @import './cmps/restaurant-page-filters';
+@import './cmps/dish-list';
+@import './cmps/dish-order';

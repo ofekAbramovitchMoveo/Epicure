@@ -1,9 +1,8 @@
 .restaurant-page-links {
     display: flex;
-    gap: 40px;
-    margin-top: 48px;
-    justify-content: center;
-    
+    justify-content: space-between;
+    margin-top: 24px;
+
     a {
         font-weight: 200;
         font-size: 18px;
@@ -11,6 +10,22 @@
 
         &.active {
             font-weight: 400;
+            border-bottom: 1.8px solid #DE9200E5;
+        }
+    }
+}
+
+@include for-normal-layout {
+    .restaurant-page-links {
+        gap: 40px;
+        margin-top: 48px;
+        justify-content: center;
+
+        a {
+
+            &.active {
+                border: none;
+            }
         }
     }
 }

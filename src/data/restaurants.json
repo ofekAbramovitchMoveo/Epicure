@@ -1,17 +1,17 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "name": "Claro",
-        "chefId": 1,
+        "chefId": "1",
         "rating": 4,
         "imgUrl": "/imgs/claro.png",
         "createdAt": "2024-08-05T11:00:00Z",
         "isOpenNow": true,
         "dishes": [
             {
-                "id": 1,
+                "id": "1",
                 "name": "Pad Ki Mao",
-                "iconUrl": "src/assets/imgs/spicy.svg",
+                "iconUrl": "/imgs/spicy.svg",
                 "ingredients": [
                     "Shrimps",
                     "Glass Noodles",
@@ -22,53 +22,507 @@
                 ],
                 "price": 88,
                 "imgUrl": "/imgs/pad-ki-mao.png",
-                "isSignature": true
+                "isSignature": true,
+                "type": "breakfast"
             },
             {
-                "id": 2,
-                "name": "hiiiii",
-                "isSignature": false
+                "id": "2",
+                "name": "Ta Ma La Ko",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Green Papaya",
+                    "Mango",
+                    "Chukka Chili",
+                    "Mint",
+                    "Kaffir lime",
+                    "Cashew",
+                    "Akaya Cham sauce"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/ta-ma-la-ko.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "3",
+                "name": "Red Farm",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Tofu",
+                    "Spekkoek Peanuts",
+                    "Spicy Manis",
+                    "Pear Yakitori"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "4",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 136,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "5",
+                "name": "Sea Fish Tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "gazpacho",
+                    "crème fraîche",
+                    "herbs oil"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sea-fish.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "6",
+                "name": "Whole-wheat frena bread",
+                "iconUrl": "",
+                "ingredients": [
+                    "matbukha",
+                    "sour cream",
+                    "spicy zhug"
+                ],
+                "price": 38,
+                "imgUrl": "/imgs/pad-ki-mao.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "7",
+                "name": "Yellow tail sashimi",
+                "iconUrl": "",
+                "ingredients": [
+                    "freekeh tabouleh from Yarka",
+                    "yogurt",
+                    "pomegranate",
+                    "pistachio",
+                    "tomato salsa"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "8",
+                "name": "Seared clamari",
+                "iconUrl": "",
+                "ingredients": [
+                    "corn and okra",
+                    "herbs",
+                    "roasted onion",
+                    "sour cream",
+                    "pickled chili"
+                ],
+                "price": 82,
+                "imgUrl": "/imgs/calamari.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "9",
+                "name": "Octopus spaghettini",
+                "iconUrl": "",
+                "ingredients": [
+                    "asparagus",
+                    "bouillabaisse",
+                    "garlic",
+                    "chili"
+                ],
+                "price": 152,
+                "imgUrl": "/imgs/octupus.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "10",
+                "name": "Lamb platter",
+                "iconUrl": "",
+                "ingredients": [
+                    "tzatziki",
+                    "matbukha",
+                    "pickled vegetables",
+                    "pita bread"
+                ],
+                "price": 298,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "11",
+                "name": "Beef fillet skewer",
+                "iconUrl": "",
+                "ingredients": [
+                    "labneh cheese",
+                    "grilled vegetables",
+                    "mediterranean chimichurri"
+                ],
+                "price": 174,
+                "imgUrl": "/imgs/onza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "12",
+                "name": "Local Tomato salad",
+                "iconUrl": "",
+                "ingredients": [
+                    "mozzarella",
+                    "sundried tomato cream",
+                    "apricot vinaigrette",
+                    "basil",
+                    "chili"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/garbanzo.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "13",
+                "name": "Fish tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "sabra gazpacho",
+                    "cilantro",
+                    "chili",
+                    "pickled okra",
+                    "onion"
+                ],
+                "price": 84,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "14",
+                "name": "Roasted cabbage",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion vinaigrette",
+                    "tomato salsa",
+                    "ricota",
+                    "hazelnuts",
+                    "cilantro"
+                ],
+                "price": 84,
+                "imgUrl": "/imgs/yapan.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "15",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "16",
+                "name": "Fillet of beef",
+                "iconUrl": "",
+                "ingredients": [
+                    "romanesco",
+                    "snow peas",
+                    "potato puree",
+                    "pomegranate sauce"
+                ],
+                "price": 186,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "dinner"
             }
         ]
     },
     {
-        "id": 2,
+        "id": "2",
         "name": "Lumina",
-        "chefId": 2,
+        "chefId": "2",
         "rating": 3,
         "imgUrl": "/imgs/lumina.png",
         "createdAt": "2024-08-05T11:10:00Z",
         "isOpenNow": true,
         "dishes": [
             {
-                "id": 1,
+                "id": "1",
                 "name": "Garbanzo Frito",
-                "iconUrl": "src/assets/imgs/spicy.svg",
+                "iconUrl": "/imgs/spicy.svg",
                 "ingredients": [
                     "Polenta fingers",
                     "veal cheek",
                     "magic chili cured lemon cream",
                     "yellow laksa"
                 ],
-                "price": 98,
+                "price": 298,
                 "imgUrl": "/imgs/garbanzo.png",
-                "isSignature": true
+                "isSignature": true,
+                "type": "breakfast"
+            },
+            {
+                "id": "2",
+                "name": "Ta Ma La Ko",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Green Papaya",
+                    "Mango",
+                    "Chukka Chili",
+                    "Mint",
+                    "Kaffir lime",
+                    "Cashew",
+                    "Akaya Cham sauce"
+                ],
+                "price": 301,
+                "imgUrl": "/imgs/ta-ma-la-ko.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "3",
+                "name": "Red Farm",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Tofu",
+                    "Spekkoek Peanuts",
+                    "Spicy Manis",
+                    "Pear Yakitori"
+                ],
+                "price": 257,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "4",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 236,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "5",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 37,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "6",
+                "name": "Roasted cabbage",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion vinaigrette",
+                    "tomato salsa",
+                    "ricota",
+                    "hazelnuts",
+                    "cilantro"
+                ],
+                "price": 49,
+                "imgUrl": "/imgs/yapan.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "7",
+                "name": "Fish tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "sabra gazpacho",
+                    "cilantro",
+                    "chili",
+                    "pickled okra",
+                    "onion"
+                ],
+                "price": 67,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "8",
+                "name": "Fillet of beef",
+                "iconUrl": "",
+                "ingredients": [
+                    "romanesco",
+                    "snow peas",
+                    "potato puree",
+                    "pomegranate sauce"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "9",
+                "name": "Beef fillet skewer",
+                "iconUrl": "",
+                "ingredients": [
+                    "labneh cheese",
+                    "grilled vegetables",
+                    "mediterranean chimichurri"
+                ],
+                "price": 100,
+                "imgUrl": "/imgs/onza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "10",
+                "name": "Lamb platter",
+                "iconUrl": "",
+                "ingredients": [
+                    "tzatziki",
+                    "matbukha",
+                    "pickled vegetables",
+                    "pita bread"
+                ],
+                "price": 398,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "11",
+                "name": "Octopus spaghettini",
+                "iconUrl": "",
+                "ingredients": [
+                    "asparagus",
+                    "bouillabaisse",
+                    "garlic",
+                    "chili"
+                ],
+                "price": 252,
+                "imgUrl": "/imgs/octupus.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "12",
+                "name": "Yellow tail sashimi",
+                "iconUrl": "",
+                "ingredients": [
+                    "freekeh tabouleh from Yarka",
+                    "yogurt",
+                    "pomegranate",
+                    "pistachio",
+                    "tomato salsa"
+                ],
+                "price": 50,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "13",
+                "name": "Seared clamari",
+                "iconUrl": "",
+                "ingredients": [
+                    "corn and okra",
+                    "herbs",
+                    "roasted onion",
+                    "sour cream",
+                    "pickled chili"
+                ],
+                "price": 80,
+                "imgUrl": "/imgs/calamari.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "14",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 36,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "15",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 344,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "16",
+                "name": "Sea Fish Tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "gazpacho",
+                    "crème fraîche",
+                    "herbs oil"
+                ],
+                "price": 299,
+                "imgUrl": "/imgs/sea-fish.png",
+                "isSignature": false,
+                "type": "dinner"
             }
         ]
     },
     {
-        "id": 3,
+        "id": "3",
         "name": "Tiger Lilly",
-        "chefId": 3,
+        "chefId": "3",
         "rating": 4,
         "imgUrl": "/imgs/tigerlily.png",
         "createdAt": "2024-08-05T11:20:00Z",
         "isOpenNow": true,
         "dishes": [
             {
-                "id": 1,
+                "id": "1",
                 "name": "Smoked Pizza",
-                "iconUrl": "src/assets/imgs/vegan.svg",
+                "iconUrl": "/imgs/vegan.svg",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -77,23 +531,252 @@
                 ],
                 "price": 65,
                 "imgUrl": "/imgs/pizza.png",
-                "isSignature": true
+                "isSignature": true,
+                "type": "lunch"
+            },
+            {
+                "id": "2",
+                "name": "Ta Ma La Ko",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Green Papaya",
+                    "Mango",
+                    "Chukka Chili",
+                    "Mint",
+                    "Kaffir lime",
+                    "Cashew",
+                    "Akaya Cham sauce"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/ta-ma-la-ko.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "3",
+                "name": "Red Farm",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Tofu",
+                    "Spekkoek Peanuts",
+                    "Spicy Manis",
+                    "Pear Yakitori"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "4",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 236,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "5",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "6",
+                "name": "Roasted cabbage",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion vinaigrette",
+                    "tomato salsa",
+                    "ricota",
+                    "hazelnuts",
+                    "cilantro"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/yapan.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "7",
+                "name": "Fish tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "sabra gazpacho",
+                    "cilantro",
+                    "chili",
+                    "pickled okra",
+                    "onion"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "8",
+                "name": "Fillet of beef",
+                "iconUrl": "",
+                "ingredients": [
+                    "romanesco",
+                    "snow peas",
+                    "potato puree",
+                    "pomegranate sauce"
+                ],
+                "price": 186,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "9",
+                "name": "Beef fillet skewer",
+                "iconUrl": "",
+                "ingredients": [
+                    "labneh cheese",
+                    "grilled vegetables",
+                    "mediterranean chimichurri"
+                ],
+                "price": 74,
+                "imgUrl": "/imgs/onza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "10",
+                "name": "Lamb platter",
+                "iconUrl": "",
+                "ingredients": [
+                    "tzatziki",
+                    "matbukha",
+                    "pickled vegetables",
+                    "pita bread"
+                ],
+                "price": 398,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "11",
+                "name": "Octopus spaghettini",
+                "iconUrl": "",
+                "ingredients": [
+                    "asparagus",
+                    "bouillabaisse",
+                    "garlic",
+                    "chili"
+                ],
+                "price": 252,
+                "imgUrl": "/imgs/octupus.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "12",
+                "name": "Yellow tail sashimi",
+                "iconUrl": "",
+                "ingredients": [
+                    "freekeh tabouleh from Yarka",
+                    "yogurt",
+                    "pomegranate",
+                    "pistachio",
+                    "tomato salsa"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "13",
+                "name": "Seared clamari",
+                "iconUrl": "",
+                "ingredients": [
+                    "corn and okra",
+                    "herbs",
+                    "roasted onion",
+                    "sour cream",
+                    "pickled chili"
+                ],
+                "price": 82,
+                "imgUrl": "/imgs/calamari.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "14",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 136,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "15",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "16",
+                "name": "Sea Fish Tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "gazpacho",
+                    "crème fraîche",
+                    "herbs oil"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sea-fish.png",
+                "isSignature": false,
+                "type": "lunch"
             }
         ]
     },
     {
-        "id": 4,
+        "id": "4",
         "name": "Onza",
-        "chefId": 4,
+        "chefId": "4",
         "rating": 3,
         "imgUrl": "/imgs/onza.png",
         "createdAt": "2024-08-06T11:00:00Z",
         "isOpenNow": true,
         "dishes": [
             {
-                "id": 1,
+                "id": "1",
                 "name": "Smoked Pizza",
-                "iconUrl": "src/assets/imgs/vegan.svg",
+                "iconUrl": "/imgs/vegan.svg",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -102,23 +785,252 @@
                 ],
                 "price": 65,
                 "imgUrl": "/imgs/pizza.png",
-                "isSignature": true
+                "isSignature": true,
+                "type": "lunch"
+            },
+            {
+                "id": "2",
+                "name": "Ta Ma La Ko",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Green Papaya",
+                    "Mango",
+                    "Chukka Chili",
+                    "Mint",
+                    "Kaffir lime",
+                    "Cashew",
+                    "Akaya Cham sauce"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/ta-ma-la-ko.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "3",
+                "name": "Red Farm",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Tofu",
+                    "Spekkoek Peanuts",
+                    "Spicy Manis",
+                    "Pear Yakitori"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "4",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 236,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "5",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "6",
+                "name": "Roasted cabbage",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion vinaigrette",
+                    "tomato salsa",
+                    "ricota",
+                    "hazelnuts",
+                    "cilantro"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/yapan.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "7",
+                "name": "Fish tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "sabra gazpacho",
+                    "cilantro",
+                    "chili",
+                    "pickled okra",
+                    "onion"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "8",
+                "name": "Fillet of beef",
+                "iconUrl": "",
+                "ingredients": [
+                    "romanesco",
+                    "snow peas",
+                    "potato puree",
+                    "pomegranate sauce"
+                ],
+                "price": 186,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "9",
+                "name": "Beef fillet skewer",
+                "iconUrl": "",
+                "ingredients": [
+                    "labneh cheese",
+                    "grilled vegetables",
+                    "mediterranean chimichurri"
+                ],
+                "price": 74,
+                "imgUrl": "/imgs/onza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "10",
+                "name": "Lamb platter",
+                "iconUrl": "",
+                "ingredients": [
+                    "tzatziki",
+                    "matbukha",
+                    "pickled vegetables",
+                    "pita bread"
+                ],
+                "price": 398,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "11",
+                "name": "Octopus spaghettini",
+                "iconUrl": "",
+                "ingredients": [
+                    "asparagus",
+                    "bouillabaisse",
+                    "garlic",
+                    "chili"
+                ],
+                "price": 252,
+                "imgUrl": "/imgs/octupus.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "12",
+                "name": "Yellow tail sashimi",
+                "iconUrl": "",
+                "ingredients": [
+                    "freekeh tabouleh from Yarka",
+                    "yogurt",
+                    "pomegranate",
+                    "pistachio",
+                    "tomato salsa"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "13",
+                "name": "Seared clamari",
+                "iconUrl": "",
+                "ingredients": [
+                    "corn and okra",
+                    "herbs",
+                    "roasted onion",
+                    "sour cream",
+                    "pickled chili"
+                ],
+                "price": 82,
+                "imgUrl": "/imgs/calamari.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "14",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 136,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "15",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "16",
+                "name": "Sea Fish Tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "gazpacho",
+                    "crème fraîche",
+                    "herbs oil"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sea-fish.png",
+                "isSignature": false,
+                "type": "dinner"
             }
         ]
     },
     {
-        "id": 5,
+        "id": "5",
         "name": "Kitchen Market",
-        "chefId": 4,
+        "chefId": "4",
         "rating": 2,
         "imgUrl": "/imgs/pizza.png",
         "createdAt": "2024-08-06T11:10:00Z",
         "isOpenNow": true,
         "dishes": [
             {
-                "id": 1,
+                "id": "1",
                 "name": "Smoked Pizza",
-                "iconUrl": "src/assets/imgs/vegan.svg",
+                "iconUrl": "/imgs/vegan.svg",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -127,23 +1039,252 @@
                 ],
                 "price": 65,
                 "imgUrl": "/imgs/pizza.png",
-                "isSignature": true
+                "isSignature": true,
+                "type": "breakfast"
+            },
+            {
+                "id": "2",
+                "name": "Ta Ma La Ko",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Green Papaya",
+                    "Mango",
+                    "Chukka Chili",
+                    "Mint",
+                    "Kaffir lime",
+                    "Cashew",
+                    "Akaya Cham sauce"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/ta-ma-la-ko.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "3",
+                "name": "Red Farm",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Tofu",
+                    "Spekkoek Peanuts",
+                    "Spicy Manis",
+                    "Pear Yakitori"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "4",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 236,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "5",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "6",
+                "name": "Roasted cabbage",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion vinaigrette",
+                    "tomato salsa",
+                    "ricota",
+                    "hazelnuts",
+                    "cilantro"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/yapan.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "7",
+                "name": "Fish tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "sabra gazpacho",
+                    "cilantro",
+                    "chili",
+                    "pickled okra",
+                    "onion"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "8",
+                "name": "Fillet of beef",
+                "iconUrl": "",
+                "ingredients": [
+                    "romanesco",
+                    "snow peas",
+                    "potato puree",
+                    "pomegranate sauce"
+                ],
+                "price": 186,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "9",
+                "name": "Beef fillet skewer",
+                "iconUrl": "",
+                "ingredients": [
+                    "labneh cheese",
+                    "grilled vegetables",
+                    "mediterranean chimichurri"
+                ],
+                "price": 74,
+                "imgUrl": "/imgs/onza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "10",
+                "name": "Lamb platter",
+                "iconUrl": "",
+                "ingredients": [
+                    "tzatziki",
+                    "matbukha",
+                    "pickled vegetables",
+                    "pita bread"
+                ],
+                "price": 398,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "11",
+                "name": "Octopus spaghettini",
+                "iconUrl": "",
+                "ingredients": [
+                    "asparagus",
+                    "bouillabaisse",
+                    "garlic",
+                    "chili"
+                ],
+                "price": 252,
+                "imgUrl": "/imgs/octupus.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "12",
+                "name": "Yellow tail sashimi",
+                "iconUrl": "",
+                "ingredients": [
+                    "freekeh tabouleh from Yarka",
+                    "yogurt",
+                    "pomegranate",
+                    "pistachio",
+                    "tomato salsa"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "13",
+                "name": "Seared clamari",
+                "iconUrl": "",
+                "ingredients": [
+                    "corn and okra",
+                    "herbs",
+                    "roasted onion",
+                    "sour cream",
+                    "pickled chili"
+                ],
+                "price": 82,
+                "imgUrl": "/imgs/calamari.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "14",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 136,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "15",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "16",
+                "name": "Sea Fish Tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "gazpacho",
+                    "crème fraîche",
+                    "herbs oil"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sea-fish.png",
+                "isSignature": false,
+                "type": "lunch"
             }
         ]
     },
     {
-        "id": 6,
+        "id": "6",
         "name": "Mashya",
-        "chefId": 4,
+        "chefId": "4",
         "rating": 2,
         "imgUrl": "/imgs/mashya.png",
         "createdAt": "2024-08-06T11:20:00Z",
         "isOpenNow": true,
         "dishes": [
             {
-                "id": 1,
+                "id": "1",
                 "name": "Smoked Pizza",
-                "iconUrl": "/imgs/vegan.png",
+                "iconUrl": "/imgs/vegan.svg",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -152,21 +1293,250 @@
                 ],
                 "price": 65,
                 "imgUrl": "/imgs/pizza.png",
-                "isSignature": true
+                "isSignature": true,
+                "type": "lunch"
+            },
+            {
+                "id": "2",
+                "name": "Ta Ma La Ko",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Green Papaya",
+                    "Mango",
+                    "Chukka Chili",
+                    "Mint",
+                    "Kaffir lime",
+                    "Cashew",
+                    "Akaya Cham sauce"
+                ],
+                "price": 198,
+                "imgUrl": "/imgs/ta-ma-la-ko.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "3",
+                "name": "Red Farm",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Tofu",
+                    "Spekkoek Peanuts",
+                    "Spicy Manis",
+                    "Pear Yakitori"
+                ],
+                "price": 128,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "4",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 336,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "5",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "6",
+                "name": "Roasted cabbage",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion vinaigrette",
+                    "tomato salsa",
+                    "ricota",
+                    "hazelnuts",
+                    "cilantro"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/yapan.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "7",
+                "name": "Fish tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "sabra gazpacho",
+                    "cilantro",
+                    "chili",
+                    "pickled okra",
+                    "onion"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "8",
+                "name": "Fillet of beef",
+                "iconUrl": "",
+                "ingredients": [
+                    "romanesco",
+                    "snow peas",
+                    "potato puree",
+                    "pomegranate sauce"
+                ],
+                "price": 186,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "9",
+                "name": "Beef fillet skewer",
+                "iconUrl": "",
+                "ingredients": [
+                    "labneh cheese",
+                    "grilled vegetables",
+                    "mediterranean chimichurri"
+                ],
+                "price": 74,
+                "imgUrl": "/imgs/onza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "10",
+                "name": "Lamb platter",
+                "iconUrl": "",
+                "ingredients": [
+                    "tzatziki",
+                    "matbukha",
+                    "pickled vegetables",
+                    "pita bread"
+                ],
+                "price": 398,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "11",
+                "name": "Octopus spaghettini",
+                "iconUrl": "",
+                "ingredients": [
+                    "asparagus",
+                    "bouillabaisse",
+                    "garlic",
+                    "chili"
+                ],
+                "price": 252,
+                "imgUrl": "/imgs/octupus.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "12",
+                "name": "Yellow tail sashimi",
+                "iconUrl": "",
+                "ingredients": [
+                    "freekeh tabouleh from Yarka",
+                    "yogurt",
+                    "pomegranate",
+                    "pistachio",
+                    "tomato salsa"
+                ],
+                "price": 8,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "13",
+                "name": "Seared clamari",
+                "iconUrl": "",
+                "ingredients": [
+                    "corn and okra",
+                    "herbs",
+                    "roasted onion",
+                    "sour cream",
+                    "pickled chili"
+                ],
+                "price": 82,
+                "imgUrl": "/imgs/calamari.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "14",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 136,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "15",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "16",
+                "name": "Sea Fish Tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "gazpacho",
+                    "crème fraîche",
+                    "herbs oil"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sea-fish.png",
+                "isSignature": false,
+                "type": "lunch"
             }
         ]
     },
     {
-        "id": 7,
+        "id": "7",
         "name": "Kab Kem",
-        "chefId": 5,
+        "chefId": "5",
         "rating": 1,
         "imgUrl": "/imgs/kab-kem.png",
         "createdAt": "2024-08-13T09:00:00Z",
         "isOpenNow": true,
         "dishes": [
             {
-                "id": 1,
+                "id": "1",
                 "name": "Smoked Pizza",
                 "iconUrl": "/imgs/vegan.svg",
                 "ingredients": [
@@ -177,21 +1547,250 @@
                 ],
                 "price": 65,
                 "imgUrl": "/imgs/pizza.png",
-                "isSignature": true
+                "isSignature": true,
+                "type": "lunch"
+            },
+            {
+                "id": "2",
+                "name": "Ta Ma La Ko",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Green Papaya",
+                    "Mango",
+                    "Chukka Chili",
+                    "Mint",
+                    "Kaffir lime",
+                    "Cashew",
+                    "Akaya Cham sauce"
+                ],
+                "price": 498,
+                "imgUrl": "/imgs/ta-ma-la-ko.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "3",
+                "name": "Red Farm",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Tofu",
+                    "Spekkoek Peanuts",
+                    "Spicy Manis",
+                    "Pear Yakitori"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "4",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 236,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "5",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "6",
+                "name": "Roasted cabbage",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion vinaigrette",
+                    "tomato salsa",
+                    "ricota",
+                    "hazelnuts",
+                    "cilantro"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/yapan.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "7",
+                "name": "Fish tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "sabra gazpacho",
+                    "cilantro",
+                    "chili",
+                    "pickled okra",
+                    "onion"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "8",
+                "name": "Fillet of beef",
+                "iconUrl": "",
+                "ingredients": [
+                    "romanesco",
+                    "snow peas",
+                    "potato puree",
+                    "pomegranate sauce"
+                ],
+                "price": 186,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "9",
+                "name": "Beef fillet skewer",
+                "iconUrl": "",
+                "ingredients": [
+                    "labneh cheese",
+                    "grilled vegetables",
+                    "mediterranean chimichurri"
+                ],
+                "price": 74,
+                "imgUrl": "/imgs/onza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "10",
+                "name": "Lamb platter",
+                "iconUrl": "",
+                "ingredients": [
+                    "tzatziki",
+                    "matbukha",
+                    "pickled vegetables",
+                    "pita bread"
+                ],
+                "price": 398,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "11",
+                "name": "Octopus spaghettini",
+                "iconUrl": "",
+                "ingredients": [
+                    "asparagus",
+                    "bouillabaisse",
+                    "garlic",
+                    "chili"
+                ],
+                "price": 252,
+                "imgUrl": "/imgs/octupus.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "12",
+                "name": "Yellow tail sashimi",
+                "iconUrl": "",
+                "ingredients": [
+                    "freekeh tabouleh from Yarka",
+                    "yogurt",
+                    "pomegranate",
+                    "pistachio",
+                    "tomato salsa"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "13",
+                "name": "Seared clamari",
+                "iconUrl": "",
+                "ingredients": [
+                    "corn and okra",
+                    "herbs",
+                    "roasted onion",
+                    "sour cream",
+                    "pickled chili"
+                ],
+                "price": 82,
+                "imgUrl": "/imgs/calamari.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "14",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 136,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "15",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "16",
+                "name": "Sea Fish Tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "gazpacho",
+                    "crème fraîche",
+                    "herbs oil"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sea-fish.png",
+                "isSignature": false,
+                "type": "dinner"
             }
         ]
     },
     {
-        "id": 8,
+        "id": "8",
         "name": "Messa",
-        "chefId": 6,
+        "chefId": "6",
         "rating": 1,
         "imgUrl": "/imgs/messa.png",
         "createdAt": "2024-08-13T09:10:00Z",
         "isOpenNow": false,
         "dishes": [
             {
-                "id": 1,
+                "id": "1",
                 "name": "Smoked Pizza",
                 "iconUrl": "/imgs/vegan.svg",
                 "ingredients": [
@@ -202,21 +1801,250 @@
                 ],
                 "price": 65,
                 "imgUrl": "/imgs/pizza.png",
-                "isSignature": true
+                "isSignature": true,
+                "type": "lunch"
+            },
+            {
+                "id": "2",
+                "name": "Ta Ma La Ko",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Green Papaya",
+                    "Mango",
+                    "Chukka Chili",
+                    "Mint",
+                    "Kaffir lime",
+                    "Cashew",
+                    "Akaya Cham sauce"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/ta-ma-la-ko.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "3",
+                "name": "Red Farm",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Tofu",
+                    "Spekkoek Peanuts",
+                    "Spicy Manis",
+                    "Pear Yakitori"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "4",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 236,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "5",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "6",
+                "name": "Roasted cabbage",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion vinaigrette",
+                    "tomato salsa",
+                    "ricota",
+                    "hazelnuts",
+                    "cilantro"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/yapan.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "7",
+                "name": "Fish tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "sabra gazpacho",
+                    "cilantro",
+                    "chili",
+                    "pickled okra",
+                    "onion"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "8",
+                "name": "Fillet of beef",
+                "iconUrl": "",
+                "ingredients": [
+                    "romanesco",
+                    "snow peas",
+                    "potato puree",
+                    "pomegranate sauce"
+                ],
+                "price": 186,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "9",
+                "name": "Beef fillet skewer",
+                "iconUrl": "",
+                "ingredients": [
+                    "labneh cheese",
+                    "grilled vegetables",
+                    "mediterranean chimichurri"
+                ],
+                "price": 74,
+                "imgUrl": "/imgs/onza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "10",
+                "name": "Lamb platter",
+                "iconUrl": "",
+                "ingredients": [
+                    "tzatziki",
+                    "matbukha",
+                    "pickled vegetables",
+                    "pita bread"
+                ],
+                "price": 398,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "11",
+                "name": "Octopus spaghettini",
+                "iconUrl": "",
+                "ingredients": [
+                    "asparagus",
+                    "bouillabaisse",
+                    "garlic",
+                    "chili"
+                ],
+                "price": 252,
+                "imgUrl": "/imgs/octupus.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "12",
+                "name": "Yellow tail sashimi",
+                "iconUrl": "",
+                "ingredients": [
+                    "freekeh tabouleh from Yarka",
+                    "yogurt",
+                    "pomegranate",
+                    "pistachio",
+                    "tomato salsa"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "13",
+                "name": "Seared clamari",
+                "iconUrl": "",
+                "ingredients": [
+                    "corn and okra",
+                    "herbs",
+                    "roasted onion",
+                    "sour cream",
+                    "pickled chili"
+                ],
+                "price": 82,
+                "imgUrl": "/imgs/calamari.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "14",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 36,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "15",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 188,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "16",
+                "name": "Sea Fish Tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "gazpacho",
+                    "crème fraîche",
+                    "herbs oil"
+                ],
+                "price": 378,
+                "imgUrl": "/imgs/sea-fish.png",
+                "isSignature": false,
+                "type": "breakfast"
             }
         ]
     },
     {
-        "id": 9,
+        "id": "9",
         "name": "Nitan Thai",
-        "chefId": 7,
+        "chefId": "7",
         "rating": 1,
         "imgUrl": "/imgs/nitan-thai.png",
         "createdAt": "2024-08-13T09:20:00Z",
         "isOpenNow": false,
         "dishes": [
             {
-                "id": 1,
+                "id": "1",
                 "name": "Smoked Pizza",
                 "iconUrl": "/imgs/vegan.svg",
                 "ingredients": [
@@ -227,23 +2055,252 @@
                 ],
                 "price": 65,
                 "imgUrl": "/imgs/pizza.png",
-                "isSignature": true
+                "isSignature": true,
+                "type": "lunch"
+            },
+            {
+                "id": "2",
+                "name": "Ta Ma La Ko",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Green Papaya",
+                    "Mango",
+                    "Chukka Chili",
+                    "Mint",
+                    "Kaffir lime",
+                    "Cashew",
+                    "Akaya Cham sauce"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/ta-ma-la-ko.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "3",
+                "name": "Red Farm",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Tofu",
+                    "Spekkoek Peanuts",
+                    "Spicy Manis",
+                    "Pear Yakitori"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "4",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 236,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "5",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "6",
+                "name": "Roasted cabbage",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion vinaigrette",
+                    "tomato salsa",
+                    "ricota",
+                    "hazelnuts",
+                    "cilantro"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/yapan.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "7",
+                "name": "Fish tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "sabra gazpacho",
+                    "cilantro",
+                    "chili",
+                    "pickled okra",
+                    "onion"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "8",
+                "name": "Fillet of beef",
+                "iconUrl": "",
+                "ingredients": [
+                    "romanesco",
+                    "snow peas",
+                    "potato puree",
+                    "pomegranate sauce"
+                ],
+                "price": 186,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "9",
+                "name": "Beef fillet skewer",
+                "iconUrl": "",
+                "ingredients": [
+                    "labneh cheese",
+                    "grilled vegetables",
+                    "mediterranean chimichurri"
+                ],
+                "price": 74,
+                "imgUrl": "/imgs/onza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "10",
+                "name": "Lamb platter",
+                "iconUrl": "",
+                "ingredients": [
+                    "tzatziki",
+                    "matbukha",
+                    "pickled vegetables",
+                    "pita bread"
+                ],
+                "price": 398,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "11",
+                "name": "Octopus spaghettini",
+                "iconUrl": "",
+                "ingredients": [
+                    "asparagus",
+                    "bouillabaisse",
+                    "garlic",
+                    "chili"
+                ],
+                "price": 252,
+                "imgUrl": "/imgs/octupus.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "12",
+                "name": "Yellow tail sashimi",
+                "iconUrl": "",
+                "ingredients": [
+                    "freekeh tabouleh from Yarka",
+                    "yogurt",
+                    "pomegranate",
+                    "pistachio",
+                    "tomato salsa"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "13",
+                "name": "Seared clamari",
+                "iconUrl": "",
+                "ingredients": [
+                    "corn and okra",
+                    "herbs",
+                    "roasted onion",
+                    "sour cream",
+                    "pickled chili"
+                ],
+                "price": 82,
+                "imgUrl": "/imgs/calamari.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "14",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 136,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "15",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "16",
+                "name": "Sea Fish Tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "gazpacho",
+                    "crème fraîche",
+                    "herbs oil"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sea-fish.png",
+                "isSignature": false,
+                "type": "lunch"
             }
         ]
     },
     {
-        "id": 10,
+        "id": "10",
         "name": "Ya Pan",
-        "chefId": 8,
+        "chefId": "8",
         "rating": 2,
         "imgUrl": "/imgs/yapan.png",
         "createdAt": "2024-08-13T09:30:00Z",
         "isOpenNow": false,
         "dishes": [
             {
-                "id": 1,
+                "id": "1",
                 "name": "Smoked Pizza",
-                "iconUrl": "src/assets/imgs/vegan.svg",
+                "iconUrl": "/imgs/vegan.svg",
                 "ingredients": [
                     "Basil dough",
                     "cashew \"butter\"",
@@ -252,7 +2309,236 @@
                 ],
                 "price": 65,
                 "imgUrl": "/imgs/pizza.png",
-                "isSignature": true
+                "isSignature": true,
+                "type": "lunch"
+            },
+            {
+                "id": "2",
+                "name": "Ta Ma La Ko",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Green Papaya",
+                    "Mango",
+                    "Chukka Chili",
+                    "Mint",
+                    "Kaffir lime",
+                    "Cashew",
+                    "Akaya Cham sauce"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/ta-ma-la-ko.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "3",
+                "name": "Red Farm",
+                "iconUrl": "/imgs/spicy.svg",
+                "ingredients": [
+                    "Tofu",
+                    "Spekkoek Peanuts",
+                    "Spicy Manis",
+                    "Pear Yakitori"
+                ],
+                "price": 98,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "4",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 236,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "5",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "6",
+                "name": "Roasted cabbage",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion vinaigrette",
+                    "tomato salsa",
+                    "ricota",
+                    "hazelnuts",
+                    "cilantro"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/yapan.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "7",
+                "name": "Fish tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "sabra gazpacho",
+                    "cilantro",
+                    "chili",
+                    "pickled okra",
+                    "onion"
+                ],
+                "price": 184,
+                "imgUrl": "/imgs/red-farm.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "8",
+                "name": "Fillet of beef",
+                "iconUrl": "",
+                "ingredients": [
+                    "romanesco",
+                    "snow peas",
+                    "potato puree",
+                    "pomegranate sauce"
+                ],
+                "price": 186,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "9",
+                "name": "Beef fillet skewer",
+                "iconUrl": "",
+                "ingredients": [
+                    "labneh cheese",
+                    "grilled vegetables",
+                    "mediterranean chimichurri"
+                ],
+                "price": 54,
+                "imgUrl": "/imgs/onza.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "10",
+                "name": "Lamb platter",
+                "iconUrl": "",
+                "ingredients": [
+                    "tzatziki",
+                    "matbukha",
+                    "pickled vegetables",
+                    "pita bread"
+                ],
+                "price": 398,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "11",
+                "name": "Octopus spaghettini",
+                "iconUrl": "",
+                "ingredients": [
+                    "asparagus",
+                    "bouillabaisse",
+                    "garlic",
+                    "chili"
+                ],
+                "price": 252,
+                "imgUrl": "/imgs/octupus.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "12",
+                "name": "Yellow tail sashimi",
+                "iconUrl": "",
+                "ingredients": [
+                    "freekeh tabouleh from Yarka",
+                    "yogurt",
+                    "pomegranate",
+                    "pistachio",
+                    "tomato salsa"
+                ],
+                "price": 48,
+                "imgUrl": "/imgs/sashimi.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "13",
+                "name": "Seared clamari",
+                "iconUrl": "",
+                "ingredients": [
+                    "corn and okra",
+                    "herbs",
+                    "roasted onion",
+                    "sour cream",
+                    "pickled chili"
+                ],
+                "price": 82,
+                "imgUrl": "/imgs/calamari.png",
+                "isSignature": false,
+                "type": "breakfast"
+            },
+            {
+                "id": "14",
+                "name": "Trout Belly Bruschetta",
+                "iconUrl": "",
+                "ingredients": [
+                    "sour cream",
+                    "arugula",
+                    "fried egg",
+                    "colorful sweet potatoes chips"
+                ],
+                "price": 136,
+                "imgUrl": "/imgs/trout.png",
+                "isSignature": false,
+                "type": "dinner"
+            },
+            {
+                "id": "15",
+                "name": "Short rib tortellini",
+                "iconUrl": "",
+                "ingredients": [
+                    "onion cream",
+                    "parmesan",
+                    "sage"
+                ],
+                "price": 108,
+                "imgUrl": "/imgs/pizza.png",
+                "isSignature": false,
+                "type": "lunch"
+            },
+            {
+                "id": "16",
+                "name": "Sea Fish Tartare",
+                "iconUrl": "",
+                "ingredients": [
+                    "gazpacho",
+                    "crème fraîche",
+                    "herbs oil"
+                ],
+                "price": 78,
+                "imgUrl": "/imgs/sea-fish.png",
+                "isSignature": false,
+                "type": "breakfast"
             }
         ]
     }

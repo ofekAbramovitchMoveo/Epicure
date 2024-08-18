@@ -1,5 +1,5 @@
-import star from '../assets/imgs/star.svg'
-import emptyStar from '../assets/imgs/empty-star.svg'
+import star from '/imgs/star.svg'
+import emptyStar from '/imgs/empty-star.svg'
 
 export const utilService = {
     renderStars

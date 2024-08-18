@@ -16,7 +16,7 @@ export default function RestaurantList({ restaurants, isChefRestaurants, chefId 
         return chef.name
     }
 
-    if (!restaurants || !restaurants.length) return <h2 className="no-restaurants">No restaurants found</h2>
+    if (!restaurants || !restaurants.length) return <h1 className="no-restaurants">No restaurants found</h1>
     return (
         <section className={`restaurant-list-container ${isChefRestaurants ? 'chef' : ''}`}>
             {!isChefRestaurants && !location.pathname.includes('/restaurant') && (
