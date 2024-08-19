@@ -1,0 +1,109 @@
+.restaurant-details {
+
+    .restaurant-img {
+        width: 100%;
+        height: 272px;
+    }
+
+    .title {
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: 2.67px;
+        margin-top: 24px;
+    }
+
+    .chef {
+        font-weight: 200;
+        font-size: 16px;
+        letter-spacing: 1.97px;
+        margin-top: 16px;
+    }
+
+    .is-open {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 200;
+        font-size: 18px;
+        letter-spacing: 1.97px;
+        margin: 16px 0 0;
+    }
+
+    .dish-type-links {
+        display: flex;
+        align-items: center;
+        font-weight: 200;
+        font-size: 18px;
+        letter-spacing: 1.92px;
+        gap: 21px;
+        margin: 32px 0 0;
+
+        .active {
+            border-bottom: 1.8px solid #DE9200E5;
+            font-weight: 400;
+        }
+    }
+
+    .dish-list {
+        margin-top: 24px;
+    }
+}
+
+@include for-narrow-layout {
+
+    .restaurant-details {
+        .restaurant-img {
+            height: 425px;
+        }
+
+        .title {
+            font-size: 56px;
+            letter-spacing: 3.67px;
+            margin-top: 32px;
+        }
+
+        .chef {
+            font-size: 32px;
+            margin-top: 4px;
+        }
+
+        .is-open {
+            margin: 32px 0 0;
+        }
+
+        .dish-type-links {
+            font-size: 24px;
+            gap: 32px;
+            margin: 48px 0 0;
+        }
+
+        .dish-list {
+            margin-top: 40px;
+        }
+    }
+}
+
+@include for-normal-layout {
+    .restaurant-details {
+
+        .title {
+            text-align: center;
+        }
+
+        .chef {
+            text-align: center;
+        }
+
+        .is-open {
+            margin: 32px auto 0;
+        }
+
+        .dish-type-links {
+            margin: 48px auto 0;
+
+            .active {
+                font-weight: 200;
+            }
+        }
+    }
+}

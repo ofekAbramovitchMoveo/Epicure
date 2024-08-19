@@ -12,7 +12,7 @@
         margin-top: 48px;
         font-weight: 200;
         font-size: 18px;
-        
+
         &-chef {
             text-transform: uppercase;
             margin-top: 32px;
@@ -33,6 +33,14 @@
     }
 }
 
+h1.no-restaurants {
+    font-weight: 900;
+    font-size: 48px;
+    position: relative;
+    top: 300%;
+    text-align: center;
+}
+
 @include for-narrow-layout {}
 
 @include for-normal-layout {
@@ -43,7 +51,7 @@
             margin-top: 80px;
             text-align: center;
             font-size: 30px;
-            
+
             &-chef {
                 margin-top: 45px;
                 font-size: 30px;
@@ -52,12 +60,13 @@
 
         .restaurant-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             margin-top: 40px;
-            gap: 24px;
+            column-gap: 24px;
+            row-gap: 40px;
 
             &.chef {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 231px));
+                grid-template-columns: repeat(auto-fill, minmax(150px, 231px));
                 gap: 16px;
             }
         }

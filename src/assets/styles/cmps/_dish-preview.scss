@@ -1,6 +1,7 @@
 .dish-preview {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 
     .dish-img {
         width: 100%;
@@ -14,12 +15,13 @@
         align-items: flex-start;
         padding: 16px;
         height: 236px;
-        gap: 16px;
+        gap: 13px;
 
         h3 {
             font-size: 18px;
             order: 1;
             letter-spacing: 2.67px;
+            text-transform: capitalize;
         }
 
         p {
@@ -35,8 +37,9 @@
             width: 30px;
             height: 23px;
         }
-
+        
         .price-container {
+            height: fit-content;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -73,6 +76,7 @@
             h3 {
                 font-size: 40px;
                 text-align: center;
+                width: 60%;
             }
 
             .dish-icon {

@@ -1,20 +1,25 @@
 /* eslint-disable react/prop-types */
-import hero from '../assets/imgs/hero.png'
-import search from '../assets/imgs/search-icon.svg'
+import hero from '/imgs/hero.png'
+import search from '/imgs/search-icon.svg'
 import RestaurantList from "../cmps/restaurant-list"
 import { CircularProgress } from "@mui/material"
-import DishList from "../cmps/dish-list"
-import spicy from '../assets/imgs/spicy-large.svg'
-import vegan from '../assets/imgs/vegan-large.svg'
-import vegitarian from '../assets/imgs/vegitarian-large.svg'
-import logo from '../assets/imgs/about-logo.svg'
-import googlePlayLogo from '../assets/imgs/google-play.svg'
-import AppFooter from "../cmps/app-footer"
+import spicy from '/imgs/spicy-large.svg'
+import vegan from '/imgs/vegan-large.svg'
+import vegitarian from '/imgs/vegitarian-large.svg'
+import logo from '/imgs/about-logo.svg'
+import googlePlayLogo from '/imgs/google-play.svg'
 import { useMediaQuery } from "react-responsive"
 import SearchSuggestions from "../cmps/search-suggestions"
+import { useEffect } from 'react'
+import { loadRestaurants } from '../store/restaurant/restaurant.actions'
+import HomePageDishList from '../cmps/home-page-dish-list'
 
 export default function HomePage({ suggestions, searchInput, setSearchInput, restaurants, chefs }) {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+
+    useEffect(() => {
+        loadRestaurants()
+    }, [])
 
     function getChefOfTheWeek() {
         if (!chefs || !chefs.length) return
@@ -53,7 +58,7 @@ export default function HomePage({ suggestions, searchInput, setSearchInput, res
             </div>
             <div className="main-content full main-layout">
                 <RestaurantList restaurants={getTopRatedRestaurants()} isChefRestaurants={false} />
-                <DishList restaurants={getTopRatedRestaurants()} />
+                <HomePageDishList restaurants={getTopRatedRestaurants()} />
                 <div className="icon-meaning full">
                     <h1>THE MEANING OF OUR ICONS:</h1>
                     <ul className="icon-list">
@@ -115,7 +120,6 @@ export default function HomePage({ suggestions, searchInput, setSearchInput, res
                         <img src={logo} alt="" className="about-logo" />
                     </div>
                 </div>
-                <AppFooter />
             </div>
         </section>
     )

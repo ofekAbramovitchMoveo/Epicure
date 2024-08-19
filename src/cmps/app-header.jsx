@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import { Link, NavLink } from "react-router-dom"
-import logo from '../assets/imgs/logo.svg'
-import search from '../assets/imgs/search-icon.svg'
-import bag from '../assets/imgs/bag.svg'
-import user from '../assets/imgs/user-icon.svg'
+import logo from '/imgs/logo.svg'
+import search from '/imgs/search-icon.svg'
+import bag from '/imgs/bag.svg'
+import user from '/imgs/user-icon.svg'
 import { useState } from "react"
 import { Box, Fade, Modal } from "@mui/material"
-import bagModal from '../assets/imgs/bag-modal.svg'
-import menu from '../assets/imgs/menu.svg'
+import bagModal from '/imgs/bag-modal.svg'
+import menu from '/imgs/menu.svg'
 import AppFooter from "./app-footer"
 import CloseIcon from '@mui/icons-material/Close'
 import SearchSuggestions from "./search-suggestions"
