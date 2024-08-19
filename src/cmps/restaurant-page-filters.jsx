@@ -26,7 +26,9 @@ export default function RestaurantPageFilters({ setFilterBy }) {
     }, [selectedRatings])
 
     useEffect(() => {
-        setFilterBy(prevState => ({ ...prevState, ratings: selectedRatings, priceRange, distance }))
+        if (setFilterBy) {
+            setFilterBy(prevState => ({ ...prevState, ratings: selectedRatings, priceRange, distance }))
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedRatings, distance, priceRange])
 

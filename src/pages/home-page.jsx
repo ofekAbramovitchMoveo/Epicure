@@ -18,7 +18,10 @@ export default function HomePage({ suggestions, searchInput, setSearchInput, res
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
     useEffect(() => {
-        loadRestaurants()
+        async function fetchData() {
+            await loadRestaurants()
+        }
+        fetchData()
     }, [])
 
     function getChefOfTheWeek() {
@@ -28,7 +31,7 @@ export default function HomePage({ suggestions, searchInput, setSearchInput, res
 
     function getChefOfTheWeekRestaurants() {
         if (!restaurants || !restaurants.length) return
-        return restaurants.filter(restaurant => restaurant.chefId === getChefOfTheWeek().id)
+        return restaurants.filter(restaurant => restaurant.chefId === getChefOfTheWeek()?.id)
     }
 
     function getTopRatedRestaurants() {
@@ -80,14 +83,14 @@ export default function HomePage({ suggestions, searchInput, setSearchInput, res
                     <h1>CHEF OF THE WEEK:</h1>
                     <div className="chef-info">
                         <div className="chef-card">
-                            <img src={getChefOfTheWeek().imgUrl} alt="" />
+                            <img src={getChefOfTheWeek()?.imgUrl} alt="" />
                             <div className="name-overlay">
-                                <h4>{getChefOfTheWeek().name}</h4>
+                                <h4>{getChefOfTheWeek()?.name}</h4>
                             </div>
                         </div>
                         <p>Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav  Udim. Shitrit{`'`}s creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.</p>
                     </div>
-                    <RestaurantList restaurants={getChefOfTheWeekRestaurants()} isChefRestaurants={true} chefId={getChefOfTheWeek().id} />
+                    <RestaurantList restaurants={getChefOfTheWeekRestaurants()} isChefRestaurants={true} chefId={getChefOfTheWeek()?.id} />
                 </article>
                 <div className="about full main-layout">
                     <div className="about-container">

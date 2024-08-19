@@ -18,8 +18,11 @@ export default function App() {
     const [suggestions, setSuggestions] = useState([])
 
     useEffect(() => {
-        loadRestaurants(filterBy)
-        loadChefs()
+        async function fetchData() {
+            await loadRestaurants(filterBy)
+            loadChefs()
+        }
+        fetchData()
     }, [filterBy])
 
     useEffect(() => {
@@ -44,7 +47,7 @@ export default function App() {
                     <Route path='/restaurant/new' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
                     <Route path='/restaurant/most-popular' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
                     <Route path='/restaurant/open-now' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
-                    <Route path='/restaurant/map' element={<RestaurantPage restaurants={restaurants} />} setFilterBy={setFilterBy} />
+                    <Route path='/restaurant/map' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
                     <Route path='/restaurant/:restaurantId' element={<RestaurantDetails />} />
                     <Route path='/restaurant/:restaurantId/lunch' element={<RestaurantDetails />} />
                     <Route path='/restaurant/:restaurantId/dinner' element={<RestaurantDetails />} />
