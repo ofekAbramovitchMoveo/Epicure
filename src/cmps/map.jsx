@@ -35,11 +35,6 @@ export default function Map({ restaurants }) {
         gridColumn: isMobile ? "1 / -1" : "2"
     }
 
-    const center = {
-        lat: 32.0853,
-        lng: 34.7818
-    }
-
     const onLoad = useCallback((map) => {
         setMap(map)
         mapRef.current = map
@@ -53,7 +48,7 @@ export default function Map({ restaurants }) {
     return isLoaded ? (
         <GoogleMap
             mapContainerStyle={mapContainerStyle}
-            center={center}
+            center={{ ...userLocation }}
             zoom={14}
             onLoad={onLoad}
             onUnmount={onUnmount}
