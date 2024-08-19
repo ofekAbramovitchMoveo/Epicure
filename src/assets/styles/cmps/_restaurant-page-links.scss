@@ -5,13 +5,18 @@
 
     a {
         font-weight: 200;
-        font-size: 18px;
         letter-spacing: 1.92px;
+        text-align: center;
+        font-size: 18px;
 
         &.active {
             font-weight: 400;
             border-bottom: 1.8px solid #DE9200E5;
         }
+    }
+
+    .swiper-slide.active {
+        border-bottom: 1.8px solid #DE9200E5;
     }
 }
 

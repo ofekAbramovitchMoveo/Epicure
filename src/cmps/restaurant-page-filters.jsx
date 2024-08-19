@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import arrow from '/imgs/arrow-down.svg'
 import { Box, Checkbox, FormControlLabel, Modal, Slider } from '@mui/material'
 import { utilService } from '../services/util.service'
+import { useMediaQuery } from 'react-responsive'
 
 export default function RestaurantPageFilters({ setFilterBy }) {
     const [isPriceModalOpen, setIsPriceModalOpen] = useState(false)
@@ -19,6 +20,8 @@ export default function RestaurantPageFilters({ setFilterBy }) {
     const ratingContainerRef = useRef(null)
     const priceSliderRef = useRef(null)
     const distanceSliderRef = useRef(null)
+    const isMobile = useMediaQuery({ query: '(max-width: 740px)' })
+
 
     useEffect(() => {
         handleRatingModalHeight()
@@ -149,7 +152,12 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                         container={priceContainerRef.current}
                         sx={{ bottom: 'auto' }}>
                         <Box className={`price-range-box filter-modal ${priceModalHeight === '197px' ? 'expanded' : ''}`}
-                            sx={{ height: priceModalHeight, transition: 'height 0.4s linear' }}
+                            sx={{
+                                height: priceModalHeight, transition: 'height 0.4s linear', ...(isMobile && {
+                                    position: 'relative',
+                                    left: '30%',
+                                })
+                            }}
                         >
                             <h6 className="price-range-title">Price Range Selected</h6>
                             <p>₪12 - ₪357</p>
@@ -190,7 +198,13 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                         container={distanceContainerRef.current}
                         sx={{ bottom: 'auto' }}>
                         <Box className={`distance-box filter-modal ${distanceModalHeight === '167px' ? 'expanded' : ''}`}
-                            sx={{ height: distanceModalHeight, transition: 'height 0.4s linear' }}
+                            sx={{
+                                height: distanceModalHeight, transition: 'height 0.4s linear', ...(isMobile && {
+                                    position: 'relative',
+                                    left: '50%',
+                                    transform: 'translateX(-52%)'
+                                })
+                            }}
                         >
                             <h6 className="distance-title">Distance</h6>
                             <div className="slider-container">
@@ -229,7 +243,13 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                         container={ratingContainerRef.current}
                         sx={{ bottom: 'auto' }}>
                         <Box className={`rating-box filter-modal ${ratingModalHeight === '368px' ? 'expanded' : ''}`}
-                            sx={{ height: ratingModalHeight, transition: 'height 0.4s linear' }}
+                            sx={{
+                                height: ratingModalHeight, transition: 'height 0.4s linear', ...(isMobile && {
+                                    position: 'relative',
+                                    left: '50%',
+                                    transform: 'translateX(-84%)'
+                                })
+                            }}
                         >
                             <h6>Rating</h6>
                             <div className="rating-list">
