@@ -9,9 +9,9 @@ import { Box, Fade, Modal } from "@mui/material"
 import bagModal from '/imgs/bag-modal.svg'
 import menu from '/imgs/menu.svg'
 import AppFooter from "./app-footer"
-import CloseIcon from '@mui/icons-material/Close'
 import SearchSuggestions from "./search-suggestions"
 import { useMediaQuery } from "react-responsive"
+import close from '/imgs/close.svg'
 
 export default function AppHeader({ suggestions, searchInput, setSearchInput }) {
     const [isBagOpen, setIsBagOpen] = useState(false)
@@ -81,7 +81,7 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }) 
                 slots={{ BackdropComponent: Fade }}>
                 <Fade in={isMenuOpen}>
                     <Box className="menu-modal main-layout" sx={{ position: 'relative' }}>
-                        <CloseIcon onClick={toggleMenu} className="close-icon" />
+                        <img src={close} alt="" onClick={toggleMenu} className="close-icon" />
                         <nav className="menu-nav-links">
                             <NavLink to='/restaurant' onClick={toggleMenu}>Restaurants</NavLink>
                             <NavLink to='/chef' onClick={toggleMenu}>Chefs</NavLink>
@@ -105,7 +105,7 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }) 
                         <Box className="search-modal main-layout" sx={{ position: 'relative' }}>
                             <div className="container">
                                 <div className="heading">
-                                    <CloseIcon onClick={toggleSearch} className="close-icon" />
+                                    <img src={close} alt="" onClick={toggleSearch} className="close-icon" />
                                     <h1 className="title">Search</h1>
                                 </div>
                                 <div className="input-container">

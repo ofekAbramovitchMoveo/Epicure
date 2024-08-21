@@ -37,7 +37,7 @@ h1.no-restaurants {
     font-weight: 900;
     font-size: 48px;
     position: relative;
-    top: 300%;
+    top: 50%;
     text-align: center;
 }
 
@@ -45,38 +45,46 @@ h1.no-restaurants {
 
 @include for-normal-layout {
     .restaurant-list-container {
-
+        
         .restaurant-list-title {
             letter-spacing: 1.25px;
             margin-top: 80px;
             text-align: center;
             font-size: 30px;
-
+            
             &-chef {
                 margin-top: 45px;
                 font-size: 30px;
             }
         }
-
+        
         .restaurant-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             margin-top: 40px;
             column-gap: 24px;
             row-gap: 40px;
-
+            
             &.chef {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 231px));
                 gap: 16px;
             }
         }
-
+        
         .all-link {
             align-self: flex-end;
             margin-top: 40px;
             font-size: 24px;
             letter-spacing: 2px;
         }
+    }
+
+    h1.no-restaurants {
+        font-weight: 900;
+        font-size: 48px;
+        position: relative;
+        top: 300%;
+        text-align: center;
     }
 }
 

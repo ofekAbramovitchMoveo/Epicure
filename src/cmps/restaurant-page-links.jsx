@@ -3,7 +3,8 @@ import { useEffect, useRef } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 import { useMediaQuery } from "react-responsive"
 import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/swiper-bundle.css"
+import 'swiper/css'
+import "swiper/css/bundle"
 
 export default function RestaurantPageLinks({ setFilterBy }) {
     const location = useLocation()

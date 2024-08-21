@@ -1,0 +1,110 @@
+.dish-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    margin-top: 20px;
+
+    .label {
+        font-weight: 200;
+        letter-spacing: 1.97px;
+        font-size: 20px;
+        border-bottom: 1px solid rgba(222, 146, 0, 0.9);
+        width: fit-content;
+
+        &:not(.quantity-label) {
+            margin-bottom: 16px;
+        }
+    }
+
+    .MuiFormControlLabel-label {
+        font-weight: 200;
+        letter-spacing: 1.97px;
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .changes-form {
+        .MuiCheckbox-root {
+            z-index: 1;
+        }
+
+        .MuiCheckbox-root.Mui-checked::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: black;
+            z-index: -1;
+            border-radius: 2px;
+        }
+
+        .MuiSvgIcon-root {
+            height: 23px;
+            width: 23px;
+        }
+    }
+
+    .quantity-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        .counter {
+            margin: 20px 0 24px;
+
+            button {
+                padding: 0;
+            }
+        }
+
+        input {
+            padding: 0;
+            font-weight: 200;
+            letter-spacing: 1.97px;
+            font-size: 18px;
+        }
+        
+        fieldset {
+            border: none;
+        }
+    }
+}
+
+@include for-normal-layout {
+    .dish-options {
+        margin-top: 2vh;
+        
+        .label {
+            align-self: center;
+            font-size: 1.97vh;
+            
+            &:not(.quantity-label) {
+                margin-bottom: 1vh;
+            }
+        }
+
+        .MuiFormControlLabel-label {
+            font-size: 1.78vh;
+        }
+        
+        .quantity-form {
+            align-items: center;
+
+            .counter {
+                margin: 9px 0;
+            }
+
+            input {
+                font-size: 1.78vh;
+            }
+        }
+    }
+}
