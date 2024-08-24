@@ -1,0 +1,182 @@
+.bag-dish-preview {
+    height: 96px;
+    display: flex;
+
+    .dish-img {
+        height: 100%;
+        width: 96px;
+    }
+
+    .dish-info {
+        width: 254px;
+        background-color: $secondary-clr-cream;
+        display: flex;
+        padding: 12px 12px 12px 24px;
+        justify-content: space-between;
+
+        .dish-details {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .dish-metadata {
+                display: flex;
+                gap: 6px;
+                align-items: center;
+
+                .quantity {
+                    font-weight: 400;
+                    font-size: 14px;
+                    letter-spacing: 2.67px;
+                    color: black;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .container {
+                    align-items: flex-start;
+
+                    .dish-name {
+                        font-weight: 400;
+                        font-size: 18px;
+                        letter-spacing: 2.67px;
+                        width: 130px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        text-align: start;
+                    }
+
+                    p {
+                        display: none;
+                    }
+                }
+            }
+
+            .dish-options-order {
+
+                &.expanded p {
+                    transition: all 0.3s linear;
+                    width: 270px;
+                }
+
+                p {
+                    width: 170px;
+                    font-weight: 200;
+                    font-size: 12px;
+                    letter-spacing: 1.23px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    text-align: start;
+                }
+            }
+        }
+
+        .price {
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: 1.97px;
+            align-self: flex-end;
+        }
+    }
+}
+
+@include for-normal-layout {
+    .bag-dish-preview {
+
+        .dish-info {
+            transition: all 0.3s linear;
+
+            &.expanded {
+                width: 355px;
+            }
+
+            .dish-details {
+                gap: 8px;
+
+                .dish-metadata {
+                    gap: 12px;
+
+                    .quantity {
+                        transition: all 0.3s linear;
+                        border: 0.57px solid $clr-primary-gray;
+                        border-radius: 3.43px;
+                        padding: 10px;
+                        color: #DE9200;
+                        font-size: 18.12px;
+                        letter-spacing: 1.98px;
+                        height: 31px;
+                        width: 31px;
+
+                        &.clickable {
+                            cursor: pointer;
+                        }
+
+                        &.expanded {
+                            width: 130px;
+                            border: none;
+                            background-color: white;
+                            border-radius: 3.43px;
+                            display: flex;
+                            gap: 15px;
+                            padding: 5px 8px;
+                        }
+
+                        .btn {
+                            border-radius: 50%;
+                            background-color: $secondary-clr-cream;
+                            border: none;
+                            width: 21px;
+                            height: 21px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 0;
+
+                            &:not(.Mui-disabled) {
+                                color: black;
+                            }
+                        }
+
+                        .quantity-display {
+
+                            input {
+                                cursor: pointer;
+                                padding: 0;
+                                color: #DE9200;
+                            }
+
+                            fieldset {
+                                padding: 0;
+                                border: none;
+                            }
+                        }
+
+                        .trash-icon {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 6px;
+
+                        .dish-name {
+                            letter-spacing: 1.97px;
+                        }
+
+                        p {
+                            display: block;
+                            font-weight: 400;
+                            font-size: 13px;
+                            letter-spacing: 1.42px;
+                            color: #DE9200;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

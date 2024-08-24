@@ -2,24 +2,26 @@
 import { Link, NavLink } from "react-router-dom"
 import logo from '/imgs/logo.svg'
 import search from '/imgs/search-icon.svg'
-import bag from '/imgs/bag.svg'
+import bag_icon from '/imgs/bag.svg'
 import user from '/imgs/user-icon.svg'
 import { useState } from "react"
 import { Box, Fade, Modal } from "@mui/material"
-import bagModal from '/imgs/bag-modal.svg'
 import menu from '/imgs/menu.svg'
 import AppFooter from "./app-footer"
 import SearchSuggestions from "./search-suggestions"
 import { useMediaQuery } from "react-responsive"
 import close from '/imgs/close.svg'
+import ShoppingBag from "./shopping-bag"
+import { useSelector } from "react-redux"
+import { toggleBag } from "../store/restaurant/restaurant.actions"
 
 export default function AppHeader({ suggestions, searchInput, setSearchInput }) {
-    const [isBagOpen, setIsBagOpen] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isSearchOpen, setIsSearchOpen] = useState(false)
+    const bag = useSelector(storeState => storeState.restaurantModule.bag)
+    const isBagOpen = useSelector(storeState => storeState.restaurantModule.isBagOpen)
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
-    const toggleBag = () => setIsBagOpen(!isBagOpen)
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
     const toggleSearch = () => setIsSearchOpen(!isSearchOpen)
 
@@ -39,7 +41,12 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }) 
                     <div className="actions">
                         <button onClick={toggleSearch} className="search-icon"><img src={search} alt="" /></button>
                         <button><img src={user} alt="" /></button>
-                        <button onClick={toggleBag}><img src={bag} alt="" /></button>
+                        <button onClick={toggleBag} className="bag-icon">
+                            <img src={bag_icon} alt="" />
+                            {bag.length > 0 && (
+                                <span className="bag-count">{bag.length}</span>
+                            )}
+                        </button>
                     </div>
                 </nav>
                 {isSearchOpen && (
@@ -56,17 +63,18 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }) 
                 onClose={toggleBag}
                 aria-labelledby="shopping-bag-modal"
                 aria-describedby="shopping-bag-description"
-                hideBackdrop={true}
                 disableScrollLock
                 disableEnforceFocus
                 disableAutoFocus
                 sx={{ bottom: 'auto' }}>
-                <Box className="bag-modal" sx={{ position: 'absolute', right: '0' }}>
-                    <div className="empty-bag">
-                        <img src={bagModal} alt="" />
-                        <h4>YOUR BAG IS <br /> EMPTY</h4>
-                    </div>
-                    <Link className="order-btn" to='/order-history'>ORDER HISTORY</Link>
+                <Box className={`bag-modal ${isMobile ? 'main-layout' : ''}`} sx={{
+                    padding: isMobile && bag.length ? '16px 0 24px' : (bag.length ? '27px 0 37px' : ''),
+                    justifyContent: bag.length ? 'inherit' : 'center',
+                    position: 'absolute',
+                    right: '0',
+                    height: isMobile ? (bag.length ? '514px' : '218px') : (!bag || !bag.length ? '586px' : '779px')
+                }}>
+                    <ShoppingBag bag={bag} toggleBag={toggleBag} />
                 </Box>
             </Modal>
             <Modal open={isMenuOpen}
@@ -76,7 +84,7 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }) 
                 disableScrollLock
                 disableEnforceFocus
                 disableAutoFocus
-                sx={{ bottom: 'auto', top: '0' }}
+                sx={{ bottom: 'auto', top: '0', zIndex: 10000 }}
                 closeAfterTransition
                 slots={{ BackdropComponent: Fade }}>
                 <Fade in={isMenuOpen}>
@@ -98,7 +106,7 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }) 
                     disableScrollLock
                     disableEnforceFocus
                     disableAutoFocus
-                    sx={{ bottom: 'auto', top: '0' }}
+                    sx={{ bottom: 'auto', top: '0', zIndex: 10000 }}
                     closeAfterTransition
                     slots={{ BackdropComponent: Fade }}>
                     <Fade in={isSearchOpen}>

@@ -2,31 +2,37 @@
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import DishOrder from "../pages/dish-order"
+import { Tooltip } from "@mui/material"
 
-export default function DishPreview({ dish }) {
+export default function DishPreview({ dish, isOpenNow, restaurant }) {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const location = useLocation()
+    const isRestaurantPage = location.pathname.includes('/restaurant')
 
     const toggleModal = () => setIsModalOpen(!isModalOpen)
 
     return (
         <>
-            <section className="dish-preview" onClick={toggleModal}>
-                <img src={dish.imgUrl} alt="" className="dish-img" />
-                <div className="dish-info">
-                    <h3>{dish.name}</h3>
-                    {!location.pathname.includes('/restaurant') && (
-                        <img src={dish.iconUrl} alt="" className="dish-icon" />
-                    )}
-                    <p>{dish.ingredients?.join(', ')}</p>
-                    <div className="price-container">
-                        <hr className="line" />
-                        <span className="price">₪{dish.price}</span>
-                        <hr className="line" />
+            <Tooltip title={`${!isOpenNow && isRestaurantPage ? 'Can\'t order dishes, restaurant is closed' : ''}`}>
+                <section className={`dish-preview ${!isOpenNow ? 'disabled' : ''}`} onClick={toggleModal}
+                    style={{ cursor: !isRestaurantPage ? 'auto' : (!isOpenNow ? 'not-allowed' : 'pointer') }}>
+                    <img src={dish.imgUrl} alt="" className="dish-img" />
+                    <div className="dish-info">
+                        <h3>{dish.name}</h3>
+                        {!isRestaurantPage && (
+                            <img src={dish.iconUrl} alt="" className="dish-icon" />
+                        )}
+                        <p>{dish.ingredients?.join(', ')}</p>
+                        <div className="price-container">
+                            <hr className="line" />
+                            <span className="price">₪{dish.price}</span>
+                            <hr className="line" />
+                        </div>
                     </div>
-                </div>
-            </section>
-            <DishOrder dish={dish} toggleModal={toggleModal} isModalOpen={isModalOpen} />
+                </section>
+            </Tooltip>
+            <DishOrder dish={dish} toggleModal={toggleModal} isModalOpen={isModalOpen}
+                isOpenNow={isOpenNow} restaurant={restaurant} />
         </>
     )
 }

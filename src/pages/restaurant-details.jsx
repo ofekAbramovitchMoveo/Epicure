@@ -53,7 +53,7 @@ export default function RestaurantDetails() {
                 <NavLink to={`/restaurant/${restaurant.id}/lunch`}>Lunch</NavLink>
                 <NavLink to={`/restaurant/${restaurant.id}/dinner`}>Dinner</NavLink>
             </div>
-            <DishList dishes={getFilteredDishes()} restaurantId={restaurantId} />
+            <DishList dishes={getFilteredDishes()} isOpenNow={restaurant.isOpenNow} restaurant={restaurant} />
         </section>
     )
 }

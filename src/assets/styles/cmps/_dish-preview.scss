@@ -3,6 +3,10 @@
     flex-direction: column;
     cursor: pointer;
 
+    &.disabled {
+        cursor: not-allowed;
+    }
+
     .dish-img {
         width: 100%;
         height: 152px;
@@ -37,7 +41,7 @@
             width: 30px;
             height: 23px;
         }
-        
+
         .price-container {
             height: fit-content;
             display: flex;
@@ -46,7 +50,7 @@
             margin-top: auto;
             order: 4;
             font-weight: 400;
-            
+
             .price {
                 letter-spacing: 1.97px;
             }
