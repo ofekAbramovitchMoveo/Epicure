@@ -1,7 +1,151 @@
-.dish-order-box {
-    height: 1064px;
-    width: 573px;
-    background-color: white;
-    left: 50%;
-    transform: translateX(-50%);
+.dish-order-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .dish-order-box {
+        background-color: white;
+        overflow-y: auto;
+
+        .close-icon {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            margin: 11px 0;
+        }
+
+        .dish-img {
+            height: 271px;
+            width: 100%;
+        }
+
+        .order-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 32px;
+
+            h1 {
+                font-weight: 400;
+                letter-spacing: 2.67px;
+                font-size: 18px;
+            }
+
+            p {
+                font-weight: 200;
+                letter-spacing: 1.97px;
+                margin-top: 14px;
+                line-height: 18px;
+            }
+
+            .icon {
+                display: none;
+            }
+
+            .price-container {
+                height: fit-content;
+                display: flex;
+                width: 100%;
+                font-weight: 400;
+                align-items: center;
+                gap: 12px;
+                margin-top: 20px;
+
+                .line {
+                    display: none;
+                }
+
+                .price {
+                    font-size: 18px;
+                    letter-spacing: 1.03px;
+                }
+            }
+
+            .add-btn {
+                background-color: black;
+                color: white;
+                border: none;
+                width: 206px;
+                height: 48px;
+                font-weight: 400;
+                letter-spacing: 2.67px;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@include for-narrow-layout {
+    .dish-order-modal {
+
+        .dish-order-box {
+
+            .dish-img {
+                height: 320px;
+            }
+        }
+    }
+}
+
+@include for-normal-layout {
+    .dish-order-modal {
+
+        .dish-order-box {
+            height: 90vh;
+            width: 573px;
+            overflow: visible;
+
+            .close-icon {
+                position: absolute;
+                top: -28px;
+                margin: 0;
+            }
+
+            .dish-img {
+                height: 24vh;
+            }
+
+            .order-info {
+                height: 65.7vh;
+                padding: 2vh 170px 2.3vh;
+                align-items: center;
+                gap: 0.5vh;
+
+                h1 {
+                    text-align: center;
+                    font-size: 2.6vh;
+                }
+
+                p {
+                    text-align: center;
+                    margin: 0;
+                    font-size: 1.15vh;
+                    line-height: 1.48vh;
+                }
+
+                .icon {
+                    display: flex;
+                    height: 2.46vh;
+                }
+
+                .price-container {
+                    margin-top: 0;
+
+                    .line {
+                        display: flex;
+                        flex: 1;
+                        border: 0.5px solid rgba(151, 151, 151, 1)
+                    }
+
+                    .price {
+                        font-size: 1.97vh;
+                    }
+                }
+
+                .add-btn {
+                    font-size: 1.58vh;
+                }
+            }
+        }
+    }
 }

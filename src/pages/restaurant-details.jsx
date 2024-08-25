@@ -23,12 +23,14 @@ export default function RestaurantDetails() {
     }, [restaurantId])
 
     function getFilteredDishes() {
+        const basePath = '/restaurant/'
+
         switch (location.pathname) {
-            case `/restaurant/${restaurantId}`:
+            case `${basePath}${restaurantId}`:
                 return restaurant.dishes.filter(dish => dish.type === 'breakfast')
-            case `/restaurant/${restaurantId}/lunch`:
+            case `${basePath}${restaurantId}/lunch`:
                 return restaurant.dishes.filter(dish => dish.type === 'lunch')
-            case `/restaurant/${restaurantId}/dinner`:
+            case `${basePath}${restaurantId}/dinner`:
                 return restaurant.dishes.filter(dish => dish.type === 'dinner')
             default:
                 return restaurant.dishes

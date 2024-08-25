@@ -2,7 +2,6 @@ import { restaurantService } from "../../services/restaurant.service"
 import { store } from "../store"
 import { SET_RESTAURANT, SET_RESTAURANTS } from "./restaurant.reducer"
 
-
 export async function loadRestaurants(filterBy = {}) {
     try {
         const restaurants = await restaurantService.query(filterBy)

@@ -45,10 +45,12 @@ export default function Map({ restaurants }) {
         mapRef.current = null
     }, [])
 
-    return isLoaded ? (
+    const defaultLocation = { lat: 32.0853, lng: 34.7818 }
+
+    return isLoaded && userLocation ? (
         <GoogleMap
             mapContainerStyle={mapContainerStyle}
-            center={{ ...userLocation }}
+            center={{ lat: userLocation?.lat || defaultLocation.lat, lng: userLocation?.lng || defaultLocation.lng }}
             zoom={14}
             onLoad={onLoad}
             onUnmount={onUnmount}
