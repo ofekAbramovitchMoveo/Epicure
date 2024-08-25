@@ -27,7 +27,7 @@ export default function DishOrder({ dish, toggleModal, isModalOpen, isOpenNow, r
     const isrRestaurantPage = location.pathname.includes('/restaurant')
 
     function onAddToBag() {
-        if (bag.length > 0 && bag[0].restaurantName !== restaurant.name) {
+        if (bag.length && bag[0].restaurantName !== restaurant.name) {
             setIsPopupOpen(true)
         } else {
             const dishToAdd = { ...dish, ...selectedOptions, restaurantName: restaurant.name }
