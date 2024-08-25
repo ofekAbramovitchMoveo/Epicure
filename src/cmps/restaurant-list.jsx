@@ -13,7 +13,7 @@ export default function RestaurantList({ restaurants, isChefRestaurants, chefId 
 
     function getChefName(chefId) {
         const chef = chefs.find(chef => chef.id === chefId)
-        return chef.name
+        return chef?.name
     }
 
     if (!restaurants || !restaurants.length) return <h1 className="no-restaurants">No restaurants found</h1>

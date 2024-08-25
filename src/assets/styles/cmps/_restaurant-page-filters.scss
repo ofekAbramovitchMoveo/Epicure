@@ -2,21 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 24px;
     background-color: $secondary-clr-offwhite;
     height: 60px;
+    gap: 48px;
 
     button {
         background-color: transparent;
         border: none;
         display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
         font-weight: 200;
-        font-size: 18px;
+        font-size: 16px;
         letter-spacing: 1.92px;
-        gap: 8px;
         height: 100%;
-        padding: 0 22px;
+        padding: 0;
 
         &:hover {
             cursor: pointer;
@@ -298,4 +300,27 @@ button.clear-btn {
             }
         }
     }
+}
+
+@include for-narrow-layout {
+    .restaurant-page-filters {
+        gap: 0;
+
+        button:not(.clear-btn) {
+            flex-direction: row;
+            font-size: 18px;
+            padding: 0 22px;
+        }
+    }
+}
+
+@include for-normal-layout {
+    .restaurant-page-filters {
+        margin-top: 40px;
+
+        button {
+            gap: 8px;
+        }
+    }
+
 }

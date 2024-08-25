@@ -7,6 +7,10 @@
         "imgUrl": "/imgs/claro.png",
         "createdAt": "2024-08-05T11:00:00Z",
         "isOpenNow": true,
+        "location": {
+            "lat": 32.0708092,
+            "lng": 34.7876717
+        },
         "dishes": [
             {
                 "id": "1",
@@ -264,6 +268,10 @@
         "imgUrl": "/imgs/lumina.png",
         "createdAt": "2024-08-05T11:10:00Z",
         "isOpenNow": true,
+        "location": {
+            "lat": 32.0865539,
+            "lng": 34.7697159
+        },
         "dishes": [
             {
                 "id": "1",
@@ -518,6 +526,10 @@
         "imgUrl": "/imgs/tigerlily.png",
         "createdAt": "2024-08-05T11:20:00Z",
         "isOpenNow": true,
+        "location": {
+            "lat": 32.0729972,
+            "lng": 34.7878404
+        },
         "dishes": [
             {
                 "id": "1",
@@ -772,6 +784,10 @@
         "imgUrl": "/imgs/onza.png",
         "createdAt": "2024-08-06T11:00:00Z",
         "isOpenNow": true,
+        "location": {
+            "lat": 32.0530813,
+            "lng": 34.7557131
+        },
         "dishes": [
             {
                 "id": "1",
@@ -1026,6 +1042,10 @@
         "imgUrl": "/imgs/pizza.png",
         "createdAt": "2024-08-06T11:10:00Z",
         "isOpenNow": true,
+        "location": {
+            "lat": 32.0950023,
+            "lng": 34.7889763
+        },
         "dishes": [
             {
                 "id": "1",
@@ -1280,6 +1300,10 @@
         "imgUrl": "/imgs/mashya.png",
         "createdAt": "2024-08-06T11:20:00Z",
         "isOpenNow": true,
+        "location": {
+            "lat": 32.0792452,
+            "lng": 34.7688776
+        },
         "dishes": [
             {
                 "id": "1",
@@ -1534,6 +1558,10 @@
         "imgUrl": "/imgs/kab-kem.png",
         "createdAt": "2024-08-13T09:00:00Z",
         "isOpenNow": true,
+        "location": {
+            "lat": 32.06692,
+            "lng": 34.7820438
+        },
         "dishes": [
             {
                 "id": "1",
@@ -1788,6 +1816,10 @@
         "imgUrl": "/imgs/messa.png",
         "createdAt": "2024-08-13T09:10:00Z",
         "isOpenNow": false,
+        "location": {
+            "lat": 32.0706579,
+            "lng": 34.7869387
+        },
         "dishes": [
             {
                 "id": "1",
@@ -2042,6 +2074,10 @@
         "imgUrl": "/imgs/nitan-thai.png",
         "createdAt": "2024-08-13T09:20:00Z",
         "isOpenNow": false,
+        "location": {
+            "lat": 32.0704442,
+            "lng": 34.7870989
+        },
         "dishes": [
             {
                 "id": "1",
@@ -2296,6 +2332,10 @@
         "imgUrl": "/imgs/yapan.png",
         "createdAt": "2024-08-13T09:30:00Z",
         "isOpenNow": false,
+        "location": {
+            "lat": 32.0655775,
+            "lng": 34.7756822
+        },
         "dishes": [
             {
                 "id": "1",

@@ -3,9 +3,9 @@ import { store } from "../store"
 import { SET_RESTAURANT, SET_RESTAURANTS } from "./restaurant.reducer"
 
 
-export function loadRestaurants(filterBy = {}) {
+export async function loadRestaurants(filterBy = {}) {
     try {
-        const restaurants = restaurantService.query(filterBy)
+        const restaurants = await restaurantService.query(filterBy)
         store.dispatch({ type: SET_RESTAURANTS, restaurants })
     } catch (err) {
         console.log('RestaurantActions: err in loadRestaurants', err)
