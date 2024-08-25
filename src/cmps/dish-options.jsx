@@ -84,7 +84,7 @@ export default function DishOptions({ dish, selectedOptions, setSelectedOptions 
                         style={{ width: '50px' }}
                         sx={{
                             '& input[type=number]::-webkit-outer-spin-button, & input[type=number]::-webkit-inner-spin-button': {
-                                '-webkit-appearance': 'none',
+                                WebkitAppearance: 'none',
                             }
                         }}
                     />

@@ -70,6 +70,79 @@
                 font-weight: 400;
                 letter-spacing: 2.67px;
                 font-size: 18px;
+
+                &.disbaled {
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}
+
+.MuiTooltip-tooltip {
+    font-size: 18px !important;
+}
+
+.warning-dialog {
+
+    .dialog-box {
+        width: 100%;
+        height: 510px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 48px 0;
+        gap: 48px;
+
+        .question {
+            height: 64px;
+            width: 40px;
+        }
+
+        .txt-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            text-align: center;
+
+            .title {
+                font-weight: 200;
+                font-size: 24px;
+                letter-spacing: 2.67px;
+            }
+
+            .desc {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 18px;
+                letter-spacing: 1.97px;
+                width: 79%;
+            }
+        }
+
+        .btns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .btn {
+                width: 206px;
+                height: 48px;
+                font-weight: 400;
+                font-size: 18px;
+                letter-spacing: 2.67px;
+            }
+
+            .delete-btn {
+                background-color: black;
+                color: white;
+                border: none;
+            }
+
+            .back-btn {
+                background-color: white;
+                border: 1px solid #000000;
             }
         }
     }
@@ -83,6 +156,13 @@
             .dish-img {
                 height: 320px;
             }
+        }
+    }
+
+    .warning-dialog {
+
+        .dialog-box {
+            width: 376px;
         }
     }
 }

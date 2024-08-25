@@ -3,7 +3,7 @@
     background-color: white;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1301;
     height: 46px;
     min-height: 46px;
     max-height: 64px;
@@ -56,6 +56,26 @@
                     img {
                         width: 20px;
                         height: 20px;
+                    }
+                }
+
+                .bag-icon {
+                    position: relative;
+
+                    .bag-count {
+                        position: absolute;
+                        top: -3px;
+                        left: -3px;
+                        background-color: black;
+                        color: white;
+                        border-radius: 50%;
+                        height: 14px;
+                        width: 14px;
+                        font-weight: 700;
+                        font-size: 8px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
                 }
             }
@@ -210,7 +230,6 @@
 
         .app-header-container {
             gap: 32px;
-            // position: static;
 
             .menu-icon {
                 display: none;
@@ -288,10 +307,9 @@
     }
 
     .bag-modal {
-        height: 586px;
         width: 497px;
-        padding: 44px;
         top: 64px;
+        padding: 44px;
 
         .empty-bag {
             gap: 16px;

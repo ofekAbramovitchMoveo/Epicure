@@ -3,6 +3,10 @@
     flex-direction: column;
     cursor: pointer;
 
+    &.disabled {
+        cursor: not-allowed;
+    }
+
     .dish-img {
         width: 100%;
         height: 152px;
@@ -30,6 +34,11 @@
             font-weight: 200;
             letter-spacing: 1.97px;
             line-height: 20px;
+            max-height: 120px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
 
         .dish-icon {
@@ -37,7 +46,7 @@
             width: 30px;
             height: 23px;
         }
-        
+
         .price-container {
             height: fit-content;
             display: flex;
@@ -46,7 +55,7 @@
             margin-top: auto;
             order: 4;
             font-weight: 400;
-            
+
             .price {
                 letter-spacing: 1.97px;
             }
@@ -91,6 +100,7 @@
                 line-height: 30px;
                 width: 85%;
                 order: 3;
+                
             }
 
             .price-container {

@@ -1,0 +1,146 @@
+.shopping-bag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: 2.67px;
+        margin-bottom: 8px;
+    }
+
+    .restaurant-name {
+        font-weight: 200;
+        font-size: 18px;
+        letter-spacing: 1.97px;
+        margin-bottom: 20px;
+    }
+
+    .bag-dish-list {
+        overflow-y: auto;
+        height: 262px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        direction: rtl;
+
+        li {
+            width: 100%;
+            direction: ltr;
+        }
+    }
+
+    .price-container {
+        display: flex;
+        margin-top: 49px;
+        align-items: center;
+        height: fit-content;
+        justify-content: center;
+        font-weight: 400;
+        width: 232px;
+        gap: 12px;
+
+        .line {
+            display: none;
+        }
+
+        .price {
+            font-size: 20px;
+            letter-spacing: 1.97px;
+
+            .total {
+                font-size: 20px;
+                letter-spacing: 2.67px;
+            }
+        }
+    }
+
+    label {
+        display: none;
+    }
+
+    .btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+
+        .checkout-btn {
+            background-color: black;
+            color: white;
+            height: 48px;
+            width: 206px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 2.67px;
+        }
+    }
+}
+
+@include for-normal-layout {
+    .shopping-bag {
+
+        h1 {
+            letter-spacing: 1.25px;
+            font-size: 32px;
+        }
+
+        .restaurant-name {
+            margin-bottom: 30px;
+        }
+
+        .bag-dish-list {
+            gap: 12px;
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+            margin-top: 21px;
+            align-items: center;
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 1.97px;
+            gap: 20px;
+            width: 358px;
+
+            textarea {
+                border: 0.6px solid $clr-primary-gray;
+                border-radius: 3.43px;
+                width: 100%;
+
+                &::placeholder {
+                    font-weight: 200;
+                    font-size: 12px;
+                    letter-spacing: 1.29px;
+                    color: $clr-primary-gray;
+                    font-family: Helvetica;
+                    padding: 8px;
+                }
+            }
+        }
+
+        .price-container {
+            gap: 12px;
+            margin-top: 16px;
+
+            .line {
+                display: block;
+                flex: 1;
+                border: 0.5px solid $clr-primary-gray;
+            }
+
+            .price {
+                font-size: 24px;
+                letter-spacing: 1.03px;
+            }
+        }
+    }
+}

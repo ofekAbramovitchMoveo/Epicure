@@ -36,8 +36,7 @@
           "changes": [
             "Without peanuts",
             "Sticky less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -65,8 +64,7 @@
           "changes": [
             "Without peanuts",
             "Sticky less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -91,14 +89,13 @@
           "changes": [
             "Without peanuts",
             "Sticky less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "4",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -117,14 +114,13 @@
           "changes": [
             "Without peanuts",
             "Sticky less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "5",
         "name": "Sea Fish Tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "gazpacho",
           "crème fraîche",
@@ -142,14 +138,13 @@
           "changes": [
             "Without peanuts",
             "Sticky less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "6",
         "name": "Whole-wheat frena bread",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "matbukha",
           "sour cream",
@@ -167,14 +162,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "7",
         "name": "Yellow tail sashimi",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "freekeh tabouleh from Yarka",
           "yogurt",
@@ -194,14 +188,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "8",
         "name": "Seared clamari",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "corn and okra",
           "herbs",
@@ -221,14 +214,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "9",
         "name": "Octopus spaghettini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "asparagus",
           "bouillabaisse",
@@ -247,14 +239,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "10",
         "name": "Lamb platter",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "tzatziki",
           "matbukha",
@@ -273,14 +264,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "11",
         "name": "Beef fillet skewer",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "labneh cheese",
           "grilled vegetables",
@@ -298,14 +288,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "12",
         "name": "Local Tomato salad",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "mozzarella",
           "sundried tomato cream",
@@ -325,14 +314,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "13",
         "name": "Fish tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "sabra gazpacho",
           "cilantro",
@@ -352,14 +340,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "14",
         "name": "Roasted cabbage",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "onion vinaigrette",
           "tomato salsa",
@@ -379,14 +366,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "15",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -404,14 +390,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "16",
         "name": "Fillet of beef",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "romanesco",
           "snow peas",
@@ -430,8 +415,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       }
     ]
@@ -471,8 +455,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -500,8 +483,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -526,14 +508,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "4",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -552,14 +533,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "5",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -577,14 +557,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "6",
         "name": "Roasted cabbage",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "onion vinaigrette",
           "tomato salsa",
@@ -604,14 +583,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "7",
         "name": "Fish tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "sabra gazpacho",
           "cilantro",
@@ -631,14 +609,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "8",
         "name": "Fillet of beef",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "romanesco",
           "snow peas",
@@ -657,14 +634,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "9",
         "name": "Beef fillet skewer",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "labneh cheese",
           "grilled vegetables",
@@ -682,14 +658,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "10",
         "name": "Lamb platter",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "tzatziki",
           "matbukha",
@@ -708,14 +683,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "11",
         "name": "Octopus spaghettini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "asparagus",
           "bouillabaisse",
@@ -734,14 +708,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "12",
         "name": "Yellow tail sashimi",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "freekeh tabouleh from Yarka",
           "yogurt",
@@ -761,14 +734,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "13",
         "name": "Seared clamari",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "corn and okra",
           "herbs",
@@ -788,14 +760,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "14",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -814,14 +785,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "15",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -839,14 +809,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "16",
         "name": "Sea Fish Tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "gazpacho",
           "crème fraîche",
@@ -864,8 +833,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       }
     ]
@@ -905,8 +873,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -934,8 +901,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -960,14 +926,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "4",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -986,14 +951,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "5",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -1011,14 +975,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "6",
         "name": "Roasted cabbage",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "onion vinaigrette",
           "tomato salsa",
@@ -1038,14 +1001,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "7",
         "name": "Fish tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sabra gazpacho",
           "cilantro",
@@ -1065,14 +1027,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "8",
         "name": "Fillet of beef",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "romanesco",
           "snow peas",
@@ -1091,14 +1052,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "9",
         "name": "Beef fillet skewer",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "labneh cheese",
           "grilled vegetables",
@@ -1116,14 +1076,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "10",
         "name": "Lamb platter",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "tzatziki",
           "matbukha",
@@ -1142,14 +1101,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "11",
         "name": "Octopus spaghettini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "asparagus",
           "bouillabaisse",
@@ -1168,14 +1126,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "12",
         "name": "Yellow tail sashimi",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "freekeh tabouleh from Yarka",
           "yogurt",
@@ -1195,14 +1152,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "13",
         "name": "Seared clamari",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "corn and okra",
           "herbs",
@@ -1222,14 +1178,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "14",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -1248,14 +1203,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "15",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -1273,14 +1227,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "16",
         "name": "Sea Fish Tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "gazpacho",
           "crème fraîche",
@@ -1298,8 +1251,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       }
     ]
@@ -1339,8 +1291,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -1368,8 +1319,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -1394,14 +1344,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "4",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -1420,14 +1369,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "5",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -1445,14 +1393,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "6",
         "name": "Roasted cabbage",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "onion vinaigrette",
           "tomato salsa",
@@ -1472,14 +1419,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "7",
         "name": "Fish tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "sabra gazpacho",
           "cilantro",
@@ -1499,14 +1445,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "8",
         "name": "Fillet of beef",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "romanesco",
           "snow peas",
@@ -1525,14 +1470,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "9",
         "name": "Beef fillet skewer",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "labneh cheese",
           "grilled vegetables",
@@ -1550,14 +1494,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "10",
         "name": "Lamb platter",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "tzatziki",
           "matbukha",
@@ -1576,14 +1519,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "11",
         "name": "Octopus spaghettini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "asparagus",
           "bouillabaisse",
@@ -1602,14 +1544,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "12",
         "name": "Yellow tail sashimi",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "freekeh tabouleh from Yarka",
           "yogurt",
@@ -1629,14 +1570,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "13",
         "name": "Seared clamari",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "corn and okra",
           "herbs",
@@ -1656,14 +1596,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "14",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -1682,14 +1621,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "15",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -1707,14 +1645,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "16",
         "name": "Sea Fish Tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "gazpacho",
           "crème fraîche",
@@ -1732,8 +1669,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       }
     ]
@@ -1773,8 +1709,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -1802,8 +1737,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -1828,14 +1762,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "4",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -1854,14 +1787,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "5",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -1879,14 +1811,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "6",
         "name": "Roasted cabbage",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "onion vinaigrette",
           "tomato salsa",
@@ -1906,14 +1837,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "7",
         "name": "Fish tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sabra gazpacho",
           "cilantro",
@@ -1933,14 +1863,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "8",
         "name": "Fillet of beef",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "romanesco",
           "snow peas",
@@ -1959,14 +1888,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "9",
         "name": "Beef fillet skewer",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "labneh cheese",
           "grilled vegetables",
@@ -1984,14 +1912,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "10",
         "name": "Lamb platter",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "tzatziki",
           "matbukha",
@@ -2010,14 +1937,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "11",
         "name": "Octopus spaghettini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "asparagus",
           "bouillabaisse",
@@ -2036,14 +1962,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "12",
         "name": "Yellow tail sashimi",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "freekeh tabouleh from Yarka",
           "yogurt",
@@ -2063,14 +1988,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "13",
         "name": "Seared clamari",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "corn and okra",
           "herbs",
@@ -2090,14 +2014,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "14",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -2116,14 +2039,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "15",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -2141,14 +2063,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "16",
         "name": "Sea Fish Tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "gazpacho",
           "crème fraîche",
@@ -2166,8 +2087,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       }
     ]
@@ -2207,8 +2127,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -2236,8 +2155,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -2262,14 +2180,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "4",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -2288,14 +2205,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "5",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -2313,14 +2229,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "6",
         "name": "Roasted cabbage",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "onion vinaigrette",
           "tomato salsa",
@@ -2340,14 +2255,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "7",
         "name": "Fish tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "sabra gazpacho",
           "cilantro",
@@ -2367,14 +2281,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "8",
         "name": "Fillet of beef",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "romanesco",
           "snow peas",
@@ -2393,14 +2306,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "9",
         "name": "Beef fillet skewer",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "labneh cheese",
           "grilled vegetables",
@@ -2418,14 +2330,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "10",
         "name": "Lamb platter",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "tzatziki",
           "matbukha",
@@ -2444,14 +2355,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "11",
         "name": "Octopus spaghettini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "asparagus",
           "bouillabaisse",
@@ -2470,14 +2380,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "12",
         "name": "Yellow tail sashimi",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "freekeh tabouleh from Yarka",
           "yogurt",
@@ -2497,14 +2406,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "13",
         "name": "Seared clamari",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "corn and okra",
           "herbs",
@@ -2524,14 +2432,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "14",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -2550,14 +2457,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "15",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -2575,14 +2481,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "16",
         "name": "Sea Fish Tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "gazpacho",
           "crème fraîche",
@@ -2600,8 +2505,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       }
     ]
@@ -2641,8 +2545,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -2670,8 +2573,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -2696,14 +2598,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "4",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -2722,14 +2623,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "5",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -2747,14 +2647,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "6",
         "name": "Roasted cabbage",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "onion vinaigrette",
           "tomato salsa",
@@ -2774,14 +2673,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "7",
         "name": "Fish tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sabra gazpacho",
           "cilantro",
@@ -2801,14 +2699,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "8",
         "name": "Fillet of beef",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "romanesco",
           "snow peas",
@@ -2827,14 +2724,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "9",
         "name": "Beef fillet skewer",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "labneh cheese",
           "grilled vegetables",
@@ -2852,14 +2748,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "10",
         "name": "Lamb platter",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "tzatziki",
           "matbukha",
@@ -2878,14 +2773,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "11",
         "name": "Octopus spaghettini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "asparagus",
           "bouillabaisse",
@@ -2904,14 +2798,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "12",
         "name": "Yellow tail sashimi",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "freekeh tabouleh from Yarka",
           "yogurt",
@@ -2931,14 +2824,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "13",
         "name": "Seared clamari",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "corn and okra",
           "herbs",
@@ -2958,14 +2850,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "14",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -2984,14 +2875,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "15",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -3009,14 +2899,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "16",
         "name": "Sea Fish Tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "gazpacho",
           "crème fraîche",
@@ -3034,8 +2923,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       }
     ]
@@ -3075,8 +2963,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -3104,8 +2991,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -3130,14 +3016,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "4",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -3156,14 +3041,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "5",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -3181,14 +3065,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "6",
         "name": "Roasted cabbage",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "onion vinaigrette",
           "tomato salsa",
@@ -3208,14 +3091,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "7",
         "name": "Fish tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "sabra gazpacho",
           "cilantro",
@@ -3235,14 +3117,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "8",
         "name": "Fillet of beef",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "romanesco",
           "snow peas",
@@ -3261,14 +3142,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "9",
         "name": "Beef fillet skewer",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "labneh cheese",
           "grilled vegetables",
@@ -3286,14 +3166,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "10",
         "name": "Lamb platter",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "tzatziki",
           "matbukha",
@@ -3312,14 +3191,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "11",
         "name": "Octopus spaghettini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "asparagus",
           "bouillabaisse",
@@ -3338,14 +3216,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "12",
         "name": "Yellow tail sashimi",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "freekeh tabouleh from Yarka",
           "yogurt",
@@ -3365,14 +3242,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "13",
         "name": "Seared clamari",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "corn and okra",
           "herbs",
@@ -3392,14 +3268,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "14",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -3418,14 +3293,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "15",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -3443,14 +3317,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "16",
         "name": "Sea Fish Tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "gazpacho",
           "crème fraîche",
@@ -3468,8 +3341,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       }
     ]
@@ -3509,8 +3381,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -3538,8 +3409,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -3564,14 +3434,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "4",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -3590,14 +3459,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "5",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -3615,14 +3483,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "6",
         "name": "Roasted cabbage",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "onion vinaigrette",
           "tomato salsa",
@@ -3642,14 +3509,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "7",
         "name": "Fish tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "sabra gazpacho",
           "cilantro",
@@ -3669,14 +3535,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "8",
         "name": "Fillet of beef",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "romanesco",
           "snow peas",
@@ -3695,14 +3560,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "9",
         "name": "Beef fillet skewer",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "labneh cheese",
           "grilled vegetables",
@@ -3720,14 +3584,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "10",
         "name": "Lamb platter",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "tzatziki",
           "matbukha",
@@ -3746,14 +3609,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "11",
         "name": "Octopus spaghettini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "asparagus",
           "bouillabaisse",
@@ -3772,14 +3634,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "12",
         "name": "Yellow tail sashimi",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "freekeh tabouleh from Yarka",
           "yogurt",
@@ -3799,14 +3660,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "13",
         "name": "Seared clamari",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "corn and okra",
           "herbs",
@@ -3826,14 +3686,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "14",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegitarian.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -3852,14 +3711,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "15",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -3877,14 +3735,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "16",
         "name": "Sea Fish Tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "gazpacho",
           "crème fraîche",
@@ -3902,8 +3759,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       }
     ]
@@ -3943,8 +3799,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -3972,8 +3827,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
@@ -3998,14 +3852,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "4",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -4024,14 +3877,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "5",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -4049,14 +3901,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "6",
         "name": "Roasted cabbage",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "onion vinaigrette",
           "tomato salsa",
@@ -4076,14 +3927,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "7",
         "name": "Fish tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "sabra gazpacho",
           "cilantro",
@@ -4103,14 +3953,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "8",
         "name": "Fillet of beef",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "romanesco",
           "snow peas",
@@ -4129,14 +3978,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "9",
         "name": "Beef fillet skewer",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "labneh cheese",
           "grilled vegetables",
@@ -4154,14 +4002,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "10",
         "name": "Lamb platter",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "tzatziki",
           "matbukha",
@@ -4180,14 +4027,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "11",
         "name": "Octopus spaghettini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "asparagus",
           "bouillabaisse",
@@ -4206,14 +4052,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "12",
         "name": "Yellow tail sashimi",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "freekeh tabouleh from Yarka",
           "yogurt",
@@ -4233,14 +4078,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "13",
         "name": "Seared clamari",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "corn and okra",
           "herbs",
@@ -4260,14 +4104,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "14",
         "name": "Trout Belly Bruschetta",
-        "iconUrl": "",
+        "iconUrl": "/imgs/vegan.svg",
         "ingredients": [
           "sour cream",
           "arugula",
@@ -4286,14 +4129,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "15",
         "name": "Short rib tortellini",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "onion cream",
           "parmesan",
@@ -4311,14 +4153,13 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       },
       {
         "id": "16",
         "name": "Sea Fish Tartare",
-        "iconUrl": "",
+        "iconUrl": "/imgs/spicy.svg",
         "ingredients": [
           "gazpacho",
           "crème fraîche",
@@ -4336,8 +4177,7 @@
           "changes": [
             "Without peanuts",
             "Sticky Less spicy"
-          ],
-          "quantity": 1
+          ]
         }
       }
     ]
