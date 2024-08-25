@@ -55,7 +55,7 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }) 
                             placeholder="Search for restaurant cuisine, chef"
                             value={searchInput}
                             onChange={({ target }) => setSearchInput(target.value)} />
-                        <SearchSuggestions suggestions={suggestions} />
+                        <SearchSuggestions suggestions={suggestions} toggleSearch={toggleSearch} />
                     </>
                 )}
             </div>
@@ -66,16 +66,33 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }) 
                 disableScrollLock
                 disableEnforceFocus
                 disableAutoFocus
-                sx={{ bottom: 'auto' }}>
-                <Box className={`bag-modal ${isMobile ? 'main-layout' : ''}`} sx={{
-                    padding: isMobile && bag.length ? '16px 0 24px' : (bag.length ? '27px 0 37px' : ''),
-                    justifyContent: bag.length ? 'inherit' : 'center',
-                    position: 'absolute',
-                    right: '0',
-                    height: isMobile ? (bag.length ? '514px' : '218px') : (!bag || !bag.length ? '586px' : '779px')
-                }}>
-                    <ShoppingBag bag={bag} toggleBag={toggleBag} />
-                </Box>
+                sx={{ bottom: 'auto' }}
+                closeAfterTransition
+                slots={{ BackdropComponent: Fade }}
+                slotProps={{
+                    backdrop: {
+                        timeout: {
+                            enter: 300,
+                            exit: 0
+                        },
+                        easing: {
+                            enter: 'ease-out',
+                            exit: 'ease-out'
+                        }
+                    }
+                }}
+            >
+                <Fade in={isBagOpen}>
+                    <Box className={`bag-modal ${isMobile ? 'main-layout' : ''}`} sx={{
+                        padding: isMobile && bag.length ? '16px 0 24px' : (bag.length ? '27px 0 37px' : ''),
+                        justifyContent: bag.length ? 'inherit' : 'center',
+                        position: 'absolute',
+                        right: '0',
+                        height: isMobile ? (bag.length ? '514px' : '218px') : (!bag || !bag.length ? '586px' : '779px')
+                    }}>
+                        <ShoppingBag bag={bag} toggleBag={toggleBag} />
+                    </Box>
+                </Fade>
             </Modal>
             <Modal open={isMenuOpen}
                 onClose={toggleMenu}
@@ -86,7 +103,20 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }) 
                 disableAutoFocus
                 sx={{ bottom: 'auto', top: '0', zIndex: 10000 }}
                 closeAfterTransition
-                slots={{ BackdropComponent: Fade }}>
+                slots={{ BackdropComponent: Fade }}
+                slotProps={{
+                    backdrop: {
+                        timeout: {
+                            enter: 300,
+                            exit: 0
+                        },
+                        easing: {
+                            enter: 'ease-out',
+                            exit: 'ease-out'
+                        }
+                    }
+                }}
+            >
                 <Fade in={isMenuOpen}>
                     <Box className="menu-modal main-layout" sx={{ position: 'relative' }}>
                         <img src={close} alt="" onClick={toggleMenu} className="close-icon" />

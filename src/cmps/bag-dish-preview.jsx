@@ -29,7 +29,9 @@ export default function BagDishPreview({ dish, onRemoveDish }) {
 
     return (
         <section className="bag-dish-preview">
-            <img src={dish.imgUrl} alt="" className="dish-img" />
+            <div className="img-container">
+                <img src={dish.imgUrl} alt="" className="dish-img" />
+            </div>
             <div className={`dish-info ${isExpanded ? 'expanded' : ''}`}>
                 <div className="dish-details">
                     <div className="dish-metadata">

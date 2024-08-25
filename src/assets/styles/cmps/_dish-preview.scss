@@ -34,6 +34,11 @@
             font-weight: 200;
             letter-spacing: 1.97px;
             line-height: 20px;
+            max-height: 120px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
 
         .dish-icon {
@@ -95,6 +100,7 @@
                 line-height: 30px;
                 width: 85%;
                 order: 3;
+                
             }
 
             .price-container {

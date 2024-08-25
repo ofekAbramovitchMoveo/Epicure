@@ -2,9 +2,14 @@
     height: 96px;
     display: flex;
 
-    .dish-img {
-        height: 100%;
+    .img-container {
         width: 96px;
+
+        .dish-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
 
     .dish-info {
