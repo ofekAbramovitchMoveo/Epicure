@@ -172,7 +172,7 @@
 
         .dish-order-box {
             height: 90vh;
-            width: 573px;
+            width: 47.06vh;
             overflow: visible;
 
             .close-icon {
@@ -183,11 +183,12 @@
 
             .dish-img {
                 height: 24vh;
+                object-fit: cover;
             }
 
             .order-info {
                 height: 65.7vh;
-                padding: 2vh 170px 2.3vh;
+                padding: 2vh 10.78vh 2.3vh;
                 align-items: center;
                 gap: 0.5vh;
 
@@ -224,6 +225,8 @@
 
                 .add-btn {
                     font-size: 1.58vh;
+                    height: 5vh;
+                    width: 20vh;
                 }
             }
         }
