@@ -32,7 +32,6 @@
                 .quantity {
                     font-weight: 400;
                     font-size: 14px;
-                    letter-spacing: 2.67px;
                     color: black;
                     display: flex;
                     align-items: center;
@@ -107,10 +106,11 @@
                         transition: all 0.3s linear;
                         border: 0.57px solid $clr-primary-gray;
                         border-radius: 3.43px;
-                        padding: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         color: #DE9200;
                         font-size: 18.12px;
-                        letter-spacing: 1.98px;
                         height: 31px;
                         width: 31px;
 
@@ -124,7 +124,7 @@
                             background-color: white;
                             border-radius: 3.43px;
                             display: flex;
-                            gap: 15px;
+                            justify-content: space-between;
                             padding: 5px 8px;
                         }
 
@@ -145,11 +145,14 @@
                         }
 
                         .quantity-display {
+                            display: flex;
+                            justify-content: center;
 
                             input {
                                 cursor: pointer;
                                 padding: 0;
                                 color: #DE9200;
+                                max-width: 27px;
                             }
 
                             fieldset {

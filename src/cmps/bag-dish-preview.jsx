@@ -64,7 +64,7 @@ export default function BagDishPreview({ dish, onRemoveDish }) {
                             ) : (
                                 dish.quantity
                             )}
-                            {isMobile ? 'x' : ''}
+                            {isMobile ? ' x' : ''}
                         </div>
                         <div className="container">
                             <h3 className="dish-name">{dish.name}</h3>
