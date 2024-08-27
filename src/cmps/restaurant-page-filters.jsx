@@ -155,7 +155,7 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                             sx={{
                                 height: priceModalHeight, transition: 'height 0.4s linear', ...(isMobile && {
                                     position: 'relative',
-                                    left: '30%',
+                                    left: '38%',
                                 })
                             }}
                         >
@@ -202,7 +202,7 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                                 height: distanceModalHeight, transition: 'height 0.4s linear', ...(isMobile && {
                                     position: 'relative',
                                     left: '50%',
-                                    transform: 'translateX(-52%)'
+                                    transform: 'translateX(-49%)'
                                 })
                             }}
                         >
@@ -247,7 +247,7 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                                 height: ratingModalHeight, transition: 'height 0.4s linear', ...(isMobile && {
                                     position: 'relative',
                                     left: '50%',
-                                    transform: 'translateX(-84%)'
+                                    transform: 'translateX(-79%)'
                                 })
                             }}
                         >
