@@ -141,7 +141,6 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                 {isPriceModalOpen && (
                     <Modal
                         className='price-range-modal'
-                        hideBackdrop
                         open={isPriceModalOpen}
                         onClose={togglePriceModal}
                         aria-labelledby="price-range-modal-title"
@@ -150,7 +149,17 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                         disableEnforceFocus
                         disableAutoFocus
                         container={priceContainerRef.current}
-                        sx={{ bottom: 'auto' }}>
+                        sx={{ bottom: 'auto' }}
+                        slotProps={{
+                            backdrop: {
+                                sx: {
+                                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                                    position: 'fixed',
+                                    top: '27%'
+                                }
+                            }
+                        }}
+                    >
                         <Box className={`price-range-box filter-modal ${priceModalHeight === '197px' ? 'expanded' : ''}`}
                             sx={{
                                 height: priceModalHeight, transition: 'height 0.4s linear', ...(isMobile && {
@@ -187,7 +196,6 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                 <button className="distance" onClick={toggleDistanceModal}>Distance <img src={arrow} alt="" /></button>
                 {isDistanceModalOpen && (
                     <Modal className='distance-modal'
-                        hideBackdrop
                         open={isDistanceModalOpen}
                         onClose={toggleDistanceModal}
                         aria-labelledby="distance-modal-title"
@@ -196,7 +204,17 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                         disableEnforceFocus
                         disableAutoFocus
                         container={distanceContainerRef.current}
-                        sx={{ bottom: 'auto' }}>
+                        sx={{ bottom: 'auto' }}
+                        slotProps={{
+                            backdrop: {
+                                sx: {
+                                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                                    position: 'fixed',
+                                    top: '27%'
+                                }
+                            }
+                        }}
+                    >
                         <Box className={`distance-box filter-modal ${distanceModalHeight === '167px' ? 'expanded' : ''}`}
                             sx={{
                                 height: distanceModalHeight, transition: 'height 0.4s linear', ...(isMobile && {
@@ -232,7 +250,6 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                 <button className="rating" onClick={toggleRatingModal}>Rating <img src={arrow} alt="" /></button>
                 {isRatingModalOpen && (
                     <Modal className='rating-modal'
-                        hideBackdrop
                         open={isRatingModalOpen}
                         onClose={toggleRatingModal}
                         aria-labelledby="rating-modal-title"
@@ -241,7 +258,17 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                         disableEnforceFocus
                         disableAutoFocus
                         container={ratingContainerRef.current}
-                        sx={{ bottom: 'auto' }}>
+                        sx={{ bottom: 'auto' }}
+                        slotProps={{
+                            backdrop: {
+                                sx: {
+                                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                                    position: 'fixed',
+                                    top: '27%'
+                                }
+                            }
+                        }}
+                    >
                         <Box className={`rating-box filter-modal ${ratingModalHeight === '368px' ? 'expanded' : ''}`}
                             sx={{
                                 height: ratingModalHeight, transition: 'height 0.4s linear', ...(isMobile && {
