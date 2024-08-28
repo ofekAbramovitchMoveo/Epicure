@@ -157,7 +157,7 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                                 sx: {
                                     backgroundColor: 'rgba(0, 0, 0, 0)',
                                     position: 'fixed',
-                                    top: '25%'
+                                    top: '232.5px'
                                 }
                             }
                         }}
@@ -212,7 +212,7 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                                 sx: {
                                     backgroundColor: 'rgba(0, 0, 0, 0)',
                                     position: 'fixed',
-                                    top: '25%'
+                                    top: '232.5px'
                                 }
                             }
                         }}
@@ -266,7 +266,7 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                                 sx: {
                                     backgroundColor: 'rgba(0, 0, 0, 0)',
                                     position: 'fixed',
-                                    top: '25%'
+                                    top: '232.5px'
                                 }
                             }
                         }}
