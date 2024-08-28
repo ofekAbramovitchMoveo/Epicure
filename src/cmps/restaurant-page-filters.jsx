@@ -22,7 +22,6 @@ export default function RestaurantPageFilters({ setFilterBy }) {
     const distanceSliderRef = useRef(null)
     const isMobile = useMediaQuery({ query: '(max-width: 740px)' })
 
-
     useEffect(() => {
         handleRatingModalHeight()
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -30,7 +29,10 @@ export default function RestaurantPageFilters({ setFilterBy }) {
 
     useEffect(() => {
         if (setFilterBy) {
-            setFilterBy(prevState => ({ ...prevState, ratings: selectedRatings, priceRange, distance }))
+            const debouncedSetFilterBy = utilService.debounce(() => {
+                setFilterBy(prevState => ({ ...prevState, ratings: selectedRatings, priceRange, distance }))
+            }, 300)
+            debouncedSetFilterBy()
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedRatings, distance, priceRange])
@@ -155,7 +157,7 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                                 sx: {
                                     backgroundColor: 'rgba(0, 0, 0, 0)',
                                     position: 'fixed',
-                                    top: '27%'
+                                    top: '25%'
                                 }
                             }
                         }}
@@ -210,7 +212,7 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                                 sx: {
                                     backgroundColor: 'rgba(0, 0, 0, 0)',
                                     position: 'fixed',
-                                    top: '27%'
+                                    top: '25%'
                                 }
                             }
                         }}
@@ -264,7 +266,7 @@ export default function RestaurantPageFilters({ setFilterBy }) {
                                 sx: {
                                     backgroundColor: 'rgba(0, 0, 0, 0)',
                                     position: 'fixed',
-                                    top: '27%'
+                                    top: '25%'
                                 }
                             }
                         }}

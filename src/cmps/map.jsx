@@ -31,7 +31,7 @@ export default function Map({ restaurants }) {
 
     const mapContainerStyle = {
         width: '100%',
-        height: '67vh',
+        height: '78vh',
         gridColumn: isMobile ? "1 / -1" : "2"
     }
 

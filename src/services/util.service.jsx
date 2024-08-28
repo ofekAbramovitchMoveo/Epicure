@@ -2,7 +2,8 @@ import star from '/imgs/star.svg'
 import emptyStar from '/imgs/empty-star.svg'
 
 export const utilService = {
-    renderStars
+    renderStars,
+    debounce
 }
 
 function renderStars(rating) {
@@ -17,4 +18,12 @@ function renderStars(rating) {
         }
     }
     return stars
+}
+
+function debounce(func, delay) {
+    let timeoutId
+    return (...args) => {
+        if (timeoutId) clearTimeout(timeoutId)
+        timeoutId = setTimeout(() => func(...args), delay)
+    }
 }

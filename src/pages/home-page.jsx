@@ -22,6 +22,11 @@ export default function HomePage({ suggestions, searchInput, setSearchInput, res
             await loadRestaurants()
         }
         fetchData()
+
+        return () => {
+            setSearchInput('')
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     function getChefOfTheWeek() {
