@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom"
+
 import { utilService } from "../services/util.service"
 
 export default function RestaurantPreview({ restaurant, chefName, isChefRestaurants }) {

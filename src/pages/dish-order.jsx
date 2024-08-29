@@ -1,16 +1,18 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react"
+import { useLocation } from "react-router"
+import { useDispatch, useSelector } from "react-redux"
+import { useMediaQuery } from "react-responsive"
 import { Box, Dialog, Modal, Tooltip } from "@mui/material"
+
+import AppFooter from "../components/app-footer"
+import DishOptions from "../components/dish-options"
+import { toggleBag } from "../store/restaurant/restaurant.actions"
+import { ADD_TO_BAG, CLEAR_BAG } from "../store/restaurant/restaurant.reducer"
+
 import close_white from '/imgs/close-white.svg'
 import close from '/imgs/close.svg'
-import DishOptions from "../cmps/dish-options"
-import { useState } from "react"
-import { useMediaQuery } from "react-responsive"
-import AppFooter from "../cmps/app-footer"
-import { useDispatch, useSelector } from "react-redux"
-import { ADD_TO_BAG, CLEAR_BAG } from "../store/restaurant/restaurant.reducer"
-import { useLocation } from "react-router"
 import question from '/imgs/question.svg'
-import { toggleBag } from "../store/restaurant/restaurant.actions"
 
 export default function DishOrder({ dish, toggleModal, isModalOpen, isOpenNow, restaurant }) {
     const [selectedOptions, setSelectedOptions] = useState({
@@ -24,7 +26,7 @@ export default function DishOrder({ dish, toggleModal, isModalOpen, isOpenNow, r
     const location = useLocation()
     const bag = useSelector(storeState => storeState.restaurantModule.bag)
     const isDisabled = !selectedOptions.sideDish || !selectedOptions.quantity
-    const isrRestaurantPage = location.pathname.includes('/restaurant')
+    const isrRestaurantPage = location.pathname.includes('/restaurants')
 
     function onAddToBag() {
         if (bag.length && bag[0].restaurantName !== restaurant.name) {

@@ -4,7 +4,6 @@ const initialState = {
     chefs: [],
 }
 
-
 export function chefReducer(state = initialState, action) {
     switch (action.type) {
         case SET_CHEFS:

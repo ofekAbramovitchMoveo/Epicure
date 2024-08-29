@@ -1,18 +1,20 @@
 /* eslint-disable react/prop-types */
+import { useEffect } from 'react'
+import { useMediaQuery } from "react-responsive"
+import { CircularProgress } from "@mui/material"
+
+import HomePageDishList from '../components/home-page-dish-list'
+import RestaurantList from "../components/restaurant-list"
+import SearchSuggestions from "../components/search-suggestions"
+import { loadRestaurants } from '../store/restaurant/restaurant.actions'
+
+import logo from '/imgs/about-logo.svg'
+import googlePlayLogo from '/imgs/google-play.svg'
 import hero from '/imgs/hero.png'
 import search from '/imgs/search-icon.svg'
-import RestaurantList from "../cmps/restaurant-list"
-import { CircularProgress } from "@mui/material"
 import spicy from '/imgs/spicy-large.svg'
 import vegan from '/imgs/vegan-large.svg'
 import vegitarian from '/imgs/vegitarian-large.svg'
-import logo from '/imgs/about-logo.svg'
-import googlePlayLogo from '/imgs/google-play.svg'
-import { useMediaQuery } from "react-responsive"
-import SearchSuggestions from "../cmps/search-suggestions"
-import { useEffect } from 'react'
-import { loadRestaurants } from '../store/restaurant/restaurant.actions'
-import HomePageDishList from '../cmps/home-page-dish-list'
 
 export default function HomePage({ suggestions, searchInput, setSearchInput, restaurants, chefs }) {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -58,7 +60,7 @@ export default function HomePage({ suggestions, searchInput, setSearchInput, res
                     </p>
                     <div className="input-container">
                         <img src={search} alt="" className="search-icon" />
-                        <input type="text" placeholder="Search for restaurant cuisine, chef"
+                        <input type="text" placeholder="Search for restaurants, cuisine, chef"
                             value={searchInput} onChange={({ target }) => setSearchInput(target.value)} />
                         <SearchSuggestions suggestions={suggestions} />
                     </div>

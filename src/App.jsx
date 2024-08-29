@@ -1,14 +1,15 @@
-import { Routes, Route } from 'react-router'
-import AppHeader from './cmps/app-header'
-import HomePage from './pages/home-page'
 import { useEffect, useState } from 'react'
-import { restaurantService } from './services/restaurant.service'
+import { Route, Routes } from 'react-router'
 import { useSelector } from 'react-redux'
-import { loadRestaurants } from './store/restaurant/restaurant.actions'
-import { loadChefs } from './store/chef/chef.actions'
-import RestaurantPage from './pages/restaurant-page'
-import AppFooter from './cmps/app-footer'
+
+import AppFooter from './components/app-footer'
+import AppHeader from './components/app-header'
+import HomePage from './pages/home-page'
 import RestaurantDetails from './pages/restaurant-details'
+import RestaurantPage from './pages/restaurant-page'
+import { restaurantService } from './services/restaurant.service'
+import { loadChefs } from './store/chef/chef.actions'
+import { loadRestaurants } from './store/restaurant/restaurant.actions'
 
 export default function App() {
     const restaurants = useSelector(storeState => storeState.restaurantModule.restaurants)
@@ -43,11 +44,11 @@ export default function App() {
                         restaurants={restaurants}
                         chefs={chefs}
                     />} />
-                    <Route path='/restaurant' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
-                    <Route path='/restaurant/new' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
-                    <Route path='/restaurant/most-popular' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
-                    <Route path='/restaurant/open-now' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
-                    <Route path='/restaurant/map' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
+                    <Route path='/restaurants' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
+                    <Route path='/restaurants/new' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
+                    <Route path='/restaurants/most-popular' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
+                    <Route path='/restaurants/open-now' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
+                    <Route path='/restaurants/map' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
                     <Route path='/restaurant/:restaurantId' element={<RestaurantDetails />} />
                     <Route path='/restaurant/:restaurantId/lunch' element={<RestaurantDetails />} />
                     <Route path='/restaurant/:restaurantId/dinner' element={<RestaurantDetails />} />

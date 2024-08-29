@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom"
-import bagModal from '/imgs/bag-modal.svg'
-import BagDishPreview from "./bag-dish-preview"
 import { useDispatch } from "react-redux"
-import { REMOVE_FROM_BAG } from "../store/restaurant/restaurant.reducer"
 import { useMediaQuery } from "react-responsive"
 
+import { REMOVE_FROM_BAG } from "../store/restaurant/restaurant.reducer"
+import BagDishPreview from "./bag-dish-preview"
+
+import bagModal from '/imgs/bag-modal.svg'
 
 export default function ShoppingBag({ bag, toggleBag }) {
     const dispatch = useDispatch()

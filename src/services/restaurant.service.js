@@ -9,7 +9,7 @@ export const restaurantService = {
 
 function query(filterBy = {}) {
     let filteredRestaurants = [...restaurants]
-    const basePath = '/restaurant/'
+    const basePath = '/restaurants/'
 
     if (filterBy.path) {
         switch (filterBy.path) {

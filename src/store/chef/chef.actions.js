@@ -2,7 +2,6 @@ import { chefService } from "../../services/chef.service"
 import { store } from "../store"
 import { SET_CHEFS } from "./chef.reducer"
 
-
 export function loadChefs() {
     try {
         const chefs = chefService.query()

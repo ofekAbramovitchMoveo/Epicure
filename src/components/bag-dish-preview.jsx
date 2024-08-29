@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
-import { useMediaQuery } from 'react-responsive'
-import trash from '/imgs/trash.svg'
 import { useState } from 'react'
-import { IconButton, TextField } from '@mui/material'
+import { useMediaQuery } from 'react-responsive'
 import { Add, Remove } from '@mui/icons-material'
+import { IconButton, TextField } from '@mui/material'
+
 import { updateDishQuantity } from '../store/restaurant/restaurant.actions'
+
+import trash from '/imgs/trash.svg'
 
 export default function BagDishPreview({ dish, onRemoveDish }) {
     const [isExpanded, setIsExpanded] = useState(false)

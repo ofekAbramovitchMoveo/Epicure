@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useMediaQuery } from "react-responsive"
-import DishPreview from "./dish-preview"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/swiper-bundle.css"
+
+import DishPreview from "./dish-preview"
 
 export default function HomePageDishList({ restaurants }) {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })

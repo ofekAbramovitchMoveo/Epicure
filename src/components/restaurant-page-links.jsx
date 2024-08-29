@@ -2,9 +2,9 @@
 import { useEffect, useRef } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 import { useMediaQuery } from "react-responsive"
-import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css'
 import "swiper/css/bundle"
+import { Swiper, SwiperSlide } from "swiper/react"
 
 export default function RestaurantPageLinks({ setFilterBy }) {
     const location = useLocation()
@@ -23,11 +23,11 @@ export default function RestaurantPageLinks({ setFilterBy }) {
     }, [swiperRef.current?.children[0]?.children])
 
     const links = [
-        { to: '/restaurant', label: 'All' },
-        { to: '/restaurant/new', label: 'New' },
-        { to: '/restaurant/most-popular', label: 'Most Popular' },
-        { to: '/restaurant/open-now', label: 'Open Now' },
-        { to: '/restaurant/map', label: 'Map View' }
+        { to: '/restaurants', label: 'All' },
+        { to: '/restaurants/new', label: 'New' },
+        { to: '/restaurants/most-popular', label: 'Most Popular' },
+        { to: '/restaurants/open-now', label: 'Open Now' },
+        { to: '/restaurants/map', label: 'Map View' }
     ]
 
     function updateActiveClass() {

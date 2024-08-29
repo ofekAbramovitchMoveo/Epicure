@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from "react"
 import { useLocation, useParams } from "react-router"
-import { loadRestaurant } from "../store/restaurant/restaurant.actions"
-import { useSelector } from "react-redux"
-import { CircularProgress } from "@mui/material"
-import { chefService } from "../services/chef.service"
-import clock from '/imgs/clock.svg'
 import { NavLink } from "react-router-dom"
-import DishList from "../cmps/dish-list"
+import { useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
+import { CircularProgress } from "@mui/material"
+
+import DishList from "../components/dish-list"
+import { chefService } from "../services/chef.service"
+import { loadRestaurant } from "../store/restaurant/restaurant.actions"
+
+import clock from '/imgs/clock.svg'
 
 export default function RestaurantDetails() {
     const restaurant = useSelector(storeState => storeState.restaurantModule.restaurant)

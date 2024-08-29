@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useRef, useState, useCallback, useEffect } from "react"
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api"
-import RestaurantMarker from "./restaurant-marker"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { useMediaQuery } from "react-responsive"
+import { GoogleMap, useJsApiLoader } from "@react-google-maps/api"
+
 import { restaurantService } from "../services/restaurant.service"
+import RestaurantMarker from "./restaurant-marker"
 
 export default function Map({ restaurants }) {
     const [map, setMap] = useState(null)

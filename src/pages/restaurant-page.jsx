@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
-import RestaurantList from "../cmps/restaurant-list"
-import RestaurantPageLinks from "../cmps/restaurant-page-links"
-import RestaurantPageFilters from "../cmps/restaurant-page-filters"
-import { useMediaQuery } from "react-responsive"
 import { useLocation } from "react-router"
-import Map from "../cmps/map"
+import { useMediaQuery } from "react-responsive"
+
+import Map from "../components/map"
+import RestaurantList from "../components/restaurant-list"
+import RestaurantPageFilters from "../components/restaurant-page-filters"
+import RestaurantPageLinks from "../components/restaurant-page-links"
 
 export default function RestaurantPage({ restaurants, setFilterBy }) {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })

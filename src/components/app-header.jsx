@@ -1,19 +1,21 @@
 /* eslint-disable react/prop-types */
-import { Link, NavLink } from "react-router-dom"
-import logo from '/imgs/logo.svg'
-import search from '/imgs/search-icon.svg'
-import bag_icon from '/imgs/bag.svg'
-import user from '/imgs/user-icon.svg'
 import { useState } from "react"
+import { useSelector } from "react-redux"
+import { useMediaQuery } from "react-responsive"
+import { Link, NavLink } from "react-router-dom"
 import { Box, Fade, Modal } from "@mui/material"
-import menu from '/imgs/menu.svg'
+
+import { toggleBag } from "../store/restaurant/restaurant.actions"
 import AppFooter from "./app-footer"
 import SearchSuggestions from "./search-suggestions"
-import { useMediaQuery } from "react-responsive"
-import close from '/imgs/close.svg'
 import ShoppingBag from "./shopping-bag"
-import { useSelector } from "react-redux"
-import { toggleBag } from "../store/restaurant/restaurant.actions"
+
+import bag_icon from '/imgs/bag.svg'
+import close from '/imgs/close.svg'
+import logo from '/imgs/logo.svg'
+import menu from '/imgs/menu.svg'
+import search from '/imgs/search-icon.svg'
+import user from '/imgs/user-icon.svg'
 
 export default function AppHeader({ suggestions, searchInput, setSearchInput }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -35,7 +37,7 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }) 
                 </Link>
                 <nav>
                     <div className="nav-links">
-                        <NavLink to='/restaurant'>Restaurants</NavLink>
+                        <NavLink to='/restaurants'>Restaurants</NavLink>
                         <NavLink to='/chef'>Chefs</NavLink>
                     </div>
                     <div className="actions">
@@ -121,7 +123,7 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }) 
                     <Box className="menu-modal main-layout" sx={{ position: 'relative' }}>
                         <img src={close} alt="" onClick={toggleMenu} className="close-icon" />
                         <nav className="menu-nav-links">
-                            <NavLink to='/restaurant' onClick={toggleMenu}>Restaurants</NavLink>
+                            <NavLink to='/restaurants' onClick={toggleMenu}>Restaurants</NavLink>
                             <NavLink to='/chef' onClick={toggleMenu}>Chefs</NavLink>
                         </nav>
                         <AppFooter />

@@ -1,6 +1,7 @@
 import { combineReducers, legacy_createStore as createStore } from 'redux'
-import { restaurantReducer } from './restaurant/restaurant.reducer'
+
 import { chefReducer } from './chef/chef.reducer'
+import { restaurantReducer } from './restaurant/restaurant.reducer'
 
 const rootReducer = combineReducers({
     restaurantModule: restaurantReducer,

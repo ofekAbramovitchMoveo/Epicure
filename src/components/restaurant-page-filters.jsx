@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from 'react'
-import arrow from '/imgs/arrow-down.svg'
-import { Box, Checkbox, FormControlLabel, Modal, Slider } from '@mui/material'
-import { utilService } from '../services/util.service'
 import { useMediaQuery } from 'react-responsive'
+import { Box, Checkbox, FormControlLabel, Modal, Slider } from '@mui/material'
+
+import { utilService } from '../services/util.service'
+
+import arrow from '/imgs/arrow-down.svg'
 
 export default function RestaurantPageFilters({ setFilterBy }) {
     const [isPriceModalOpen, setIsPriceModalOpen] = useState(false)

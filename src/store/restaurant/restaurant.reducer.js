@@ -8,7 +8,6 @@ export const CLEAR_ORDER_DETAILS = 'CLEAR_ORDER_DETAILS'
 export const TOGGLE_BAG_MODAL = 'TOGGLE_BAG_MODAL'
 export const UPDATE_DISH_QUANTITY = 'UPDATE_DISH_QUANTITY'
 
-
 const initialState = {
     restaurants: [],
     restaurant: null,
