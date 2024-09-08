@@ -25,7 +25,7 @@ export default function SearchSuggestions({ suggestions, toggleSearch }) {
                             <ul>
                                 {groupedSuggestions[type].map((suggestion, idx) => (
                                     <li key={idx} className="suggestion-item">
-                                        <Link to={`/${suggestion.type}/${suggestion.id}`} onClick={toggleSearch}>
+                                        <Link to={`/${suggestion.type}/${suggestion._id}`} onClick={toggleSearch}>
                                             {suggestion.name}
                                         </Link>
                                     </li>

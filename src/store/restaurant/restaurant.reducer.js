@@ -7,13 +7,15 @@ export const SET_ORDER_DETAILS = 'SET_ORDER_DETAILS'
 export const CLEAR_ORDER_DETAILS = 'CLEAR_ORDER_DETAILS'
 export const TOGGLE_BAG_MODAL = 'TOGGLE_BAG_MODAL'
 export const UPDATE_DISH_QUANTITY = 'UPDATE_DISH_QUANTITY'
+export const SET_LOADING = 'SET_LOADING'
 
 const initialState = {
     restaurants: [],
     restaurant: null,
     bag: [],
     orderDetails: null,
-    isBagOpen: false
+    isBagOpen: false,
+    isLoading: true
 }
 
 export function restaurantReducer(state = initialState, action) {
@@ -25,7 +27,7 @@ export function restaurantReducer(state = initialState, action) {
         case ADD_TO_BAG:
             return { ...state, bag: [...state.bag, action.dish] }
         case REMOVE_FROM_BAG:
-            return { ...state, bag: state.bag.filter(dish => dish.id !== action.dishId) }
+            return { ...state, bag: state.bag.filter(dish => dish._id !== action.dishId) }
         case CLEAR_BAG:
             return { ...state, bag: [] }
         case SET_ORDER_DETAILS:
@@ -38,9 +40,11 @@ export function restaurantReducer(state = initialState, action) {
             return {
                 ...state,
                 bag: state.bag.map(dish =>
-                    dish.id === action.dishId ? { ...dish, quantity: action.quantity } : dish
+                    dish._id === action.dishId ? { ...dish, quantity: action.quantity } : dish
                 )
             }
+        case SET_LOADING:
+            return { ...state, isLoading: action.isLoading }
         default:
             return state
     }
