@@ -1,4 +1,6 @@
-import chefs from '../data/chefs.json'
+import { httpService } from "./http.service"
+
+const BASE_URL = 'chef/'
 
 export const chefService = {
     query,
@@ -6,9 +8,9 @@ export const chefService = {
 }
 
 function query() {
-    return chefs
+    return httpService.get(BASE_URL)
 }
 
 function getChefById(chefId) {
-    return chefs.find(chef => chef.id === chefId)
+    return httpService.get(`${BASE_URL}${chefId}`)
 }

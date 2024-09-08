@@ -1,6 +1,6 @@
 import { restaurantService } from "../../services/restaurant.service"
 import { store } from "../store"
-import { SET_RESTAURANT, SET_RESTAURANTS, TOGGLE_BAG_MODAL, UPDATE_DISH_QUANTITY } from "./restaurant.reducer"
+import { SET_LOADING, SET_RESTAURANT, SET_RESTAURANTS, TOGGLE_BAG_MODAL, UPDATE_DISH_QUANTITY } from "./restaurant.reducer"
 
 export async function loadRestaurants(filterBy = {}) {
     try {
@@ -11,12 +11,15 @@ export async function loadRestaurants(filterBy = {}) {
     }
 }
 
-export function loadRestaurant(restaurantId) {
+export async function loadRestaurant(restaurantId) {
     try {
-        const restaurant = restaurantService.getById(restaurantId)
+        store.dispatch({ type: SET_LOADING, isLoading: true })
+        const restaurant = await restaurantService.getById(restaurantId)
         store.dispatch({ type: SET_RESTAURANT, restaurant })
     } catch (err) {
         console.log('RestaurantActions: err in loadRestaurant', err)
+    } finally {
+        store.dispatch({ type: SET_LOADING, isLoading: false })
     }
 }
 

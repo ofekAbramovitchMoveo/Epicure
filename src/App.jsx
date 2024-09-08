@@ -20,15 +20,30 @@ export default function App() {
 
     useEffect(() => {
         async function fetchData() {
-            await loadRestaurants(filterBy)
-            loadChefs()
+            await loadChefs()
+        }
+        fetchData()
+    }, [])
+
+    useEffect(() => {
+        async function fetchData() {
+            
+            try {
+                await loadRestaurants(filterBy)
+            } catch (error) {
+                console.log('error loading restaurants', error)
+            }
         }
         fetchData()
     }, [filterBy])
 
     useEffect(() => {
-        setSuggestions(restaurantService.getRestaurantSuggestions(searchInput))
-    }, [searchInput, restaurants])
+        async function fetchSuggestions() {
+            const suggestions = await restaurantService.getRestaurantSuggestions(searchInput)
+            setSuggestions(suggestions)
+        }
+        fetchSuggestions()
+    }, [searchInput])
 
     return (
         <section className="app main-layout">
@@ -44,11 +59,20 @@ export default function App() {
                         restaurants={restaurants}
                         chefs={chefs}
                     />} />
-                    <Route path='/restaurants' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
-                    <Route path='/restaurants/new' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
-                    <Route path='/restaurants/most-popular' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
-                    <Route path='/restaurants/open-now' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
-                    <Route path='/restaurants/map' element={<RestaurantPage restaurants={restaurants} setFilterBy={setFilterBy} />} />
+                    <Route path='/restaurants' element={<RestaurantPage restaurants={restaurants}
+                        setFilterBy={setFilterBy}
+                    />} />
+                    <Route path='/restaurants/new' element={<RestaurantPage restaurants={restaurants}
+                        setFilterBy={setFilterBy}
+                    />} />
+                    <Route path='/restaurants/most-popular' element={<RestaurantPage restaurants={restaurants}
+                        setFilterBy={setFilterBy}
+                    />} />
+                    <Route path='/restaurants/open-now' element={<RestaurantPage restaurants={restaurants}
+                        setFilterBy={setFilterBy}
+                    />} />
+                    <Route path='/restaurants/map' element={<RestaurantPage restaurants={restaurants}
+                        setFilterBy={setFilterBy} />} />
                     <Route path='/restaurant/:restaurantId' element={<RestaurantDetails />} />
                     <Route path='/restaurant/:restaurantId/lunch' element={<RestaurantDetails />} />
                     <Route path='/restaurant/:restaurantId/dinner' element={<RestaurantDetails />} />
