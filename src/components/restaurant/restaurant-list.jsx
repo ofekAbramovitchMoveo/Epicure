@@ -13,7 +13,7 @@ export default function RestaurantList({ restaurants, isChefRestaurants, chefId 
     const location = useLocation()
 
     function getChefName(chefId) {
-        const chef = chefs.find(chef => chef.id === chefId)
+        const chef = chefs.find(chef => chef._id === chefId)
         return chef?.name
     }
 
@@ -28,15 +28,15 @@ export default function RestaurantList({ restaurants, isChefRestaurants, chefId 
                 {isMobile && !location.pathname.includes('/restaurants') ? (
                     <Swiper spaceBetween={24} slidesPerView={1.33}>
                         {restaurants.map(restaurant => (
-                            <SwiperSlide key={restaurant.id}>
-                                <RestaurantPreview restaurant={restaurant} chefName={getChefName(restaurant.chefId)} isChefRestaurants={isChefRestaurants} />
+                            <SwiperSlide key={restaurant._id}>
+                                <RestaurantPreview restaurant={restaurant} chefName={getChefName(restaurant.chef)} isChefRestaurants={isChefRestaurants} />
                             </SwiperSlide>
                         ))}
                     </Swiper>
                 ) : (
                     restaurants.map(restaurant => (
-                        <li key={restaurant.id}>
-                            <RestaurantPreview restaurant={restaurant} chefName={getChefName(restaurant.chefId)} isChefRestaurants={isChefRestaurants} />
+                        <li key={restaurant._id}>
+                            <RestaurantPreview restaurant={restaurant} chefName={getChefName(restaurant.chef)} isChefRestaurants={isChefRestaurants} />
                         </li>
                     ))
                 )

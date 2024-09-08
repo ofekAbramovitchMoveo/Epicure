@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import { useMediaQuery } from "react-responsive"
 import { CircularProgress } from "@mui/material"
 
-import HomePageDishList from '../components/home-page-dish-list'
-import RestaurantList from "../components/restaurant-list"
+import HomePageDishList from '../components/dish/home-page-dish-list'
+import RestaurantList from "../components/restaurant/restaurant-list"
 import SearchSuggestions from "../components/search-suggestions"
 import { loadRestaurants } from '../store/restaurant/restaurant.actions'
 
@@ -15,6 +15,7 @@ import search from '/imgs/search-icon.svg'
 import spicy from '/imgs/spicy-large.svg'
 import vegan from '/imgs/vegan-large.svg'
 import vegitarian from '/imgs/vegitarian-large.svg'
+import { restaurantService } from '../services/restaurant.service'
 
 export default function HomePage({ suggestions, searchInput, setSearchInput, restaurants, chefs }) {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -38,7 +39,7 @@ export default function HomePage({ suggestions, searchInput, setSearchInput, res
 
     function getChefOfTheWeekRestaurants() {
         if (!restaurants || !restaurants.length) return
-        return restaurants.filter(restaurant => restaurant.chefId === getChefOfTheWeek()?.id)
+        return restaurants.filter(restaurant => restaurant.chef === getChefOfTheWeek()?._id)
     }
 
     function getTopRatedRestaurants() {
@@ -47,6 +48,19 @@ export default function HomePage({ suggestions, searchInput, setSearchInput, res
             .sort((a, b) => b.rating - a.rating)
             .slice(0, 3)
     }
+
+    const getSignatureDishes = useCallback(async () => {
+        const topRestaurants = getTopRatedRestaurants()
+        if (!topRestaurants || !topRestaurants.length) return []
+
+        const signatureDishes = await Promise.all(topRestaurants.map(async (restaurant) => {
+            const allDishes = await restaurantService.getDishes(restaurant._id)
+            return allDishes.filter(dish => dish.isSignature)
+        }))
+
+        return signatureDishes.flat()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [restaurants])
 
     if (!restaurants || !restaurants.length) return (<CircularProgress className="loader" color="secondary" />)
     return (
@@ -68,7 +82,7 @@ export default function HomePage({ suggestions, searchInput, setSearchInput, res
             </div>
             <div className="main-content full main-layout">
                 <RestaurantList restaurants={getTopRatedRestaurants()} isChefRestaurants={false} />
-                <HomePageDishList restaurants={getTopRatedRestaurants()} />
+                <HomePageDishList getSignatureDishes={getSignatureDishes} />
                 <div className="icon-meaning full">
                     <h1>THE MEANING OF OUR ICONS:</h1>
                     <ul className="icon-list">
@@ -97,7 +111,7 @@ export default function HomePage({ suggestions, searchInput, setSearchInput, res
                         </div>
                         <p>Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav  Udim. Shitrit{`'`}s creativity and culinary  acumen born of long experience  are expressed in the every detail of each and every dish.</p>
                     </div>
-                    <RestaurantList restaurants={getChefOfTheWeekRestaurants()} isChefRestaurants={true} chefId={getChefOfTheWeek()?.id} />
+                    <RestaurantList restaurants={getChefOfTheWeekRestaurants()} isChefRestaurants={true} chefId={getChefOfTheWeek()?._id} />
                 </article>
                 <div className="about full main-layout">
                     <div className="about-container">

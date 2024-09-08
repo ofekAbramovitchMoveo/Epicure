@@ -3,7 +3,8 @@ import emptyStar from '/imgs/empty-star.svg'
 
 export const utilService = {
     renderStars,
-    debounce
+    debounce,
+    getUserLocation
 }
 
 function renderStars(rating) {
@@ -26,4 +27,22 @@ function debounce(func, delay) {
         if (timeoutId) clearTimeout(timeoutId)
         timeoutId = setTimeout(() => func(...args), delay)
     }
+}
+
+function getUserLocation() {
+    return new Promise((res, rej) => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                position => {
+                    const { latitude, longitude } = position.coords
+                    res({ lat: latitude, lng: longitude })
+                },
+                err => {
+                    rej(err)
+                }
+            )
+        } else {
+            rej(new Error('Geolocation is not supported by this browser.'))
+        }
+    })
 }
