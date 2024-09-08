@@ -3,12 +3,12 @@ import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import { Tooltip } from "@mui/material"
 
-import DishOrder from "../pages/dish-order"
+import DishOrder from "../../pages/dish-order"
 
 export default function DishPreview({ dish, isOpenNow, restaurant }) {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const location = useLocation()
-    const isRestaurantPage = location.pathname.includes('/restaurants')
+    const isRestaurantPage = location.pathname.includes('/restaurant')
 
     const toggleModal = () => setIsModalOpen(!isModalOpen)
 
