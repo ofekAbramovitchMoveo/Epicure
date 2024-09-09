@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux"
 import { useMediaQuery } from "react-responsive"
 
 import { REMOVE_FROM_BAG } from "../store/restaurant/restaurant.reducer"
-import BagDishPreview from "./bag-dish-preview"
+import BagDishPreview from "./dish/bag-dish-preview"
 
 import bagModal from '/imgs/bag-modal.svg'
 
@@ -16,7 +16,7 @@ export default function ShoppingBag({ bag, toggleBag }) {
         dispatch({ type: REMOVE_FROM_BAG, dishId })
     }
 
-    if (!bag || !bag.length) return (
+    if (!bag?.length) return (
         <>
             <div className="empty-bag">
                 <img src={bagModal} alt="" />

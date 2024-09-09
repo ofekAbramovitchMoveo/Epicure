@@ -3,8 +3,8 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { useMediaQuery } from "react-responsive"
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api"
 
-import { restaurantService } from "../services/restaurant.service"
 import RestaurantMarker from "./restaurant-marker"
+import { utilService } from "../../services/util.service"
 
 export default function Map({ restaurants }) {
     const [map, setMap] = useState(null)
@@ -12,10 +12,11 @@ export default function Map({ restaurants }) {
     const [userLocation, setUserLocation] = useState(null)
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const mapRef = useRef(null)
+    const defaultLocation = { lat: 32.0853, lng: 34.7818 }
 
     useEffect(() => {
         async function fetchUserLocation() {
-            const location = await restaurantService.getUserLocation()
+            const location = await utilService.getUserLocation()
             setUserLocation(location)
         }
         fetchUserLocation()
@@ -46,7 +47,6 @@ export default function Map({ restaurants }) {
         mapRef.current = null
     }, [])
 
-    const defaultLocation = { lat: 32.0853, lng: 34.7818 }
 
     return isLoaded && userLocation ? (
         <GoogleMap
@@ -57,14 +57,21 @@ export default function Map({ restaurants }) {
             onUnmount={onUnmount}
             options={{ mapId: "bf940397493a94a5" }}
         >
-            {currentRestaurants.map(restaurant => (
-                <RestaurantMarker
-                    key={restaurant.id}
-                    position={{ lat: restaurant.location.lat, lng: restaurant.location.lng }}
-                    map={map}
-                    title={restaurant.name} />
+            {currentRestaurants.map(restaurant => {
+                const position = {
+                    lat: restaurant.location.coordinates[1],
+                    lng: restaurant.location.coordinates[0]
+                }
 
-            ))}
+                return (
+                    <RestaurantMarker
+                        key={restaurant._id}
+                        position={position}
+                        map={map}
+                        title={restaurant.name} />
+                )
+
+            })}
             <RestaurantMarker position={userLocation} map={map} title={`You`} />
         </GoogleMap>
     ) : <></>

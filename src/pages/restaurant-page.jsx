@@ -2,10 +2,10 @@
 import { useLocation } from "react-router"
 import { useMediaQuery } from "react-responsive"
 
-import Map from "../components/map"
-import RestaurantList from "../components/restaurant-list"
-import RestaurantPageFilters from "../components/restaurant-page-filters"
-import RestaurantPageLinks from "../components/restaurant-page-links"
+import Map from "../components/map/map"
+import RestaurantList from "../components/restaurant/restaurant-list"
+import RestaurantPageFilters from "../components/restaurant/restaurant-page-filters"
+import RestaurantPageLinks from "../components/restaurant/restaurant-page-links"
 
 export default function RestaurantPage({ restaurants, setFilterBy }) {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })

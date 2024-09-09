@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { useEffect, useRef } from "react"
 import { NavLink, useLocation } from "react-router-dom"
@@ -14,12 +15,10 @@ export default function RestaurantPageLinks({ setFilterBy }) {
     useEffect(() => {
         setFilterBy(prevState => ({ ...prevState, path: location.pathname }))
         updateActiveClass()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location.pathname])
 
     useEffect(() => {
         updateActiveClass()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [swiperRef.current?.children[0]?.children])
 
     const links = [

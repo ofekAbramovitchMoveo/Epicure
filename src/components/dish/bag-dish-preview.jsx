@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive'
 import { Add, Remove } from '@mui/icons-material'
 import { IconButton, TextField } from '@mui/material'
 
-import { updateDishQuantity } from '../store/restaurant/restaurant.actions'
+import { updateDishQuantity } from '../../store/restaurant/restaurant.actions'
 
 import trash from '/imgs/trash.svg'
 
@@ -26,7 +26,7 @@ export default function BagDishPreview({ dish, onRemoveDish }) {
 
     function handleQuantityChange(change) {
         const newQuantity = Math.max(1, dish.quantity + change)
-        updateDishQuantity(dish.id, newQuantity)
+        updateDishQuantity(dish._id, newQuantity)
     }
 
     return (
@@ -61,7 +61,7 @@ export default function BagDishPreview({ dish, onRemoveDish }) {
                                     <IconButton className="plus btn" onClick={() => handleQuantityChange(1)}>
                                         <Add />
                                     </IconButton>
-                                    <img src={trash} alt="" onClick={() => onRemoveDish(dish.id)} className="trash-icon" />
+                                    <img src={trash} alt="" onClick={() => onRemoveDish(dish._id)} className="trash-icon" />
                                 </>
                             ) : (
                                 dish.quantity
