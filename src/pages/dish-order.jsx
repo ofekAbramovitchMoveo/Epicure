@@ -3,18 +3,19 @@ import { useState } from "react"
 import { useLocation } from "react-router"
 import { useDispatch, useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
-import { Box, Dialog, Modal, Tooltip } from "@mui/material"
+import { Box, Modal, Tooltip } from "@mui/material"
 
 import AppFooter from "../components/app-footer"
-import DishOptions from "../components/dish-options"
+import DishOptions from "../components/dish/dish-options"
 import { toggleBag } from "../store/restaurant/restaurant.actions"
 import { ADD_TO_BAG, CLEAR_BAG } from "../store/restaurant/restaurant.reducer"
+import WarningDialog from "../components/modals/warning-dialog"
 
 import close_white from '/imgs/close-white.svg'
 import close from '/imgs/close.svg'
-import question from '/imgs/question.svg'
 
 export default function DishOrder({ dish, toggleModal, isModalOpen, isOpenNow, restaurant }) {
+    const bag = useSelector(storeState => storeState.restaurantModule.bag)
     const [selectedOptions, setSelectedOptions] = useState({
         sideDish: '',
         changes: [],
@@ -24,9 +25,8 @@ export default function DishOrder({ dish, toggleModal, isModalOpen, isOpenNow, r
     const isMobile = useMediaQuery({ query: '(max-width: 769px)' })
     const dispatch = useDispatch()
     const location = useLocation()
-    const bag = useSelector(storeState => storeState.restaurantModule.bag)
     const isDisabled = !selectedOptions.sideDish || !selectedOptions.quantity
-    const isrRestaurantPage = location.pathname.includes('/restaurants')
+    const isRestaurantPage = location.pathname.includes('/restaurant')
 
     function onAddToBag() {
         if (bag.length && bag[0].restaurantName !== restaurant.name) {
@@ -54,7 +54,7 @@ export default function DishOrder({ dish, toggleModal, isModalOpen, isOpenNow, r
         <>
             <Modal
                 className="dish-order-modal"
-                open={isModalOpen && isOpenNow && isrRestaurantPage}
+                open={isModalOpen && isOpenNow && isRestaurantPage}
                 onClose={toggleModal}
                 aria-labelledby="dish-order-title"
                 aria-describedby="dish-order-description"
@@ -119,38 +119,7 @@ export default function DishOrder({ dish, toggleModal, isModalOpen, isOpenNow, r
                     </div>
                 </Box>
             </Modal>
-            <Dialog
-                className="warning-dialog"
-                open={isPopupOpen}
-                onClose={onPopupClose}
-                aria-labelledby="warning-dialog-title"
-                aria-describedby="warning-dialog-description"
-                sx={{
-                    zIndex: 10000,
-                }}
-                slotProps={{
-                    backdrop: {
-                        sx: {
-                            backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                        }
-                    }
-                }}
-            >
-                <Box className="dialog-box">
-                    <img src={question} alt="" className="question" />
-                    <div className="txt-container">
-                        <h1 className="title">DELETE ORDER?</h1>
-                        <p className="desc">
-                            You can order from only one restaurant per order.
-                            Going out to another restaurant will erase all the items you put in the cart
-                        </p>
-                    </div>
-                    <div className="btns">
-                        <button className="delete-btn btn" onClick={onClearBag}>DELETE</button>
-                        <button className="back-btn btn" onClick={onPopupClose}>BACK TO ORDER</button>
-                    </div>
-                </Box>
-            </Dialog>
+            <WarningDialog isPopupOpen={isPopupOpen} onPopupClose={onPopupClose} onClearBag={onClearBag} />
         </>
     )
 }
