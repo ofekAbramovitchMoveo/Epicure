@@ -1,0 +1,32 @@
+.restaurant-details-skeleton {
+    align-items: flex-start !important;
+
+
+    .img-skeleton {
+        height: 272px;
+    }
+
+    .dishes-skeleton {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+}
+
+@include for-normal-layout {
+    .restaurant-details-skeleton {
+        align-items: center !important;
+        
+        .img-skeleton {
+            height: 425px;
+        }
+
+        .dishes-skeleton {
+            flex-direction: row;
+            gap: 32px;
+            margin-top: 40px;
+            width: 100%;
+        }
+    }
+}

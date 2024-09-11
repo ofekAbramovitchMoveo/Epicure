@@ -27,8 +27,6 @@
 		minmax($mobile-padding, 1fr) minmax(auto, $max) minmax($mobile-padding, 1fr);
 }
 
-
-
 /* Media  Mixins */
 @mixin aspect-ratio($width, $height) {
 	position: relative;
