@@ -25,7 +25,6 @@ export default function HeaderModal({ children, open = false, onClose, container
             onClose={onClose}
             aria-labelledby={ariaLabelledby}
             aria-describedby={ariaDescribedby}
-            disableScrollLock
             disableEnforceFocus
             disableAutoFocus
             sx={{ ...sx, bottom: 'auto' }}

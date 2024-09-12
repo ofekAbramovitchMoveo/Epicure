@@ -47,12 +47,19 @@ export default function RestaurantPageFilters({ setFilterBy }: RestaurantPageFil
         setIsDistanceModalOpen(false)
         setIsRatingModalOpen(false)
         setIsPriceModalOpen(!isPriceModalOpen)
+        if (!isPriceModalOpen) {
+            getIsActiveClassMin(priceSliderRef)
+            getIsActiveClassMax(priceSliderRef, false)
+        }
     }
 
     const toggleDistanceModal = () => {
         setIsPriceModalOpen(false)
         setIsRatingModalOpen(false)
         setIsDistanceModalOpen(!isDistanceModalOpen)
+        if (!isDistanceModalOpen) {
+            getIsActiveClassMax(distanceSliderRef, true)
+        }
     }
 
     const toggleRatingModal = () => {
@@ -94,9 +101,9 @@ export default function RestaurantPageFilters({ setFilterBy }: RestaurantPageFil
         return ''
     }
 
-    const getIsActiveClassMax = (sliderRef: React.RefObject<HTMLDivElement>): string => {
+    const getIsActiveClassMax = (sliderRef: React.RefObject<HTMLDivElement>, isDistance: boolean): string => {
         if (sliderRef.current) {
-            if (priceRange[1] !== 357 || distance[1] !== 4) {
+            if (isDistance && distance[1] !== 4 || !isDistance && priceRange[1] !== 357) {
                 (sliderRef.current.children[3] as HTMLElement).style.color = '#DE9200'
                 return 'active'
             } else {
