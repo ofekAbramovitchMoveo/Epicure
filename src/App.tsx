@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Route, Routes } from 'react-router'
+import { Route, Routes, useLocation } from 'react-router'
 import { useSelector } from 'react-redux'
+import { useMediaQuery } from 'react-responsive'
 
 import AppFooter from './components/app-footer'
 import AppHeader from './components/app-header'
@@ -12,6 +13,7 @@ import { loadChefs } from './store/chef/chef.actions'
 import { loadRestaurants } from './store/restaurant/restaurant.actions'
 import { RootState } from './store/store'
 import { Suggestion } from './types/restaurant.type'
+import CheckoutPage from './pages/checkout-page'
 
 export default function App() {
     const restaurants = useSelector((storeState: RootState) => storeState.restaurantModule.restaurants)
@@ -19,6 +21,9 @@ export default function App() {
     const [filterBy, setFilterBy] = useState({})
     const [searchInput, setSearchInput] = useState("")
     const [suggestions, setSuggestions] = useState<Suggestion[]>([])
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+    const location = useLocation()
+    const isCheckoutPage = location.pathname.includes('/checkout')
 
     useEffect(() => {
         async function fetchData() {
@@ -29,7 +34,7 @@ export default function App() {
 
     useEffect(() => {
         async function fetchData() {
-            
+
             try {
                 await loadRestaurants(filterBy)
             } catch (error) {
@@ -78,9 +83,10 @@ export default function App() {
                     <Route path='/restaurant/:restaurantId' element={<RestaurantDetails />} />
                     <Route path='/restaurant/:restaurantId/lunch' element={<RestaurantDetails />} />
                     <Route path='/restaurant/:restaurantId/dinner' element={<RestaurantDetails />} />
+                    <Route path='/checkout' element={<CheckoutPage />} />
                 </Routes>
             </main>
-            <AppFooter />
+            {(!isCheckoutPage || (isCheckoutPage && !isMobile)) && <AppFooter />}
         </section>
     )
 }

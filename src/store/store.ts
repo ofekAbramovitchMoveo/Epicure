@@ -7,6 +7,8 @@ import { userReducer } from './user/user.reducer'
 import { Chef } from '../types/chef.type'
 import { BagDish } from '../types/dish.type'
 import { User } from '../types/user.type'
+import { orderReducer } from './order/order.reducer'
+import { OrderDetails } from '../types/order-details.type'
 
 export type RootState = {
     restaurantModule: {
@@ -15,6 +17,7 @@ export type RootState = {
         bag: BagDish[]
         isBagOpen: boolean
         isLoading: boolean
+        isWarningPopupOpen: boolean
     }
     chefModule: {
         chefs: Chef[]
@@ -26,12 +29,17 @@ export type RootState = {
         isSignInModalOpen: boolean
         isHeader: boolean
     }
+    orderModule: {
+        orders: OrderDetails[]
+        order: OrderDetails | null
+    }
 }
 
 const rootReducer = combineReducers({
     restaurantModule: restaurantReducer,
     chefModule: chefReducer,
-    userModule: userReducer
+    userModule: userReducer,
+    orderModule: orderReducer
 })
 
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

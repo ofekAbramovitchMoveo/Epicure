@@ -1,5 +1,6 @@
 import { User } from '../types/user.type'
 import { httpService } from './http.service'
+import { restaurantService } from './restaurant.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 const BASE_URL = 'user/'

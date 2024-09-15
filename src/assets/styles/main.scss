@@ -12,6 +12,7 @@
 @import './pages/restaurant-page';
 @import './pages/restaurant-details';
 @import './pages/dish-order';
+@import './pages/checkout-page';
 
 // Components
 @import './components/app-header';
@@ -29,3 +30,4 @@
 @import './components/dish/dish-options';
 @import './components/dish/bag-dish-preview';
 @import './components/restaurant/restaurant-details-skeleton';
+@import './components/sign-in-modal';

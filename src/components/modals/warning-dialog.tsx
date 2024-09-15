@@ -1,19 +1,19 @@
-import { Box, Dialog } from "@mui/material"
+import { Dialog, DialogContent } from "@mui/material"
 
 import question from '/imgs/question.svg'
 
 interface WarningDialogProps {
     isPopupOpen: boolean
-    onPopupClose: () => void
+    onWarningPopupClose: () => void
     onClearBag: () => void
 }
 
-export default function WarningDialog({ isPopupOpen, onPopupClose, onClearBag }: WarningDialogProps) {
+export default function WarningDialog({ isPopupOpen, onWarningPopupClose, onClearBag }: WarningDialogProps) {
     return (
         <Dialog
             className="warning-dialog"
             open={isPopupOpen}
-            onClose={onPopupClose}
+            onClose={onWarningPopupClose}
             aria-labelledby="warning-dialog-title"
             aria-describedby="warning-dialog-description"
             sx={{
@@ -27,7 +27,7 @@ export default function WarningDialog({ isPopupOpen, onPopupClose, onClearBag }:
                 }
             }}
         >
-            <Box className="dialog-box">
+            <DialogContent className="dialog-box">
                 <img src={question} alt="" className="question" />
                 <div className="txt-container">
                     <h1 className="title">DELETE ORDER?</h1>
@@ -38,9 +38,9 @@ export default function WarningDialog({ isPopupOpen, onPopupClose, onClearBag }:
                 </div>
                 <div className="btns">
                     <button className="delete-btn btn" onClick={onClearBag}>DELETE</button>
-                    <button className="back-btn btn" onClick={onPopupClose}>BACK TO ORDER</button>
+                    <button className="back-btn btn" onClick={onWarningPopupClose}>BACK TO ORDER</button>
                 </div>
-            </Box>
+            </DialogContent>
         </Dialog>
     )
 }
