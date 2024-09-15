@@ -48,7 +48,7 @@ export default function ShoppingBag({ bag, toggleBag, isDisabled, deliveryDetail
                 toggleBag()
             }
         } else {
-            let order = null
+            let order: OrderDetails | null = null
             try {
                 const orderDetails: OrderDetails = {
                     deliveryDetails,
