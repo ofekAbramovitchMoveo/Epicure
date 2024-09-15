@@ -12,7 +12,7 @@ interface PriceRangeModalProps {
     priceRange: number[]
     handlePriceChange: (event: Event, newValue: number | number[]) => void
     getIsActiveClassMin: (ref: React.RefObject<HTMLDivElement>) => string
-    getIsActiveClassMax: (ref: React.RefObject<HTMLDivElement>) => string
+    getIsActiveClassMax: (ref: React.RefObject<HTMLDivElement>, isDistance: boolean) => string
     isMobile: boolean
 }
 
@@ -52,7 +52,7 @@ export default function PriceRangeModal({ isPriceModalOpen, togglePriceModal,
                 />
                 <div className="fixed-labels">
                     <span className={`label-min ${getIsActiveClassMin(priceSliderRef)}`}>₪{priceRange[0]}</span>
-                    <span className={`label-max ${getIsActiveClassMax(priceSliderRef)}`}>₪{priceRange[1]}</span>
+                    <span className={`label-max ${getIsActiveClassMax(priceSliderRef, false)}`}>₪{priceRange[1]}</span>
                 </div>
             </div>
         </FilterModal>

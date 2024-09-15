@@ -5,12 +5,18 @@ export type Restaurant = {
     rating: number
     imgUrl: string
     createdAt: string
-    isOpenNow: boolean
+    openingHours: OpeningHours[]
     location: {
         type: string
         coordinates: number[]
     }
     dishes: string[]
+}
+
+export type OpeningHours = {
+    day: number
+    open: number
+    close: number
 }
 
 export type Suggestion = Restaurant & {

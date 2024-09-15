@@ -11,7 +11,7 @@ interface DistanceModalProps {
     distanceSliderRef: React.RefObject<HTMLDivElement>
     distance: number[]
     handleDistanceChange: (event: Event, newValue: number | number[]) => void
-    getIsActiveClassMax: (ref: React.RefObject<HTMLDivElement>) => string
+    getIsActiveClassMax: (ref: React.RefObject<HTMLDivElement>, isDistance: boolean) => string
     valueLabelFormat: (value: number, index: number) => string
     isMobile: boolean
 }
@@ -50,7 +50,7 @@ export default function DistanceModal({ isDistanceModalOpen, toggleDistanceModal
                     valueLabelFormat={valueLabelFormat}
                 />
                 <div className="fixed-labels">
-                    <span className={`${getIsActiveClassMax(distanceSliderRef)}`}>{distance[1]}km</span>
+                    <span className={`${getIsActiveClassMax(distanceSliderRef, true)}`}>{distance[1]}km</span>
                 </div>
             </div>
         </FilterModal>
