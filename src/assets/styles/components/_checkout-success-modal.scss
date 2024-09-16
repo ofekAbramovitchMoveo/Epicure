@@ -1,0 +1,120 @@
+.checkout-success-modal {
+
+    .checkout-success-box {
+        position: relative;
+        background-color: #fff;
+        width: 375px;
+        height: 544px;
+        top: 46px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
+        padding: 48px 0;
+        box-shadow: 0px 4px 4px 0px #00000040;
+
+        .close-icon {
+            display: none;
+        }
+
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+
+            h1 {
+                font-weight: 200;
+                font-size: 24px;
+                letter-spacing: 2.67px;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 18px;
+                letter-spacing: 1.97px;
+            }
+        }
+
+        .time-estimation {
+
+            p {
+                font-weight: 200;
+                font-size: 18px;
+                letter-spacing: 1.97px;
+
+                span {
+                    font-weight: 400;
+                    font-size: 40px;
+                    margin: 0 9px;
+                }
+            }
+        }
+
+        .dishes {
+            height: 68px;
+            overflow-y: scroll;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .dish {
+                display: flex;
+                justify-content: space-between;
+                width: 267px;
+
+                .dish-info {
+                    font-weight: 200;
+                    font-size: 14px;
+                    letter-spacing: 2.67px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    max-width: 205px;
+
+                    span {
+                        font-size: 18px;
+                    }
+                }
+
+                .dish-price {
+                    font-weight: 400;
+                    font-size: 16px;
+                    letter-spacing: 1.97px;
+                }
+            }
+        }
+
+        .total-price {
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 2.67px;
+
+            span {
+                letter-spacing: 1.97px;
+            }
+        }
+    }
+}
+
+@media (min-width: 376px) {
+    .checkout-success-modal {
+        .checkout-success-box {
+            width: 376px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: none;
+
+            .close-icon {
+                display: block;
+                position: absolute;
+                margin: 0;
+                top: -28px;
+                align-self: flex-start;
+                cursor: pointer;
+            }
+        }
+    }
+}

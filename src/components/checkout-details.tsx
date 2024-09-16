@@ -82,7 +82,7 @@ export default function CheckoutDetails({ deliveryDetails, setDeliveryDetails, p
                 <h3>delivery details</h3>
                 <SignUpForm renderTextField={renderTextField} />
             </div>
-            <div className="payment-details-container">
+            <div className="payment-details-container" style={{ gap: errors.length >= 2 ? '18px' : '24px' }}>
                 <h3>payment details</h3>
                 <PaymentForm renderTextField={renderTextField} handleExpiryDateChange={handleExpiryDateChange}
                     setErrors={setErrors}

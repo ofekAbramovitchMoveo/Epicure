@@ -10,14 +10,19 @@ import RestaurantDetails from './pages/restaurant-details'
 import RestaurantPage from './pages/restaurant-page'
 import { restaurantService } from './services/restaurant.service'
 import { loadChefs } from './store/chef/chef.actions'
-import { loadRestaurants } from './store/restaurant/restaurant.actions'
+import { clearBag, loadRestaurants, setWarningPopup, toggleBag } from './store/restaurant/restaurant.actions'
 import { RootState } from './store/store'
 import { Suggestion } from './types/restaurant.type'
 import CheckoutPage from './pages/checkout-page'
+import CheckoutSuccessModal from './components/modals/checkout-success-modal'
+import WarningDialog from './components/modals/warning-dialog'
 
 export default function App() {
     const restaurants = useSelector((storeState: RootState) => storeState.restaurantModule.restaurants)
     const chefs = useSelector((storeState: RootState) => storeState.chefModule.chefs)
+    const isCheckoutSuccessOpen = useSelector((storeState: RootState) => storeState.orderModule.isCheckoutSuccessOpen)
+    const isWarningPopupOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isWarningPopupOpen)
+    const isBagOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isBagOpen)
     const [filterBy, setFilterBy] = useState({})
     const [searchInput, setSearchInput] = useState("")
     const [suggestions, setSuggestions] = useState<Suggestion[]>([])
@@ -52,41 +57,51 @@ export default function App() {
         fetchSuggestions()
     }, [searchInput])
 
+    function onClearBag() {
+        clearBag()
+        setWarningPopup(false)
+        if (!isBagOpen) toggleBag()
+    }
+
     return (
-        <section className="app main-layout">
-            <AppHeader suggestions={suggestions}
-                searchInput={searchInput}
-                setSearchInput={setSearchInput}
-            />
-            <main className="main-container full">
-                <Routes>
-                    <Route path='/' element={<HomePage suggestions={suggestions}
-                        searchInput={searchInput}
-                        setSearchInput={setSearchInput}
-                        restaurants={restaurants}
-                        chefs={chefs}
-                    />} />
-                    <Route path='/restaurants' element={<RestaurantPage restaurants={restaurants}
-                        setFilterBy={setFilterBy}
-                    />} />
-                    <Route path='/restaurants/new' element={<RestaurantPage restaurants={restaurants}
-                        setFilterBy={setFilterBy}
-                    />} />
-                    <Route path='/restaurants/most-popular' element={<RestaurantPage restaurants={restaurants}
-                        setFilterBy={setFilterBy}
-                    />} />
-                    <Route path='/restaurants/open-now' element={<RestaurantPage restaurants={restaurants}
-                        setFilterBy={setFilterBy}
-                    />} />
-                    <Route path='/restaurants/map' element={<RestaurantPage restaurants={restaurants}
-                        setFilterBy={setFilterBy} />} />
-                    <Route path='/restaurant/:restaurantId' element={<RestaurantDetails />} />
-                    <Route path='/restaurant/:restaurantId/lunch' element={<RestaurantDetails />} />
-                    <Route path='/restaurant/:restaurantId/dinner' element={<RestaurantDetails />} />
-                    <Route path='/checkout' element={<CheckoutPage />} />
-                </Routes>
-            </main>
-            {(!isCheckoutPage || (isCheckoutPage && !isMobile)) && <AppFooter />}
-        </section>
+        <>
+            <section className="app main-layout">
+                <AppHeader suggestions={suggestions}
+                    searchInput={searchInput}
+                    setSearchInput={setSearchInput}
+                />
+                <main className="main-container full">
+                    <Routes>
+                        <Route path='/' element={<HomePage suggestions={suggestions}
+                            searchInput={searchInput}
+                            setSearchInput={setSearchInput}
+                            restaurants={restaurants}
+                            chefs={chefs}
+                        />} />
+                        <Route path='/restaurants' element={<RestaurantPage restaurants={restaurants}
+                            setFilterBy={setFilterBy}
+                        />} />
+                        <Route path='/restaurants/new' element={<RestaurantPage restaurants={restaurants}
+                            setFilterBy={setFilterBy}
+                        />} />
+                        <Route path='/restaurants/most-popular' element={<RestaurantPage restaurants={restaurants}
+                            setFilterBy={setFilterBy}
+                        />} />
+                        <Route path='/restaurants/open-now' element={<RestaurantPage restaurants={restaurants}
+                            setFilterBy={setFilterBy}
+                        />} />
+                        <Route path='/restaurants/map' element={<RestaurantPage restaurants={restaurants}
+                            setFilterBy={setFilterBy} />} />
+                        <Route path='/restaurant/:restaurantId' element={<RestaurantDetails />} />
+                        <Route path='/restaurant/:restaurantId/lunch' element={<RestaurantDetails />} />
+                        <Route path='/restaurant/:restaurantId/dinner' element={<RestaurantDetails />} />
+                        <Route path='/checkout' element={<CheckoutPage />} />
+                    </Routes>
+                </main>
+                {(!isCheckoutPage || (isCheckoutPage && !isMobile)) && <AppFooter />}
+            </section>
+            {isCheckoutSuccessOpen && <CheckoutSuccessModal />}
+            {isWarningPopupOpen && <WarningDialog onClearBag={onClearBag} />}
+        </>
     )
 }

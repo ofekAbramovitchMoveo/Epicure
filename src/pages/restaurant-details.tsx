@@ -5,7 +5,6 @@ import { useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
 
 import DishList from "../components/dish/dish-list"
-import { chefService } from "../services/chef.service"
 import { loadRestaurant } from "../store/restaurant/restaurant.actions"
 
 import clock from '/imgs/clock.svg'
@@ -95,16 +94,17 @@ export default function RestaurantDetails() {
         if (todayHours) {
             const { open, close } = todayHours
             if (close < open) {
-                return currTime >= open || currTime < close
+                if (currTime >= open || currTime < close) return true
             } else {
-                return currTime >= open && currTime < close
+                if (currTime >= open && currTime < close) return true
             }
         }
 
         const prevDay = (currDay - 1 + 7) % 7
         const prevDayHours = openingHours.find(day => day.day === prevDay)
-        if (prevDayHours && prevDayHours.close < prevDayHours.open && currTime < prevDayHours.close) {
-            return true
+        if (prevDayHours) {
+            const { open, close } = prevDayHours
+            if (close < open && currTime < close) return true
         }
 
         return false

@@ -1,16 +1,16 @@
-import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
-import BagDishPreview from "./dish/bag-dish-preview"
-import { BagDish } from "../types/dish.type"
-import SignInModal from "./sign-in/sign-in-modal"
+import { submitOrder, toggleCheckoutSuccess } from "../store/order/order.actions"
+import { clearBag, removeFromBag } from "../store/restaurant/restaurant.actions"
 import { RootState } from "../store/store"
 import { toggleSignInModal } from "../store/user/user.actions"
 import { SET_HEADER } from "../store/user/user.reducer"
-import { clearBag, removeFromBag } from "../store/restaurant/restaurant.actions"
-import { submitOrder } from "../store/order/order.actions"
+import { BagDish } from "../types/dish.type"
 import { DeliveryDetails, OrderDetails, PaymentDetails } from "../types/order-details.type"
+import BagDishPreview from "./dish/bag-dish-preview"
+import SignInModal from "./sign-in/sign-in-modal"
 
 import bagModal from '/imgs/bag-modal.svg'
 import lock from '/imgs/lock.svg'
@@ -73,6 +73,7 @@ export default function ShoppingBag({ bag, toggleBag, isDisabled, deliveryDetail
             if (order) {
                 clearBag()
                 navigate('/')
+                toggleCheckoutSuccess()
             }
         }
     }

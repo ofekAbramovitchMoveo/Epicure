@@ -56,7 +56,6 @@
             margin-top: 40px;
             display: flex;
             flex-direction: column;
-            gap: 24px;
 
             h3 {
                 text-transform: uppercase;
@@ -178,10 +177,6 @@
 
             .payment-details-container {
                 margin-top: 64px;
-
-                &:has(.Mui-error) {
-                    gap: 18px;
-                }
             }
         }
 

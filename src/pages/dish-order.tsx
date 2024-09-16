@@ -17,13 +17,13 @@ import close from '/imgs/close.svg'
 
 interface DishOrderProps {
     dish: Dish
-    closeDishOrder: () => void
+    toggleDishOrder: () => void
     isDishOrderOpen: boolean
     isOpenNow: boolean
     restaurant?: Restaurant | null
 }
 
-export default function DishOrder({ dish, closeDishOrder, isDishOrderOpen, isOpenNow, restaurant }: DishOrderProps) {
+export default function DishOrder({ dish, toggleDishOrder, isDishOrderOpen, isOpenNow, restaurant }: DishOrderProps) {
     const bag = useSelector((storeState: RootState) => storeState.restaurantModule.bag)
     const isWarningPopupOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isWarningPopupOpen)
     const [selectedOptions, setSelectedOptions] = useState<{
@@ -46,7 +46,7 @@ export default function DishOrder({ dish, closeDishOrder, isDishOrderOpen, isOpe
         } else {
             const dishToAdd: BagDish = { ...dish, ...selectedOptions, restaurantName: restaurant?.name }
             addToBag(dishToAdd)
-            closeDishOrder()
+            toggleDishOrder()
             clearDishOrder()
         }
     }
@@ -59,14 +59,11 @@ export default function DishOrder({ dish, closeDishOrder, isDishOrderOpen, isOpe
         })
     }
 
-    function onWarningPopupClose() {
-        setWarningPopup(false)
-    }
-
     function onClearBag() {
         clearBag()
-        onWarningPopupClose()
-        closeDishOrder()
+        setWarningPopup(false)
+        toggleDishOrder()
+        toggleBag()
     }
 
     return (
@@ -74,7 +71,7 @@ export default function DishOrder({ dish, closeDishOrder, isDishOrderOpen, isOpe
             <Modal
                 className="dish-order-modal"
                 open={isDishOrderOpen && isOpenNow && isRestaurantPage}
-                onClose={closeDishOrder}
+                onClose={toggleDishOrder}
                 aria-labelledby="dish-order-title"
                 aria-describedby="dish-order-description"
                 disableAutoFocus
@@ -105,7 +102,7 @@ export default function DishOrder({ dish, closeDishOrder, isDishOrderOpen, isOpe
                         width: '100vw',
                     })
                 }}>
-                    <img src={isMobile ? close : close_white} alt="" onClick={closeDishOrder} className="close-icon" />
+                    <img src={isMobile ? close : close_white} alt="" onClick={toggleDishOrder} className="close-icon" />
                     <img src={dish.imgUrl} alt="" className="dish-img full" />
                     <div className="order-info">
                         <h1>{dish.name}</h1>
@@ -138,7 +135,7 @@ export default function DishOrder({ dish, closeDishOrder, isDishOrderOpen, isOpe
                     </div>
                 </Box>
             </Modal>
-            <WarningDialog isPopupOpen={isWarningPopupOpen} onWarningPopupClose={onWarningPopupClose} onClearBag={onClearBag} />
+            {isWarningPopupOpen && <WarningDialog onClearBag={onClearBag} />}
         </>
     )
 }
