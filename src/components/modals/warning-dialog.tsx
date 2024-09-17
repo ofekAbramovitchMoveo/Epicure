@@ -1,14 +1,22 @@
+import { useSelector } from "react-redux"
 import { Dialog, DialogContent } from "@mui/material"
+
+import { clearBag, setWarningPopup } from "../../store/restaurant/restaurant.actions"
+import { RootState } from "../../store/store"
 
 import question from '/imgs/question.svg'
 
 interface WarningDialogProps {
-    isPopupOpen: boolean
-    onWarningPopupClose: () => void
     onClearBag: () => void
 }
 
-export default function WarningDialog({ isPopupOpen, onWarningPopupClose, onClearBag }: WarningDialogProps) {
+export default function WarningDialog({ onClearBag }: WarningDialogProps) {
+    const isPopupOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isWarningPopupOpen)
+
+    function onWarningPopupClose() {
+        setWarningPopup(false)
+    }
+
     return (
         <Dialog
             className="warning-dialog"

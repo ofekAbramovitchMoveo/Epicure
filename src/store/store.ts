@@ -32,6 +32,7 @@ export type RootState = {
     orderModule: {
         orders: OrderDetails[]
         order: OrderDetails | null
+        isCheckoutSuccessOpen: boolean
     }
 }
 

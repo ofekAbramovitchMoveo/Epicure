@@ -1,6 +1,6 @@
 import { orderService } from "../../services/order.service"
 import { OrderDetails } from "../../types/order-details.type"
-import { SET_ORDER, SET_ORDERS } from "./order.reducer"
+import { SET_ORDER, SET_ORDERS, TOGGLE_CHECKOUT_SUCCESS } from "./order.reducer"
 import { store } from "../store"
 
 export async function submitOrder(newOrder: OrderDetails) {
@@ -21,4 +21,8 @@ export async function loadOrders() {
     } catch (err) {
         console.log('OrderActions: err in loadOrders', err)
     }
+}
+
+export function toggleCheckoutSuccess() {
+    store.dispatch({ type: TOGGLE_CHECKOUT_SUCCESS })
 }
