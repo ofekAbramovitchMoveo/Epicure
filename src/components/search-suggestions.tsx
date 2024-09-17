@@ -4,7 +4,7 @@ import { Suggestion } from "../types/restaurant.type"
 
 interface SearchSuggestionsProps {
     suggestions: Suggestion[]
-    toggleSearch: () => void
+    toggleSearch?: () => void
 }
 
 export default function SearchSuggestions({ suggestions, toggleSearch }: SearchSuggestionsProps) {

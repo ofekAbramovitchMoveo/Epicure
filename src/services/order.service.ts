@@ -12,6 +12,6 @@ async function submitOrder(order: OrderDetails): Promise<OrderDetails> {
     return await httpService.post(BASE_URL, order)
 }
 
-async function getOrders(): Promise<OrderDetails[]> {
-    return await httpService.get(BASE_URL)
+async function getOrders(userId: string): Promise<OrderDetails[]> {
+    return await httpService.get(`${BASE_URL}user/${userId}`)
 }

@@ -6,14 +6,14 @@ import { useMediaQuery } from "react-responsive"
 
 import DishList from "../components/dish/dish-list"
 import { loadRestaurant } from "../store/restaurant/restaurant.actions"
-
-import clock from '/imgs/clock.svg'
 import { restaurantService } from "../services/restaurant.service"
 import RestaurantDetailsSkeleton from "../components/skeletons/restaurant-details-skeleton"
 import { RootState } from "../store/store"
 import { Dish } from "../types/dish.type"
 import { loadChef } from "../store/chef/chef.actions"
 import { OpeningHours } from "../types/restaurant.type"
+
+import clock from '/imgs/clock.svg'
 
 export default function RestaurantDetails() {
     const restaurant = useSelector((storeState: RootState) => storeState.restaurantModule.restaurant)
@@ -53,9 +53,9 @@ export default function RestaurantDetails() {
 
     useEffect(() => {
         async function fetchChef() {
-            if (!restaurant?.chef) return
+            if (!restaurant?.chefId) return
             try {
-                await loadChef(restaurant.chef)
+                await loadChef(restaurant.chefId)
             } catch (err) {
                 console.log('err', err)
             } finally {
@@ -63,7 +63,7 @@ export default function RestaurantDetails() {
             }
         }
         fetchChef()
-    }, [restaurant?.chef])
+    }, [restaurant?.chefId])
 
     useEffect(() => {
         if (!restaurant?.openingHours) return

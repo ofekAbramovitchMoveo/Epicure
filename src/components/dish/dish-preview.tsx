@@ -17,12 +17,10 @@ export default function DishPreview({ dish, isOpenNow = true, restaurant }: Dish
     const location = useLocation()
     const isRestaurantPage = location.pathname.includes('/restaurant')
 
-    const toggleDishOrder = () => setIsDishOrderOpen(!isDishOrderOpen)
-
     return (
         <>
             <Tooltip title={`${!isOpenNow && isRestaurantPage ? 'Can\'t order dishes, restaurant is closed' : ''}`}>
-                <section className={`dish-preview ${!isOpenNow ? 'disabled' : ''}`} onClick={toggleDishOrder}
+                <section className={`dish-preview ${!isOpenNow ? 'disabled' : ''}`} onClick={() => setIsDishOrderOpen(true)}
                     style={{ cursor: !isRestaurantPage ? 'auto' : (!isOpenNow ? 'not-allowed' : 'pointer') }}>
                     <img src={dish.imgUrl} alt="" className="dish-img" />
                     <div className="dish-info">
@@ -39,7 +37,7 @@ export default function DishPreview({ dish, isOpenNow = true, restaurant }: Dish
                     </div>
                 </section>
             </Tooltip>
-            {isDishOrderOpen && isOpenNow && isRestaurantPage && <DishOrder dish={dish} toggleDishOrder={toggleDishOrder}
+            {isDishOrderOpen && <DishOrder dish={dish} setIsDishOrderOpen={setIsDishOrderOpen}
                 isDishOrderOpen={isDishOrderOpen} isOpenNow={isOpenNow} restaurant={restaurant || null} />}
         </>
     )

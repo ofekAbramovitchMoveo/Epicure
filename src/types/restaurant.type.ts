@@ -1,7 +1,7 @@
 export type Restaurant = {
     _id: string
     name: string
-    chef: string
+    chefId: string
     rating: number
     imgUrl: string
     createdAt: string
@@ -10,7 +10,7 @@ export type Restaurant = {
         type: string
         coordinates: number[]
     }
-    dishes: string[]
+    dishesIds: string[]
 }
 
 export type OpeningHours = {

@@ -27,6 +27,11 @@ export function loadBag(): void {
     store.dispatch({ type: SET_BAG, bag })
 }
 
+export function setBag(bag: BagDish[]): void {
+    restaurantService.saveBag(bag)
+    store.dispatch({ type: SET_BAG, bag })
+}
+
 export function addToBag(dish: BagDish): void {
     restaurantService.addToBag(dish)
     store.dispatch({ type: ADD_TO_BAG, dish })

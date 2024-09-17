@@ -3,5 +3,5 @@ export type Chef = {
     name: string
     imgUrl: string
     isChefOfTheWeek: boolean
-    restaurants: string[]
+    restaurantsIds: string[]
 }

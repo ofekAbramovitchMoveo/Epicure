@@ -71,15 +71,15 @@ function addToBag(newDish: BagDish): void {
         )
         saveBag(updatedBag)
     } else {
-        const bagId = `${newDish._id}_${Date.now()}`
-        const uniqueDish = { ...newDish, bagId, quantity: newDish.quantity || 1 }
+        const bagDishId = `${newDish._id}_${Date.now()}`
+        const uniqueDish = { ...newDish, bagDishId, quantity: newDish.quantity || 1 }
         saveBag([...bag, uniqueDish])
     }
 }
 
 function removeFromBag(dishId: string): void {
     const bag = getBag()
-    const updatedBag = bag.filter(dish => dish.bagId !== dishId)
+    const updatedBag = bag.filter(dish => dish.bagDishId !== dishId)
     saveBag(updatedBag)
 }
 
@@ -91,7 +91,7 @@ function saveBag(bag: BagDish[]): void {
 
 function updateDishQuantity(dishId: string, quantity: number): void {
     const bag = getBag()
-    const updatedBag = bag.map(dish => dish.bagId === dishId ? { ...dish, quantity } : dish)
+    const updatedBag = bag.map(dish => dish.bagDishId === dishId ? { ...dish, quantity } : dish)
     saveBag(updatedBag)
 }
 
@@ -110,9 +110,9 @@ function transferGuestBag(): boolean {
     const userBag = getBag()
 
     if (guestBag.length && userBag.length) {
-        const guestRestaurant = guestBag[0].restaurant
-        const userRestaurant = userBag[0].restaurant
-        if (guestRestaurant !== userRestaurant) {
+        const guestRestaurantId = guestBag[0].restaurantId
+        const userRestaurantId = userBag[0].restaurantId
+        if (guestRestaurantId !== userRestaurantId) {
             return false
         }
     }

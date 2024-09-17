@@ -49,7 +49,7 @@ export default function CheckoutSuccessModal() {
                     </div>
                     <div className="dishes">
                         {order?.bag.map(dish => (
-                            <div className="dish" key={dish.bagId}>
+                            <div className="dish" key={dish.bagDishId}>
                                 <p className="dish-info">{dish.quantity}x <span>{dish.name}</span></p>
                                 <p className="dish-price">₪{dish.price}</p>
                             </div>

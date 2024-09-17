@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import { Modal as MuiModal, Fade, Box } from '@mui/material'
 
 interface HeaderModalProps {
