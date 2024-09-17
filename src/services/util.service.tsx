@@ -5,7 +5,8 @@ import { Coordinates } from '../components/map/map'
 export const utilService = {
     renderStars,
     debounce,
-    getUserLocation
+    getUserLocation,
+    areArraysEqual
 }
 
 function renderStars(rating: number) {
@@ -46,4 +47,9 @@ function getUserLocation(): Promise<Coordinates | null> {
             rej(new Error('Geolocation is not supported by this browser.'))
         }
     })
+}
+
+function areArraysEqual(arr1: any[], arr2: any[]): boolean {
+    if (arr1.length !== arr2.length) return false
+    return arr1.every((item, index) => JSON.stringify(item) === JSON.stringify(arr2[index]))
 }

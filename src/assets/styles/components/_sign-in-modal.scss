@@ -52,24 +52,32 @@
             input {
                 width: 327px;
                 padding-top: 8px;
+                font-weight: 200;
+                font-size: 16px;
+                letter-spacing: 1.97px;
             }
 
             .MuiFormLabel-root {
                 font-size: 14px;
-                color: black;
                 font-weight: 200;
                 letter-spacing: 1.97px;
-            }
 
-            .Mui-focused.MuiFormLabel-root:not(.Mui-error) {
-                color: $clr-primary-gray;
-                font-weight: 200;
-                font-size: 14px;
-                letter-spacing: 1.97px;
+                &:not(.Mui-error) {
+                    color: black;
+                }
+
+                &.MuiFormLabel-filled,
+                &.Mui-focused {
+                    font-size: 12px;
+
+                    &:not(.Mui-error) {
+                        color: rgba(0, 0, 0, 0.4);
+                    }
+                }
             }
 
             .MuiInput-root::after {
-                border-bottom: 1px solid black;
+                border-bottom: 0.5px solid black;
             }
 
             .MuiFormHelperText-root {
@@ -209,6 +217,15 @@
 
                 .MuiFormLabel-root {
                     font-size: 16px;
+
+                    &.MuiFormLabel-filled,
+                    &.Mui-focused {
+                        font-size: 14px;
+
+                        &:not(.Mui-error) {
+                            color: $clr-primary-gray;
+                        }
+                    }
                 }
             }
         }

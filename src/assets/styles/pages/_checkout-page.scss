@@ -1,0 +1,242 @@
+.checkout-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    .checkout-details {
+        width: 100%;
+        padding-top: 40px;
+
+        .delivery-details-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            h3 {
+                text-transform: uppercase;
+                font-weight: 200;
+                font-size: 14px;
+                letter-spacing: 2.67px;
+                align-self: center;
+            }
+
+            input {
+                font-weight: 200;
+                font-size: 16px;
+                letter-spacing: 1.97px;
+                padding-top: 8px;
+            }
+
+            .MuiFormLabel-root {
+                font-weight: 200;
+                font-size: 16px;
+                letter-spacing: 1.97px;
+
+                &:not(.Mui-error) {
+                    color: black;
+                }
+
+                &.MuiFormLabel-filled,
+                &.Mui-focused {
+                    font-size: 14px;
+
+                    &:not(.Mui-error) {
+                        color: $clr-primary-gray;
+                    }
+                }
+            }
+
+            .MuiInput-root::after {
+                border-bottom: 0.5px solid black;
+            }
+        }
+
+        .payment-details-container {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            h3 {
+                text-transform: uppercase;
+                font-weight: 200;
+                font-size: 14px;
+                letter-spacing: 2.67px;
+                align-self: center;
+            }
+
+            input {
+                padding-top: 8px;
+                font-weight: 200;
+                font-size: 16px;
+                letter-spacing: 1.97px;
+            }
+
+            .MuiFormLabel-root {
+                font-weight: 200;
+                font-size: 16px;
+                letter-spacing: 1.97px;
+
+                &:not(.Mui-error) {
+                    color: black;
+                }
+
+                &.MuiFormLabel-filled,
+                &.Mui-focused {
+                    font-size: 14px;
+
+                    &:not(.Mui-error) {
+                        color: $clr-primary-gray;
+                    }
+                }
+            }
+
+            .MuiInput-root::after {
+                border-bottom: 0.5px solid black;
+            }
+        }
+    }
+
+    .order-summary {
+        width: 100%;
+        padding: 40px 0;
+
+        .shopping-bag {
+            display: grid;
+
+            h1 {
+                font-weight: 200;
+                font-size: 14px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .price-container {
+                margin-top: 40px;
+                width: 100%;
+            }
+
+            .btns {
+                margin-top: 20px;
+
+                .checkout-btn {
+                    width: 100%;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    padding: 5px 16px;
+
+                    &.disabled {
+                        background-color: $clr-primary-gray;
+                        cursor: not-allowed;
+                    }
+
+                    .payment {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        p {
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include for-narrow-layout {
+    .checkout-page {
+        .order-summary {
+            .shopping-bag {
+                .bag-dish-list {
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}
+
+@include for-normal-layout {
+    .checkout-page {
+        box-shadow: none;
+        flex-direction: row;
+        gap: 32px;
+        margin-top: 48px;
+
+        .checkout-details {
+            height: 708px;
+            width: 408px;
+            box-shadow: 2px 4px 10px 0px #AFAFAF40;
+            padding: 32px 24px;
+
+            .delivery-details-container {
+                gap: 24px;
+            }
+
+            .payment-details-container {
+                margin-top: 64px;
+
+                &:has(.Mui-error) {
+                    gap: 18px;
+                }
+            }
+        }
+
+        .order-summary {
+            width: 497px;
+            height: 708px;
+            box-shadow: 2px 4px 10px 0px #AFAFAF40;
+            padding: 27px 0;
+
+            .shopping-bag {
+                display: flex;
+                align-items: center;
+
+                h1 {
+                    font-weight: 400;
+                    font-size: 32px;
+                    margin-bottom: 8px;
+                }
+
+                .price-container {
+                    margin-top: 27px;
+                    gap: 0;
+                    width: 232px;
+
+                    .line {
+                        flex: 0.584;
+                        margin: 0;
+                    }
+                }
+
+                label {
+                    margin-top: 23px;
+                    gap: 30px;
+
+                    textarea {
+                        height: 122px;
+                    }
+                }
+
+                .btns {
+                    margin-top: 25px;
+
+                    .checkout-btn {
+                        width: 215px;
+                        border: 1px solid #000000;
+                        justify-content: space-between;
+
+                        .pay-container {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -19,7 +19,7 @@ export default function SideDishForm({ dish, selectedOptions, handleOptionChange
                 value={selectedOptions.sideDish}
                 onChange={handleOptionChange}
             >
-                {dish.options.sideDish.map(value => (
+                {dish.options?.sideDish?.map(value => (
                     <FormControlLabel
                         key={value}
                         value={value}

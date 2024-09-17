@@ -13,7 +13,7 @@ export default function DishChangesForm({ dish, selectedOptions, handleCheckboxC
     return (
         <FormControl className="changes-form form" component="fieldset">
             <label className="changes-label label">Changes</label>
-            {dish.options.changes.map(value => (
+            {dish.options?.changes?.map(value => (
                 <FormControlLabel
                     key={value}
                     control={

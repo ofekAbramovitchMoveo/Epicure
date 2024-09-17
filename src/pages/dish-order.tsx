@@ -1,31 +1,31 @@
 import { useState } from "react"
 import { useLocation } from "react-router"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
 import { Box, Modal, Tooltip } from "@mui/material"
 
 import AppFooter from "../components/app-footer"
 import DishOptions from "../components/dish/dish-options"
-import { toggleBag } from "../store/restaurant/restaurant.actions"
-import { ADD_TO_BAG, CLEAR_BAG } from "../store/restaurant/restaurant.reducer"
+import { addToBag, clearBag, setWarningPopup, toggleBag } from "../store/restaurant/restaurant.actions"
 import WarningDialog from "../components/modals/warning-dialog"
-
-import close_white from '/imgs/close-white.svg'
-import close from '/imgs/close.svg'
-import { Dish } from "../types/dish.type"
+import { BagDish, Dish } from "../types/dish.type"
 import { Restaurant } from "../types/restaurant.type"
 import { RootState } from "../store/store"
 
+import close_white from '/imgs/close-white.svg'
+import close from '/imgs/close.svg'
+
 interface DishOrderProps {
     dish: Dish
-    toggleModal: () => void
-    isModalOpen: boolean
+    closeDishOrder: () => void
+    isDishOrderOpen: boolean
     isOpenNow: boolean
     restaurant?: Restaurant | null
 }
 
-export default function DishOrder({ dish, toggleModal, isModalOpen, isOpenNow, restaurant }: DishOrderProps) {
+export default function DishOrder({ dish, closeDishOrder, isDishOrderOpen, isOpenNow, restaurant }: DishOrderProps) {
     const bag = useSelector((storeState: RootState) => storeState.restaurantModule.bag)
+    const isWarningPopupOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isWarningPopupOpen)
     const [selectedOptions, setSelectedOptions] = useState<{
         sideDish: string
         changes: string[]
@@ -35,41 +35,46 @@ export default function DishOrder({ dish, toggleModal, isModalOpen, isOpenNow, r
         changes: [],
         quantity: 1,
     })
-    const [isPopupOpen, setIsPopupOpen] = useState(false)
     const isMobile = useMediaQuery({ query: '(max-width: 769px)' })
-    const dispatch = useDispatch()
     const location = useLocation()
     const isDisabled = !selectedOptions.sideDish || !selectedOptions.quantity
     const isRestaurantPage = location.pathname.includes('/restaurant')
 
     function onAddToBag() {
         if (bag.length && bag[0].restaurant !== restaurant?._id) {
-            setIsPopupOpen(true)
+            setWarningPopup(true)
         } else {
-            const dishToAdd = { ...dish, ...selectedOptions, restaurantName: restaurant?.name }
-            dispatch({ type: ADD_TO_BAG, dish: dishToAdd })
-            toggleModal()
-            toggleBag()
+            const dishToAdd: BagDish = { ...dish, ...selectedOptions, restaurantName: restaurant?.name }
+            addToBag(dishToAdd)
+            closeDishOrder()
+            clearDishOrder()
         }
     }
 
-    function onPopupClose() {
-        setIsPopupOpen(false)
+    function clearDishOrder() {
+        setSelectedOptions({
+            sideDish: '',
+            changes: [],
+            quantity: 1,
+        })
+    }
+
+    function onWarningPopupClose() {
+        setWarningPopup(false)
     }
 
     function onClearBag() {
-        dispatch({ type: CLEAR_BAG })
-        onPopupClose()
-        toggleModal()
-        toggleBag()
+        clearBag()
+        onWarningPopupClose()
+        closeDishOrder()
     }
 
     return (
         <>
             <Modal
                 className="dish-order-modal"
-                open={isModalOpen && isOpenNow && isRestaurantPage}
-                onClose={toggleModal}
+                open={isDishOrderOpen && isOpenNow && isRestaurantPage}
+                onClose={closeDishOrder}
                 aria-labelledby="dish-order-title"
                 aria-describedby="dish-order-description"
                 disableAutoFocus
@@ -100,7 +105,7 @@ export default function DishOrder({ dish, toggleModal, isModalOpen, isOpenNow, r
                         width: '100vw',
                     })
                 }}>
-                    <img src={isMobile ? close : close_white} alt="" onClick={toggleModal} className="close-icon" />
+                    <img src={isMobile ? close : close_white} alt="" onClick={closeDishOrder} className="close-icon" />
                     <img src={dish.imgUrl} alt="" className="dish-img full" />
                     <div className="order-info">
                         <h1>{dish.name}</h1>
@@ -133,7 +138,7 @@ export default function DishOrder({ dish, toggleModal, isModalOpen, isOpenNow, r
                     </div>
                 </Box>
             </Modal>
-            <WarningDialog isPopupOpen={isPopupOpen} onPopupClose={onPopupClose} onClearBag={onClearBag} />
+            <WarningDialog isPopupOpen={isWarningPopupOpen} onWarningPopupClose={onWarningPopupClose} onClearBag={onClearBag} />
         </>
     )
 }

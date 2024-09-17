@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
-import { Link, NavLink, useLocation } from "react-router-dom"
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom"
 
-import { toggleBag } from "../store/restaurant/restaurant.actions"
+import { loadBag, toggleBag } from "../store/restaurant/restaurant.actions"
 import SearchSuggestions from "./search-suggestions"
 import BagModal from "./modals/bag-modal"
 import MenuModal from "./modals/menu-modal"
@@ -20,6 +20,7 @@ import logo from '/imgs/logo.svg'
 import menu from '/imgs/menu.svg'
 import search from '/imgs/search-icon.svg'
 import user from '/imgs/user-icon.svg'
+import close from '/imgs/close.svg'
 
 interface AppHeaderProps {
     suggestions: Suggestion[]
@@ -41,6 +42,7 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }: 
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const dispatch = useDispatch()
     const location = useLocation()
+    const navigate = useNavigate()
     const userIconRef = useRef<HTMLButtonElement>(null)
     const isCheckoutPage = location.pathname.includes('checkout')
 
@@ -63,6 +65,10 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }: 
         }
     }, [isLogoutModalOpen, windowWidth])
 
+    useEffect(() => {
+        loadBag()
+    }, [loggedInUser,bag.length])
+
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
     const toggleSearch = () => {
@@ -83,7 +89,11 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }: 
     return (
         <header className="app-header main-layout full">
             <div className="app-header-container">
-                <img src={menu} alt="" className="menu-icon" onClick={toggleMenu} />
+                {!isCheckoutPage ? <img src={menu} alt="" className="menu-icon" onClick={toggleMenu} /> : (
+                    <img src={close} alt="" className="close-icon"
+                        onClick={() => navigate(-1)}
+                    />
+                )}
                 <Link to='/' className="logo-container">
                     <img src={logo} alt="logo-icon" />
                     <h3>EPICURE</h3>

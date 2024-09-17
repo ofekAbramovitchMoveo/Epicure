@@ -1,6 +1,7 @@
 import { TextField } from "@mui/material"
 
 import { User } from "../../types/user.type"
+import SignUpForm from "./sign-up-form"
 
 interface SignInFormProps {
     onSubmit: (ev: React.FormEvent<HTMLFormElement>, isSignUp: boolean) => void
@@ -38,13 +39,7 @@ export default function SignInForm({ onSubmit, isSignUp, credentials, setCredent
 
     return (
         <form className="inputs-container" onSubmit={ev => onSubmit(ev, isSignUp)}>
-            {isSignUp && (
-                <>
-                    {renderTextField('Full name', 'fullName')}
-                    {renderTextField('Address', 'address')}
-                    {renderTextField('Phone', 'phone', 'tel')}
-                </>
-            )}
+            {isSignUp && <SignUpForm renderTextField={renderTextField} />}
             {renderTextField('Email address', 'email', 'email')}
             {renderTextField('Password', 'password', 'password')}
         </form>

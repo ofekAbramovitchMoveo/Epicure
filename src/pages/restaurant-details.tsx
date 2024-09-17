@@ -92,14 +92,22 @@ export default function RestaurantDetails() {
         const currTime = now.getHours() * 60 + now.getMinutes()
 
         const todayHours = openingHours.find(day => day.day === currDay)
-        if (!todayHours) return false
-
-        const { open, close } = todayHours
-        if (close < open) {
-            return currTime >= open || currTime < close
+        if (todayHours) {
+            const { open, close } = todayHours
+            if (close < open) {
+                return currTime >= open || currTime < close
+            } else {
+                return currTime >= open && currTime < close
+            }
         }
 
-        return currTime >= open && currTime < close
+        const prevDay = (currDay - 1 + 7) % 7
+        const prevDayHours = openingHours.find(day => day.day === prevDay)
+        if (prevDayHours && prevDayHours.close < prevDayHours.open && currTime < prevDayHours.close) {
+            return true
+        }
+
+        return false
     }
 
     return (
