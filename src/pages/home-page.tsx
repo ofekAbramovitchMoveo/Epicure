@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useMediaQuery } from "react-responsive"
 import { CircularProgress } from "@mui/material"
 
@@ -6,6 +6,9 @@ import HomePageDishList from '../components/dish/home-page-dish-list'
 import RestaurantList from "../components/restaurant/restaurant-list"
 import SearchSuggestions from "../components/search-suggestions"
 import { loadRestaurants } from '../store/restaurant/restaurant.actions'
+import { restaurantService } from '../services/restaurant.service'
+import { Restaurant, Suggestion } from '../types/restaurant.type'
+import { Chef } from '../types/chef.type'
 
 import logo from '/imgs/about-logo.svg'
 import googlePlayLogo from '/imgs/google-play.svg'
@@ -14,20 +17,15 @@ import search from '/imgs/search-icon.svg'
 import spicy from '/imgs/spicy-large.svg'
 import vegan from '/imgs/vegan-large.svg'
 import vegitarian from '/imgs/vegitarian-large.svg'
-import { restaurantService } from '../services/restaurant.service'
-import { Restaurant, Suggestion } from '../types/restaurant.type'
-import { Chef } from '../types/chef.type'
 
 interface HomePageProps {
-    suggestions: Suggestion[]
-    searchInput: string
-    setSearchInput: (searchInput: string) => void
     restaurants: Restaurant[]
     chefs: Chef[]
 }
 
-export default function HomePage({ suggestions, searchInput, setSearchInput,
-    restaurants, chefs }: HomePageProps) {
+export default function HomePage({ restaurants, chefs }: HomePageProps) {
+    const [searchInput, setSearchInput] = useState("")
+    const [suggestions, setSuggestions] = useState<Suggestion[]>([])
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
     useEffect(() => {
@@ -41,6 +39,14 @@ export default function HomePage({ suggestions, searchInput, setSearchInput,
         }
     }, [])
 
+    useEffect(() => {
+        async function fetchSuggestions() {
+            const suggestions = await restaurantService.getRestaurantSuggestions(searchInput)
+            setSuggestions(suggestions)
+        }
+        fetchSuggestions()
+    }, [searchInput])
+
     function getChefOfTheWeek() {
         if (!chefs || !chefs.length) return
         return chefs.find(chef => chef.isChefOfTheWeek)
@@ -48,7 +54,7 @@ export default function HomePage({ suggestions, searchInput, setSearchInput,
 
     function getChefOfTheWeekRestaurants() {
         if (!restaurants || !restaurants.length) return []
-        return restaurants.filter(restaurant => restaurant.chef === getChefOfTheWeek()?._id)
+        return restaurants.filter(restaurant => restaurant.chefId === getChefOfTheWeek()?._id)
     }
 
     function getTopRatedRestaurants() {
@@ -84,7 +90,7 @@ export default function HomePage({ suggestions, searchInput, setSearchInput,
                         <img src={search} alt="" className="search-icon" />
                         <input type="text" placeholder="Search for restaurants, cuisine, chef"
                             value={searchInput} onChange={({ target }) => setSearchInput(target.value)} />
-                        <SearchSuggestions suggestions={suggestions} toggleSearch={() => { }} />
+                        <SearchSuggestions suggestions={suggestions} />
                     </div>
                 </div>
             </div>

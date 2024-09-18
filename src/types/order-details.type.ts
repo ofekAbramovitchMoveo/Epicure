@@ -18,5 +18,6 @@ export type OrderDetails = {
     paymentDetails: PaymentDetails
     bag: BagDish[]
     totalPrice: number
-    createdAt?: Date
+    createdAt?: string
+    userId: string
 }

@@ -37,7 +37,7 @@ export default function Map({ restaurants }: MapProps) {
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyBPSnSB3KM1tGH3au7TEh0NXRhzvaRQZlA"
+        googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY
     })
 
     const mapContainerStyle = {

@@ -62,13 +62,13 @@ export function restaurantReducer(state = initialState, action: RestaurantAction
             } else {
                 const newDish = action.dish ? {
                     ...action.dish,
-                    bagId: `${action.dish._id}_${Date.now()}`,
+                    bagDishId: `${action.dish._id}_${Date.now()}`,
                     quantity: action.dish.quantity || 1
                 } : null;
                 return { ...state, bag: newDish ? [...state.bag, newDish] : state.bag }
             }
         case REMOVE_FROM_BAG:
-            return { ...state, bag: state.bag.filter(dish => dish.bagId !== action.dishId) }
+            return { ...state, bag: state.bag.filter(dish => dish.bagDishId !== action.dishId) }
         case CLEAR_BAG:
             return { ...state, bag: [] }
         case TOGGLE_BAG_MODAL:
@@ -77,7 +77,7 @@ export function restaurantReducer(state = initialState, action: RestaurantAction
             return {
                 ...state,
                 bag: state.bag.map(dish =>
-                    dish.bagId === action.dishId ? { ...dish, quantity: action.quantity } : dish
+                    dish.bagDishId === action.dishId ? { ...dish, quantity: action.quantity } : dish
                 )
             }
         case SET_BAG:

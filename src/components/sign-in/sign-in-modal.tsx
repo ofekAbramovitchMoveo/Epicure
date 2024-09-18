@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router"
+import { useLocation, useNavigate } from "react-router"
 import { useSelector } from "react-redux"
 import { Box, Modal } from "@mui/material"
 import { useMediaQuery } from "react-responsive"
@@ -8,7 +8,8 @@ import { User } from "../../types/user.type"
 import { RootState } from "../../store/store"
 import { loadUsers, login, signup } from "../../store/user/user.actions"
 import SignInForm from "./sign-in-form"
-import { toggleBag } from "../../store/restaurant/restaurant.actions"
+import { setBag, toggleBag } from "../../store/restaurant/restaurant.actions"
+import { BagDish } from "../../types/dish.type"
 
 import close_white from '/imgs/close-white.svg'
 import close from '/imgs/close.svg'
@@ -17,11 +18,13 @@ interface SignInModalProps {
     isOpen: boolean
     toggleModal: () => void
     isHeader?: boolean
+    bag?: BagDish[]
 }
 
-export default function SignInModal({ isOpen, toggleModal, isHeader }: SignInModalProps) {
+export default function SignInModal({ isOpen, toggleModal, isHeader, bag }: SignInModalProps) {
     const users = useSelector((storeState: RootState) => storeState.userModule.users)
     const user = useSelector((storeState: RootState) => storeState.userModule.user)
+    const isBagOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isBagOpen)
     const [credentials, setCredentials] = useState<User>({
         email: '',
         password: '',
@@ -33,6 +36,8 @@ export default function SignInModal({ isOpen, toggleModal, isHeader }: SignInMod
     const [errors, setErrors] = useState<string[]>([])
     const isMobile = useMediaQuery({ query: '(max-width: 769px)' })
     const navigate = useNavigate()
+    const location = useLocation()
+    const isOrderHistoryPage = location.pathname.includes('/order-history')
     const isDisabled = !credentials.email || !credentials.password ||
         (isSignUp && (!credentials.fullName || !credentials.address || !credentials.phone))
 
@@ -66,7 +71,8 @@ export default function SignInModal({ isOpen, toggleModal, isHeader }: SignInMod
         if (user && !isHeader) {
             navigate('/checkout')
             toggleModal()
-            toggleBag()
+            if (isBagOpen) toggleBag()
+            if (isOrderHistoryPage && !isBagOpen && bag) setBag(bag)
         }
         else toggleModal()
     }

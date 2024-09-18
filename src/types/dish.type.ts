@@ -11,11 +11,11 @@ export type Dish = {
         sideDish?: string[]
         changes?: string[]
     }
-    restaurant?: string
+    restaurantId?: string
 }
 
 export type BagDish = Dish & {
-    bagId?: string
+    bagDishId?: string
     restaurantName?: string
     changes?: string[]
     sideDish?: string

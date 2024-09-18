@@ -4,9 +4,16 @@ export default function AppFooter() {
     const location = useLocation()
     const isHomePage = location.pathname === '/'
     const isMapView = location.pathname.includes('map')
+    const isOrderHistory = location.pathname.includes('order-history')
 
     return (
-        <footer className="app-footer full main-layout" style={!isHomePage && !isMapView ? { marginTop: '48px' } : {}}>
+        <footer className="app-footer full main-layout" style={{
+            marginTop: !isHomePage && !isMapView && !isOrderHistory ? '48px' : '0',
+            ...(isOrderHistory && {
+                position: 'sticky',
+                bottom: '0'
+            })
+        }}>
             <div className="footer-container">
                 <ul className="links">
                     <li>

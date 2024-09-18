@@ -14,6 +14,7 @@ import SignInModal from "./sign-in/sign-in-modal"
 import { toggleSignInModal } from "../store/user/user.actions"
 import { SET_HEADER } from "../store/user/user.reducer"
 import { LogoutModal } from "./sign-in/logout-modal"
+import { restaurantService } from "../services/restaurant.service"
 
 import bag_icon from '/imgs/bag.svg'
 import logo from '/imgs/logo.svg'
@@ -22,13 +23,7 @@ import search from '/imgs/search-icon.svg'
 import user from '/imgs/user-icon.svg'
 import close from '/imgs/close.svg'
 
-interface AppHeaderProps {
-    suggestions: Suggestion[]
-    searchInput: string
-    setSearchInput: (searchInput: string) => void
-}
-
-export default function AppHeader({ suggestions, searchInput, setSearchInput }: AppHeaderProps) {
+export default function AppHeader() {
     const loggedInUser = useSelector((storeState: RootState) => storeState.userModule.user)
     const isSignInModalOpen = useSelector((storeState: RootState) => storeState.userModule.isSignInModalOpen)
     const bag = useSelector((storeState: RootState) => storeState.restaurantModule.bag)
@@ -39,12 +34,22 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }: 
     const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false)
     const [buttonPosition, setButtonPosition] = useState({ left: 0 })
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+    const [searchInput, setSearchInput] = useState("")
+    const [suggestions, setSuggestions] = useState<Suggestion[]>([])
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const dispatch = useDispatch()
     const location = useLocation()
     const navigate = useNavigate()
     const userIconRef = useRef<HTMLButtonElement>(null)
     const isCheckoutPage = location.pathname.includes('checkout')
+
+    useEffect(() => {
+        async function fetchSuggestions() {
+            const suggestions = await restaurantService.getRestaurantSuggestions(searchInput)
+            setSuggestions(suggestions)
+        }
+        fetchSuggestions()
+    }, [searchInput])
 
     useEffect(() => {
         const handleResize = () => {
@@ -67,7 +72,7 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }: 
 
     useEffect(() => {
         loadBag()
-    }, [loggedInUser,bag.length])
+    }, [loggedInUser, bag.length])
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
@@ -128,7 +133,7 @@ export default function AppHeader({ suggestions, searchInput, setSearchInput }: 
                     </>
                 )}
             </div>
-            <BagModal bag={bag} toggleBag={toggleBag} isBagOpen={isBagOpen} isMobile={isMobile} />
+            <BagModal bag={bag} isBagOpen={isBagOpen} isMobile={isMobile} />
             <MenuModal isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
             {isMobile && (
                 <SearchModal isSearchOpen={isSearchOpen} toggleSearch={toggleSearch}

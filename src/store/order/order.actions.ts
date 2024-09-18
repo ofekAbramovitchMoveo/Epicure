@@ -14,9 +14,9 @@ export async function submitOrder(newOrder: OrderDetails) {
     }
 }
 
-export async function loadOrders() {
+export async function loadOrders(userId: string) {
     try {
-        const orders = await orderService.getOrders()
+        const orders = await orderService.getOrders(userId)
         store.dispatch({ type: SET_ORDERS, orders })
     } catch (err) {
         console.log('OrderActions: err in loadOrders', err)

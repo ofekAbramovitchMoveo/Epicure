@@ -17,13 +17,13 @@ import close from '/imgs/close.svg'
 
 interface DishOrderProps {
     dish: Dish
-    toggleDishOrder: () => void
+    setIsDishOrderOpen: (isDishOrderOpen: boolean) => void
     isDishOrderOpen: boolean
     isOpenNow: boolean
     restaurant?: Restaurant | null
 }
 
-export default function DishOrder({ dish, toggleDishOrder, isDishOrderOpen, isOpenNow, restaurant }: DishOrderProps) {
+export default function DishOrder({ dish, setIsDishOrderOpen, isDishOrderOpen, isOpenNow, restaurant }: DishOrderProps) {
     const bag = useSelector((storeState: RootState) => storeState.restaurantModule.bag)
     const isWarningPopupOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isWarningPopupOpen)
     const [selectedOptions, setSelectedOptions] = useState<{
@@ -41,12 +41,12 @@ export default function DishOrder({ dish, toggleDishOrder, isDishOrderOpen, isOp
     const isRestaurantPage = location.pathname.includes('/restaurant')
 
     function onAddToBag() {
-        if (bag.length && bag[0].restaurant !== restaurant?._id) {
+        if (bag.length && bag[0].restaurantId !== restaurant?._id) {
             setWarningPopup(true)
         } else {
             const dishToAdd: BagDish = { ...dish, ...selectedOptions, restaurantName: restaurant?.name }
             addToBag(dishToAdd)
-            toggleDishOrder()
+            setIsDishOrderOpen(false)
             clearDishOrder()
         }
     }
@@ -62,7 +62,7 @@ export default function DishOrder({ dish, toggleDishOrder, isDishOrderOpen, isOp
     function onClearBag() {
         clearBag()
         setWarningPopup(false)
-        toggleDishOrder()
+        setIsDishOrderOpen(false)
         toggleBag()
     }
 
@@ -71,7 +71,7 @@ export default function DishOrder({ dish, toggleDishOrder, isDishOrderOpen, isOp
             <Modal
                 className="dish-order-modal"
                 open={isDishOrderOpen && isOpenNow && isRestaurantPage}
-                onClose={toggleDishOrder}
+                onClose={() => setIsDishOrderOpen(false)}
                 aria-labelledby="dish-order-title"
                 aria-describedby="dish-order-description"
                 disableAutoFocus
@@ -102,7 +102,7 @@ export default function DishOrder({ dish, toggleDishOrder, isDishOrderOpen, isOp
                         width: '100vw',
                     })
                 }}>
-                    <img src={isMobile ? close : close_white} alt="" onClick={toggleDishOrder} className="close-icon" />
+                    <img src={isMobile ? close : close_white} alt="" onClick={() => setIsDishOrderOpen(false)} className="close-icon" />
                     <img src={dish.imgUrl} alt="" className="dish-img full" />
                     <div className="order-info">
                         <h1>{dish.name}</h1>

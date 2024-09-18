@@ -1,15 +1,15 @@
+import { toggleBag } from "../../store/restaurant/restaurant.actions"
 import { BagDish } from "../../types/dish.type"
 import ShoppingBag from "../shopping-bag"
 import HeaderModal from "./header-modal"
 
 interface BagModalProps {
     bag: BagDish[]
-    toggleBag: () => void
     isBagOpen: boolean
     isMobile: boolean
 }
 
-export default function BagModal({ bag, toggleBag, isBagOpen, isMobile }: BagModalProps) {
+export default function BagModal({ bag, isBagOpen, isMobile }: BagModalProps) {
     return (
         <HeaderModal open={isBagOpen}
             onClose={toggleBag}
@@ -24,7 +24,7 @@ export default function BagModal({ bag, toggleBag, isBagOpen, isMobile }: BagMod
                 height: isMobile ? (bag.length ? '514px' : '218px') : (!bag || !bag.length ? '586px' : '779px')
             }}
         >
-            <ShoppingBag bag={bag} toggleBag={toggleBag} />
+            <ShoppingBag bag={bag} />
         </HeaderModal>
     )
 }

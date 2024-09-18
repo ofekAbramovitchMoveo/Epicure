@@ -31,7 +31,7 @@ export default function BagDishPreview({ dish, onRemoveDish }: BagDishPreviewPro
 
     function handleQuantityChange(change: number) {
         const newQuantity = Math.max(1, (dish.quantity || 0) + change)
-        updateDishQuantity(dish.bagId || '', newQuantity)
+        updateDishQuantity(dish.bagDishId || '', newQuantity)
     }
 
     return (
@@ -66,7 +66,7 @@ export default function BagDishPreview({ dish, onRemoveDish }: BagDishPreviewPro
                                     <IconButton className="plus btn" onClick={() => handleQuantityChange(1)}>
                                         <Add />
                                     </IconButton>
-                                    <img src={trash} alt="" onClick={() => onRemoveDish(dish.bagId || '')} className="trash-icon" />
+                                    <img src={trash} alt="" onClick={() => onRemoveDish(dish.bagDishId || '')} className="trash-icon" />
                                 </>
                             ) : (
                                 dish.quantity

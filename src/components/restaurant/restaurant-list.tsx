@@ -36,14 +36,14 @@ export default function RestaurantList({ restaurants, isChefRestaurants, chefId 
                     <Swiper spaceBetween={24} slidesPerView={1.33}>
                         {restaurants.map(restaurant => (
                             <SwiperSlide key={restaurant._id}>
-                                <RestaurantPreview restaurant={restaurant} chefName={getChefName(restaurant.chef) || ''} isChefRestaurants={isChefRestaurants || false} />
+                                <RestaurantPreview restaurant={restaurant} chefName={getChefName(restaurant.chefId) || ''} isChefRestaurants={isChefRestaurants || false} />
                             </SwiperSlide>
                         ))}
                     </Swiper>
                 ) : (
                     restaurants.map(restaurant => (
                         <li key={restaurant._id}>
-                            <RestaurantPreview restaurant={restaurant} chefName={getChefName(restaurant.chef) || ''} isChefRestaurants={isChefRestaurants || false} />
+                            <RestaurantPreview restaurant={restaurant} chefName={getChefName(restaurant.chefId) || ''} isChefRestaurants={isChefRestaurants || false} />
                         </li>
                     ))
                 )

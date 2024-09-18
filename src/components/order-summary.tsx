@@ -2,7 +2,6 @@ import { useSelector } from "react-redux"
 
 import ShoppingBag from "./shopping-bag"
 import { RootState } from "../store/store"
-import { toggleBag } from "../store/restaurant/restaurant.actions"
 import { DeliveryDetails, PaymentDetails } from "../types/order-details.type"
 
 interface OrderSummaryProps {
@@ -17,7 +16,7 @@ export default function OrderSummary({ isDisabled, deliveryDetails, paymentDetai
 
     return (
         <section className="order-summary">
-            <ShoppingBag bag={bag} toggleBag={toggleBag} isDisabled={isDisabled}
+            <ShoppingBag bag={bag} isDisabled={isDisabled}
                 deliveryDetails={deliveryDetails}
                 paymentDetails={paymentDetails}
                 setErrors={setErrors}
