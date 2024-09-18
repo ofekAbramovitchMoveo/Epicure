@@ -1,7 +1,7 @@
 import Axios, { isAxiosError } from 'axios'
 
 const BASE_URL = process.env.NODE_ENV === 'production'
-    ? 'http://34.207.171.151:3030/api/'
+    ? '//34.207.171.151:3030/api/'
     : '//localhost:3030/api/'
 
 var axios = Axios.create({
