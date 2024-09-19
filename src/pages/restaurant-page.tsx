@@ -31,10 +31,10 @@ export default function RestaurantPage({ restaurants, setFilterBy }: RestaurantP
     useEffect(() => {
         async function fetchUserLocation() {
             const location = await utilService.getUserLocation()
-            if (!location) toggleLocationWarningPopup()
             setUserLocation(location)
         }
         fetchUserLocation()
+        if (!userLocation) toggleLocationWarningPopup()
     }, [userLocation])
 
     return (
