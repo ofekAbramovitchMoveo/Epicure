@@ -12,8 +12,7 @@ import { RootState } from "../store/store"
 import { Dish } from "../types/dish.type"
 import { loadChef } from "../store/chef/chef.actions"
 import { OpeningHours } from "../types/restaurant.type"
-
-import clock from '/imgs/clock.svg'
+import Image from "../components/image"
 
 export default function RestaurantDetails() {
     const restaurant = useSelector((storeState: RootState) => storeState.restaurantModule.restaurant)
@@ -114,10 +113,10 @@ export default function RestaurantDetails() {
         <section className="restaurant-details main-layout">
             {isLoading ? <RestaurantDetailsSkeleton /> : (
                 <>
-                    <img className={`restaurant-img ${isMobile ? 'full' : ''}`} src={restaurant?.imgUrl} alt="" />
+                    <Image className={`restaurant-img ${isMobile ? 'full' : ''}`} src={restaurant?.imgUrl || ""} alt="" />
                     <h1 className="title">{restaurant?.name}</h1>
                     <h3 className="chef">{chef?.name}</h3>
-                    <p className="is-open"><img src={clock} alt="" /> {isOpenNow ? 'Open now' : 'Closed'}</p>
+                    <p className="is-open"><Image src="clock.svg" alt="" /> {isOpenNow ? 'Open now' : 'Closed'}</p>
                     <div className="dish-type-links">
                         <NavLink to={`/restaurant/${restaurant?._id}`} end>Breakfast</NavLink>
                         <NavLink to={`/restaurant/${restaurant?._id}/lunch`}>Lunch</NavLink>

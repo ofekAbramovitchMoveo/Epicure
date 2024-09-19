@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 
 import { utilService } from "../../services/util.service"
 import { Restaurant } from "../../types/restaurant.type"
+import Image from "../image"
 
 interface RestaurantPreviewProps {
     restaurant: Restaurant
@@ -13,7 +14,7 @@ export default function RestaurantPreview({ restaurant, chefName, isChefRestaura
 
     return (
         <Link className={`restaurant-preview ${isChefRestaurants ? 'chef' : ''}`} to={`/restaurant/${restaurant._id}`}>
-            <img src={restaurant.imgUrl} alt="" className={`restaurant-img ${isChefRestaurants ? 'chef' : ''}`} />
+            <Image src={restaurant.imgUrl} alt="" className={`restaurant-img ${isChefRestaurants ? 'chef' : ''}`} />
             <div className={`restaurant-info ${isChefRestaurants ? 'chef' : ''}`}>
                 <h2>{restaurant.name}</h2>
                 {!isChefRestaurants &&

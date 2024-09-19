@@ -1,10 +1,9 @@
 import { useSelector } from "react-redux"
 import { Dialog, DialogContent } from "@mui/material"
 
-import { clearBag, setWarningPopup } from "../../store/restaurant/restaurant.actions"
+import { setWarningPopup } from "../../store/restaurant/restaurant.actions"
 import { RootState } from "../../store/store"
-
-import question from '/imgs/question.svg'
+import Image from "../image"
 
 interface WarningDialogProps {
     onClearBag: () => void
@@ -36,7 +35,7 @@ export default function WarningDialog({ onClearBag }: WarningDialogProps) {
             }}
         >
             <DialogContent className="dialog-box">
-                <img src={question} alt="" className="question" />
+                <Image src="question.svg" alt="" className="question" />
                 <div className="txt-container">
                     <h1 className="title">DELETE ORDER?</h1>
                     <p className="desc">

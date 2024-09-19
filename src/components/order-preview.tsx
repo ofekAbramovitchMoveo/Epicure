@@ -1,9 +1,8 @@
 import { useState } from "react"
 
 import { OrderDetails } from "../types/order-details.type"
-
-import arrow from '/imgs/arrow-right.svg'
 import OrderAgainModal from "./modals/order-again-modal"
+import Image from "./image"
 
 interface OrderPreviewProps {
     order: OrderDetails
@@ -39,7 +38,7 @@ export default function OrderPreview({ order }: OrderPreviewProps) {
                     <p className="date">{formatDate(order.createdAt)}</p>
                     <div className="total-price">
                         <p>₪{order.totalPrice}</p>
-                        <img src={arrow} alt="arrow" />
+                        <Image src="arrow-right.svg" alt="arrow" />
                     </div>
                 </div>
             </section>

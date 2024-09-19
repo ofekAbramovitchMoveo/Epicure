@@ -10,9 +10,7 @@ import { loadUsers, login, signup } from "../../store/user/user.actions"
 import SignInForm from "./sign-in-form"
 import { setBag, toggleBag } from "../../store/restaurant/restaurant.actions"
 import { BagDish } from "../../types/dish.type"
-
-import close_white from '/imgs/close-white.svg'
-import close from '/imgs/close.svg'
+import Image from "../image"
 
 interface SignInModalProps {
     isOpen: boolean
@@ -102,7 +100,7 @@ export default function SignInModal({ isOpen, toggleModal, isHeader, bag }: Sign
             }}
         >
             <Box className={`sign-in-modal-box ${isSignUp ? 'sign-up' : ''}`}>
-                <img src={isMobile ? close : close_white} alt="" onClick={toggleModal} className="close-icon" />
+                <Image src={isMobile ? "close.svg" : "close-white.svg"} alt="" onClick={toggleModal} className="close-icon" />
                 <h1>{isSignUp ? 'SIGN UP' : 'SIGN IN'}</h1>
                 {!isSignUp && !isHeader && <p>To continue the order, please sign in</p>}
                 <SignInForm onSubmit={onSubmit} isSignUp={isSignUp}

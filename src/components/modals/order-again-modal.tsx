@@ -2,8 +2,7 @@ import { Box, Modal } from "@mui/material"
 
 import ShoppingBag from "../shopping-bag"
 import { BagDish } from "../../types/dish.type"
-
-import close_white from '/imgs/close-white.svg'
+import Image from "../image"
 
 interface OrderAgainModalProps {
     toggleOrderAgainModal: () => void
@@ -23,7 +22,7 @@ export default function OrderAgainModal({ toggleOrderAgainModal, isOrderAgainMod
             slotProps={{ backdrop: { sx: { backgroundColor: 'rgba(0, 0, 0, 0.7)' } } }}
         >
             <Box className="order-again-modal-box">
-                <img src={close_white} alt="close" onClick={toggleOrderAgainModal} className="close-icon" />
+                <Image src="close-white.svg" alt="close" onClick={toggleOrderAgainModal} className="close-icon" />
                 <ShoppingBag bag={bag} />
             </Box>
         </Modal>

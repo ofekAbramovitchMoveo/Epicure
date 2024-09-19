@@ -1,5 +1,4 @@
-import star from '/imgs/star.svg'
-import emptyStar from '/imgs/empty-star.svg'
+import Image from '../components/image'
 import { Coordinates } from '../components/map/map'
 
 export const utilService = {
@@ -15,9 +14,9 @@ function renderStars(rating: number) {
 
     for (let i = 0; i < totalStars; i++) {
         if (i < rating) {
-            stars.push(<img src={star} alt='' key={i} className="filled-star"></img>)
+            stars.push(<Image src="star.svg" alt='' key={i} className="filled-star" />)
         } else {
-            stars.push(<img src={emptyStar} alt='' key={i} className="empty-star"></img>)
+            stars.push(<Image src="star.svg" alt='' key={i} className="empty-star" />)
         }
     }
     return stars

@@ -4,9 +4,7 @@ import { Box, Fade, Modal } from "@mui/material"
 
 import { RootState } from "../../store/store"
 import { toggleCheckoutSuccess } from "../../store/order/order.actions"
-
-import check from '/imgs/check.svg'
-import close_white from '/imgs/close-white.svg'
+import Image from "../image"
 
 export default function CheckoutSuccessModal() {
     const order = useSelector((storeState: RootState) => storeState.orderModule.order)
@@ -38,8 +36,8 @@ export default function CheckoutSuccessModal() {
         >
             <Fade in={isCheckoutSuccessOpen} timeout={300} easing={{ enter: 'ease-in', exit: 'ease-out' }}>
                 <Box className="checkout-success-box">
-                    <img src={close_white} alt="close" className="close-icon" onClick={toggleCheckoutSuccess} />
-                    <img src={check} alt="check" />
+                    <Image src="close-white.svg" alt="close" className="close-icon" onClick={toggleCheckoutSuccess} />
+                    <Image src="check.svg" alt="check" />
                     <div className="title-container">
                         <h1>ORDER RECEIVED</h1>
                         <p>Your food is in process</p>

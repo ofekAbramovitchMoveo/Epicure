@@ -9,14 +9,7 @@ import { loadRestaurants } from '../store/restaurant/restaurant.actions'
 import { restaurantService } from '../services/restaurant.service'
 import { Restaurant, Suggestion } from '../types/restaurant.type'
 import { Chef } from '../types/chef.type'
-
-import logo from '/imgs/about-logo.svg'
-import googlePlayLogo from '/imgs/google-play.svg'
-import hero from '/imgs/hero.png'
-import search from '/imgs/search-icon.svg'
-import spicy from '/imgs/spicy-large.svg'
-import vegan from '/imgs/vegan-large.svg'
-import vegitarian from '/imgs/vegitarian-large.svg'
+import Image from '../components/image'
 
 interface HomePageProps {
     restaurants: Restaurant[]
@@ -80,14 +73,14 @@ export default function HomePage({ restaurants, chefs }: HomePageProps) {
     return (
         <section className="home-page main-layout">
             <div className="hero-container full main-layout">
-                <img className="hero-img full" src={hero} alt="" />
+                <Image className="hero-img full" src="hero.png" alt="" />
                 <div className="hero-box">
                     <p className="hero-text">
                         Epicure works with the top <br />
                         chef restaurants in Tel Aviv
                     </p>
                     <div className="input-container">
-                        <img src={search} alt="" className="search-icon" />
+                        <Image src="search-icon.svg" alt="" className="search-icon" />
                         <input type="text" placeholder="Search for restaurants, cuisine, chef"
                             value={searchInput} onChange={({ target }) => setSearchInput(target.value)} />
                         <SearchSuggestions suggestions={suggestions} />
@@ -101,15 +94,15 @@ export default function HomePage({ restaurants, chefs }: HomePageProps) {
                     <h1>THE MEANING OF OUR ICONS:</h1>
                     <ul className="icon-list">
                         <li>
-                            <img src={spicy} alt="" />
+                            <Image src="spicy.svg" alt="" />
                             <p>Spicy</p>
                         </li>
                         <li>
-                            <img src={vegitarian} alt="" />
+                            <Image src="vegitarian.svg" alt="" />
                             <p>Vegitarian</p>
                         </li>
                         <li>
-                            <img src={vegan} alt="" />
+                            <Image src="vegan.svg" alt="" />
                             <p>Vegan</p>
                         </li>
                     </ul>
@@ -118,7 +111,7 @@ export default function HomePage({ restaurants, chefs }: HomePageProps) {
                     <h1>CHEF OF THE WEEK:</h1>
                     <div className="chef-info">
                         <div className="chef-card">
-                            <img src={getChefOfTheWeek()?.imgUrl} alt="" />
+                            <Image src={getChefOfTheWeek()?.imgUrl || ""} alt="" />
                             <div className="name-overlay">
                                 <h4>{getChefOfTheWeek()?.name}</h4>
                             </div>
@@ -150,12 +143,12 @@ export default function HomePage({ restaurants, chefs }: HomePageProps) {
                                     <p>Download on the <br /> <span>App Store</span></p>
                                 </button>
                                 <button className="google-store-btn">
-                                    <img src={googlePlayLogo} alt="" className="logo" />
+                                    <Image src="google-play.svg" alt="" className="logo" />
                                     <p>Get it on <br /> <span>Google Play</span></p>
                                 </button>
                             </div>
                         </div>
-                        <img src={logo} alt="" className="about-logo" />
+                        <Image src="logo.svg" alt="" className="about-logo" />
                     </div>
                 </div>
             </div>

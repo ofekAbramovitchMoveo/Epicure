@@ -13,9 +13,7 @@ import { BagDish } from "../types/dish.type"
 import { DeliveryDetails, OrderDetails, PaymentDetails } from "../types/order-details.type"
 import BagDishPreview from "./dish/bag-dish-preview"
 import SignInModal from "./sign-in/sign-in-modal"
-
-import bagModal from '/imgs/bag-modal.svg'
-import lock from '/imgs/lock.svg'
+import Image from "./image"
 
 interface ShoppingBagProps {
     bag: BagDish[]
@@ -110,7 +108,7 @@ export default function ShoppingBag({ bag, isDisabled, deliveryDetails, paymentD
     if (!bag?.length) return (
         <>
             <div className="empty-bag">
-                <img src={bagModal} alt="" />
+                <Image src="bag-modal.svg" alt="" />
                 <h4>YOUR BAG IS <br /> EMPTY</h4>
             </div>
             <Link onClick={onOrderHistory} className="order-btn" to='/order-history'>ORDER HISTORY</Link>
@@ -152,14 +150,14 @@ export default function ShoppingBag({ bag, isDisabled, deliveryDetails, paymentD
                                     {!isMobile ? (
                                         <>
                                             <div className="pay-container">
-                                                <img src={lock} alt="" />
+                                                <Image src="lock.svg" alt="" />
                                                 <p>PAY</p>
                                             </div>
                                             <span>₪{calcPrice()}</span>
                                         </>
                                     ) : (
                                         <div className="payment">
-                                            <img src={lock} alt="" />
+                                            <Image src="lock.svg" alt="" />
                                             <p>Complete payment</p>
                                         </div>
                                     )}

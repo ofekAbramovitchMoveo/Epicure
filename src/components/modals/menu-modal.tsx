@@ -2,8 +2,7 @@ import { NavLink } from "react-router-dom"
 
 import AppFooter from "../app-footer"
 import HeaderModal from "./header-modal"
-
-import close from '/imgs/close.svg'
+import Image from "../image"
 
 interface MenuModalProps {
     isMenuOpen: boolean
@@ -20,7 +19,7 @@ export default function MenuModal({ isMenuOpen, toggleMenu }: MenuModalProps) {
             boxClassName="menu-modal main-layout"
             boxSx={{ position: 'relative' }}
         >
-            <img src={close} alt="" onClick={toggleMenu} className="close-icon" />
+            <Image src="close.svg" alt="" onClick={toggleMenu} className="close-icon" />
             <nav className="menu-nav-links">
                 <NavLink to='/restaurants' onClick={toggleMenu}>Restaurants</NavLink>
                 <NavLink to='/chef' onClick={toggleMenu}>Chefs</NavLink>

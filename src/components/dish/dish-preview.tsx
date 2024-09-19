@@ -5,6 +5,7 @@ import { Tooltip } from "@mui/material"
 import DishOrder from "../../pages/dish-order"
 import { Dish } from "../../types/dish.type"
 import { Restaurant } from "../../types/restaurant.type"
+import Image from "../image"
 
 interface DishPreviewProps {
     dish: Dish
@@ -22,11 +23,11 @@ export default function DishPreview({ dish, isOpenNow = true, restaurant }: Dish
             <Tooltip title={`${!isOpenNow && isRestaurantPage ? 'Can\'t order dishes, restaurant is closed' : ''}`}>
                 <section className={`dish-preview ${!isOpenNow ? 'disabled' : ''}`} onClick={() => setIsDishOrderOpen(true)}
                     style={{ cursor: !isRestaurantPage ? 'auto' : (!isOpenNow ? 'not-allowed' : 'pointer') }}>
-                    <img src={dish.imgUrl} alt="" className="dish-img" />
+                    <Image src={dish.imgUrl || ''} alt="" className="dish-img" />
                     <div className="dish-info">
                         <h3>{dish.name}</h3>
                         {!isRestaurantPage && (
-                            <img src={dish.iconUrl} alt="" className="dish-icon" />
+                            <Image src={dish.iconUrl || ''} alt="" className="dish-icon" />
                         )}
                         <p>{dish.ingredients?.join(', ')}</p>
                         <div className="price-container">

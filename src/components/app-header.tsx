@@ -15,13 +15,7 @@ import { toggleSignInModal } from "../store/user/user.actions"
 import { SET_HEADER } from "../store/user/user.reducer"
 import { LogoutModal } from "./sign-in/logout-modal"
 import { restaurantService } from "../services/restaurant.service"
-
-import bag_icon from '/imgs/bag.svg'
-import logo from '/imgs/logo.svg'
-import menu from '/imgs/menu.svg'
-import search from '/imgs/search-icon.svg'
-import user from '/imgs/user-icon.svg'
-import close from '/imgs/close.svg'
+import Image from "./image"
 
 export default function AppHeader() {
     const loggedInUser = useSelector((storeState: RootState) => storeState.userModule.user)
@@ -94,13 +88,11 @@ export default function AppHeader() {
     return (
         <header className="app-header main-layout full">
             <div className="app-header-container">
-                {!isCheckoutPage ? <img src={menu} alt="" className="menu-icon" onClick={toggleMenu} /> : (
-                    <img src={close} alt="" className="close-icon"
-                        onClick={() => navigate(-1)}
-                    />
+                {!isCheckoutPage ? <Image src="menu.svg" alt="menu-icon" className="menu-icon" onClick={toggleMenu} /> : (
+                    <Image src="close.svg" alt="close-icon" className="close-icon" onClick={() => navigate(-1)} />
                 )}
                 <Link to='/' className="logo-container">
-                    <img src={logo} alt="logo-icon" />
+                    <Image src="logo.svg" alt="logo-icon" />
                     <h3>EPICURE</h3>
                 </Link>
                 {!isCheckoutPage ? (
@@ -110,10 +102,10 @@ export default function AppHeader() {
                             <NavLink to='/chef'>Chefs</NavLink>
                         </div>
                         <div className="actions">
-                            <button onClick={toggleSearch} className="search-icon"><img src={search} alt="" /></button>
-                            <button onClick={onUserClick} ref={userIconRef}><img src={user} alt="" /></button>
+                            <button onClick={toggleSearch} className="search-icon"><Image src="search-icon.svg" alt="search-icon" /></button>
+                            <button onClick={onUserClick} ref={userIconRef}><Image src="user-icon.svg" alt="user-icon" /></button>
                             <button onClick={toggleBag} className="bag-icon">
-                                <img src={bag_icon} alt="" />
+                                <Image src="bag.svg" alt="bag-icon" />
                                 {bag.length > 0 && (
                                     <span className="bag-count">{bag.length}</span>
                                 )}

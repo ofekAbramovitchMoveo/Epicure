@@ -1,9 +1,8 @@
 import { Suggestion } from "../../types/restaurant.type"
+import Image from "../image"
 import SearchSuggestions from "../search-suggestions"
 import HeaderModal from "./header-modal"
 
-import close from '/imgs/close.svg'
-import search from '/imgs/search-icon.svg'
 
 interface SearchModalProps {
     isSearchOpen: boolean
@@ -25,11 +24,11 @@ export default function SearchModal({ isSearchOpen, toggleSearch, searchInput, s
         >
             <div className="container">
                 <div className="heading">
-                    <img src={close} alt="" onClick={toggleSearch} className="close-icon" />
+                    <Image src="close.svg" alt="" onClick={toggleSearch} className="close-icon" />
                     <h1 className="title">Search</h1>
                 </div>
                 <div className="input-container">
-                    <img src={search} alt="" />
+                    <Image src="search-icon.svg" alt="" />
                     <input type="text"
                         placeholder="Search for restaurant cuisine, chef"
                         value={searchInput}

@@ -11,9 +11,7 @@ import WarningDialog from "../components/modals/warning-dialog"
 import { BagDish, Dish } from "../types/dish.type"
 import { Restaurant } from "../types/restaurant.type"
 import { RootState } from "../store/store"
-
-import close_white from '/imgs/close-white.svg'
-import close from '/imgs/close.svg'
+import Image from "../components/image"
 
 interface DishOrderProps {
     dish: Dish
@@ -102,12 +100,12 @@ export default function DishOrder({ dish, setIsDishOrderOpen, isDishOrderOpen, i
                         width: '100vw',
                     })
                 }}>
-                    <img src={isMobile ? close : close_white} alt="" onClick={() => setIsDishOrderOpen(false)} className="close-icon" />
-                    <img src={dish.imgUrl} alt="" className="dish-img full" />
+                    <Image src={isMobile ? "close.svg" : "close-white.svg"} alt="" onClick={() => setIsDishOrderOpen(false)} className="close-icon" />
+                    <Image src={dish.imgUrl || ""} alt="" className="dish-img full" />
                     <div className="order-info">
                         <h1>{dish.name}</h1>
                         <p>{dish.ingredients?.join(', ')}</p>
-                        <img className="icon" src={dish.iconUrl} alt="" />
+                        <Image className="icon" src={dish.iconUrl || ""} alt="" />
                         <div className="price-container">
                             <hr className="line" />
                             <span className="price">₪{dish.price}</span>

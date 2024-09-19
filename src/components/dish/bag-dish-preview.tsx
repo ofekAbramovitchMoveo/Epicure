@@ -5,8 +5,7 @@ import { IconButton, TextField } from '@mui/material'
 
 import { updateDishQuantity } from '../../store/restaurant/restaurant.actions'
 import { BagDish } from '../../types/dish.type'
-
-import trash from '/imgs/trash.svg'
+import Image from '../image'
 
 interface BagDishPreviewProps {
     dish: BagDish
@@ -37,7 +36,7 @@ export default function BagDishPreview({ dish, onRemoveDish }: BagDishPreviewPro
     return (
         <section className="bag-dish-preview">
             <div className="img-container">
-                <img src={dish.imgUrl} alt="" className="dish-img" />
+                <Image src={dish.imgUrl || ''} alt="" className="dish-img" />
             </div>
             <div className={`dish-info ${isExpanded ? 'expanded' : ''}`}>
                 <div className="dish-details">
@@ -66,7 +65,7 @@ export default function BagDishPreview({ dish, onRemoveDish }: BagDishPreviewPro
                                     <IconButton className="plus btn" onClick={() => handleQuantityChange(1)}>
                                         <Add />
                                     </IconButton>
-                                    <img src={trash} alt="" onClick={() => onRemoveDish(dish.bagDishId || '')} className="trash-icon" />
+                                    <Image src="trash.svg" alt="" onClick={() => onRemoveDish(dish.bagDishId || '')} className="trash-icon" />
                                 </>
                             ) : (
                                 dish.quantity

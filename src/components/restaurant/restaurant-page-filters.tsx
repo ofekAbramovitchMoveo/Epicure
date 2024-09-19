@@ -6,8 +6,7 @@ import PriceRangeModal from '../modals/price-range-modal'
 import DistanceModal from '../modals/distance-modal'
 import RatingsModal from '../modals/ratings-modal'
 import { FilterBy } from '../../types/filter-by.type'
-
-import arrow from '/imgs/arrow-down.svg'
+import Image from '../image'
 
 interface RestaurantPageFiltersProps {
     setFilterBy: (updater: (prevState: FilterBy) => FilterBy) => void
@@ -155,7 +154,7 @@ export default function RestaurantPageFilters({ setFilterBy }: RestaurantPageFil
     return (
         <section className="restaurant-page-filters full">
             <div className="price-container" ref={priceContainerRef}>
-                <button className="price" onClick={togglePriceModal}>Price Range <img src={arrow} alt="" /></button>
+                <button className="price" onClick={togglePriceModal}>Price Range <Image src="arrow-down.svg" alt="" /></button>
                 {isPriceModalOpen && (
                     <PriceRangeModal
                         isPriceModalOpen={isPriceModalOpen}
@@ -173,7 +172,7 @@ export default function RestaurantPageFilters({ setFilterBy }: RestaurantPageFil
                 )}
             </div>
             <div className="distance-container" ref={distanceContainerRef}>
-                <button className="distance" onClick={toggleDistanceModal}>Distance <img src={arrow} alt="" /></button>
+                <button className="distance" onClick={toggleDistanceModal}>Distance <Image src="arrow-down.svg" alt="" /></button>
                 {isDistanceModalOpen && (
                     <DistanceModal
                         isDistanceModalOpen={isDistanceModalOpen}
@@ -191,7 +190,7 @@ export default function RestaurantPageFilters({ setFilterBy }: RestaurantPageFil
                 )}
             </div>
             <div className="rating-container" ref={ratingContainerRef}>
-                <button className="rating" onClick={toggleRatingModal}>Rating <img src={arrow} alt="" /></button>
+                <button className="rating" onClick={toggleRatingModal}>Rating <Image src="arrow-down.svg" alt="" /></button>
                 {isRatingModalOpen && (
                     <RatingsModal
                         isRatingModalOpen={isRatingModalOpen}
