@@ -18,6 +18,7 @@ export type RootState = {
         isBagOpen: boolean
         isLoading: boolean
         isWarningPopupOpen: boolean
+        isLocationWarningPopupOpen: boolean
     }
     chefModule: {
         chefs: Chef[]

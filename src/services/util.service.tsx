@@ -1,5 +1,5 @@
 import Image from '../components/image'
-import { Coordinates } from '../components/map/map'
+import { Coordinates } from '../pages/restaurant-page'
 
 export const utilService = {
     renderStars,
@@ -31,7 +31,7 @@ function debounce(func: Function, delay: number) {
 }
 
 function getUserLocation(): Promise<Coordinates | null> {
-    return new Promise((res, rej) => {
+    return new Promise((res) => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 position => {
@@ -39,11 +39,13 @@ function getUserLocation(): Promise<Coordinates | null> {
                     res({ lat: latitude, lng: longitude })
                 },
                 err => {
-                    rej(err)
+                    console.log('Geolocation error:', err)
+                    res(null)
                 }
             )
         } else {
-            rej(new Error('Geolocation is not supported by this browser.'))
+            console.log('Geolocation is not supported by this browser.')
+            res(null)
         }
     })
 }

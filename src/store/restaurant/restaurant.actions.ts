@@ -2,7 +2,7 @@ import { restaurantService } from "../../services/restaurant.service"
 import { BagDish } from "../../types/dish.type"
 import { Restaurant } from "../../types/restaurant.type"
 import { store } from "../store"
-import { ADD_TO_BAG, CLEAR_BAG, REMOVE_FROM_BAG, SET_BAG, SET_RESTAURANT, SET_RESTAURANTS, SET_WARNING_POPUP, TOGGLE_BAG_MODAL, UPDATE_DISH_QUANTITY } from "./restaurant.reducer"
+import { ADD_TO_BAG, CLEAR_BAG, REMOVE_FROM_BAG, SET_BAG, SET_RESTAURANT, SET_RESTAURANTS, SET_WARNING_POPUP, TOGGLE_BAG_MODAL, TOGGLE_LOCATION_WARNING_POPUP, UPDATE_DISH_QUANTITY } from "./restaurant.reducer"
 
 export async function loadRestaurants(filterBy = {}): Promise<void> {
     try {
@@ -59,4 +59,8 @@ export function updateDishQuantity(dishId: string, quantity: number): void {
 
 export function setWarningPopup(isWarningPopupOpen: boolean): void {
     store.dispatch({ type: SET_WARNING_POPUP, isWarningPopupOpen })
+}
+
+export function toggleLocationWarningPopup(): void {
+    store.dispatch({ type: TOGGLE_LOCATION_WARNING_POPUP })
 }

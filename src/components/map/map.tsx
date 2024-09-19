@@ -3,33 +3,26 @@ import { useMediaQuery } from "react-responsive"
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api"
 
 import RestaurantMarker from "./restaurant-marker"
-import { utilService } from "../../services/util.service"
 import { Restaurant } from "../../types/restaurant.type"
+import LocationWarningDialog from "../modals/location-warning-dialog"
+import { Coordinates } from "../../pages/restaurant-page"
+import { toggleLocationWarningPopup } from "../../store/restaurant/restaurant.actions"
 
 interface MapProps {
     restaurants: Restaurant[]
+    userLocation: Coordinates | null
 }
 
-export interface Coordinates {
-    lat: number
-    lng: number
-}
-
-export default function Map({ restaurants }: MapProps) {
+export default function Map({ restaurants, userLocation }: MapProps) {
     const [map, setMap] = useState<google.maps.Map | null>(null)
     const [currentRestaurants, setCurrentRestaurants] = useState<Restaurant[]>([])
-    const [userLocation, setUserLocation] = useState<Coordinates | null>(null)
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const mapRef = useRef<google.maps.Map | null>(null)
     const defaultLocation = { lat: 32.0853, lng: 34.7818 }
 
     useEffect(() => {
-        async function fetchUserLocation() {
-            const location = await utilService.getUserLocation()
-            setUserLocation(location)
-        }
-        fetchUserLocation()
-    }, [])
+        if (!userLocation) toggleLocationWarningPopup()
+    }, [userLocation])
 
     useEffect(() => {
         setCurrentRestaurants(restaurants)
@@ -57,31 +50,34 @@ export default function Map({ restaurants }: MapProps) {
     }, [])
 
 
-    return isLoaded && userLocation ? (
-        <GoogleMap
-            mapContainerStyle={mapContainerStyle}
-            center={{ lat: userLocation?.lat || defaultLocation.lat, lng: userLocation?.lng || defaultLocation.lng }}
-            zoom={14}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
-            options={{ mapId: "bf940397493a94a5" }}
-        >
-            {currentRestaurants.map(restaurant => {
-                const position = {
-                    lat: restaurant.location.coordinates[1],
-                    lng: restaurant.location.coordinates[0]
-                }
+    return isLoaded ? (
+        <>
+            <GoogleMap
+                mapContainerStyle={mapContainerStyle}
+                center={{ lat: userLocation?.lat || defaultLocation.lat, lng: userLocation?.lng || defaultLocation.lng }}
+                zoom={14}
+                onLoad={onLoad}
+                onUnmount={onUnmount}
+                options={{ mapId: "bf940397493a94a5" }}
+            >
+                {currentRestaurants.map(restaurant => {
+                    const position = {
+                        lat: restaurant.location.coordinates[1],
+                        lng: restaurant.location.coordinates[0]
+                    }
 
-                return (
-                    <RestaurantMarker
-                        key={restaurant._id}
-                        position={position}
-                        map={map}
-                        title={restaurant.name} />
-                )
+                    return (
+                        <RestaurantMarker
+                            key={restaurant._id}
+                            position={position}
+                            map={map}
+                            title={restaurant.name} />
+                    )
 
-            })}
-            <RestaurantMarker position={userLocation} map={map} title={`You`} />
-        </GoogleMap>
+                })}
+                {userLocation && <RestaurantMarker position={userLocation} map={map} title={`You`} />}
+            </GoogleMap>
+            {!userLocation && <LocationWarningDialog />}
+        </>
     ) : <></>
 }

@@ -29,7 +29,10 @@ async function query(filterBy: FilterBy = {}): Promise<Restaurant[]> {
     )))
 
     const userLocation = await utilService.getUserLocation()
-    queryParams.append('userLocation', JSON.stringify(userLocation))
+    if (userLocation) {
+        queryParams.append('userLocation', JSON.stringify(userLocation))
+    }
+
     return httpService.get(`${BASE_URL}?${queryParams}`)
 }
 

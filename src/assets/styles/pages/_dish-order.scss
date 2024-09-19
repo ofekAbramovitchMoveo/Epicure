@@ -84,7 +84,7 @@
 }
 
 .warning-dialog {
-    
+
     .dialog-box {
         overflow: hidden;
         width: 100%;
@@ -94,6 +94,15 @@
         align-items: center;
         padding: 48px 0;
         gap: 48px;
+
+        &.location {
+            gap: 80px;
+
+            .location-icon {
+                width: 80px;
+                height: 80px;
+            }
+        }
 
         .question {
             height: 64px;
@@ -111,6 +120,10 @@
                 font-weight: 200;
                 font-size: 24px;
                 letter-spacing: 2.67px;
+
+                &.location {
+                    font-size: 28px;
+                }
             }
 
             .desc {
@@ -119,6 +132,11 @@
                 line-height: 18px;
                 letter-spacing: 1.97px;
                 width: 79%;
+
+                &.location {
+                    font-size: 20px;
+                    line-height: 25px;
+                }
             }
         }
 

@@ -13,6 +13,7 @@ export const TOGGLE_BAG_MODAL = 'TOGGLE_BAG_MODAL'
 export const UPDATE_DISH_QUANTITY = 'UPDATE_DISH_QUANTITY'
 export const SET_BAG = 'SET_BAG'
 export const SET_WARNING_POPUP = 'SET_WARNING_POPUP'
+export const TOGGLE_LOCATION_WARNING_POPUP = 'TOGGLE_LOCATION_WARNING_POPUP'
 
 type RestaurantAction = Action & {
     restaurants?: Restaurant[]
@@ -22,6 +23,7 @@ type RestaurantAction = Action & {
     quantity?: number
     bag?: BagDish[]
     isWarningPopupOpen?: boolean
+    isLocationWarningPopupOpen?: boolean
 }
 
 const initialState: {
@@ -29,13 +31,15 @@ const initialState: {
     restaurant: Restaurant | null,
     bag: BagDish[],
     isBagOpen: boolean,
-    isWarningPopupOpen: boolean
+    isWarningPopupOpen: boolean,
+    isLocationWarningPopupOpen: boolean
 } = {
     restaurants: [],
     restaurant: null,
     bag: [],
     isBagOpen: false,
-    isWarningPopupOpen: false
+    isWarningPopupOpen: false,
+    isLocationWarningPopupOpen: false
 }
 
 export function restaurantReducer(state = initialState, action: RestaurantAction) {
@@ -84,6 +88,8 @@ export function restaurantReducer(state = initialState, action: RestaurantAction
             return { ...state, bag: action.bag }
         case SET_WARNING_POPUP:
             return { ...state, isWarningPopupOpen: action.isWarningPopupOpen }
+        case TOGGLE_LOCATION_WARNING_POPUP:
+            return { ...state, isLocationWarningPopupOpen: !state.isLocationWarningPopupOpen }
         default:
             return state
     }
