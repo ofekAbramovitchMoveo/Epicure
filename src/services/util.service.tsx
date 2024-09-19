@@ -16,7 +16,7 @@ function renderStars(rating: number) {
         if (i < rating) {
             stars.push(<Image src="star.svg" alt='' key={i} className="filled-star" />)
         } else {
-            stars.push(<Image src="star.svg" alt='' key={i} className="empty-star" />)
+            stars.push(<Image src="empty-star.svg" alt='' key={i} className="empty-star" />)
         }
     }
     return stars

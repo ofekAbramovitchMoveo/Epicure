@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import { utilService } from '../../services/util.service'
@@ -34,13 +34,12 @@ export default function RestaurantPageFilters({ setFilterBy }: RestaurantPageFil
     }, [selectedRatings])
 
     useEffect(() => {
-        if (setFilterBy) {
-            const debouncedSetFilterBy = utilService.debounce(() => {
-                setFilterBy(prevState => ({ ...prevState, ratings: selectedRatings, priceRange, distance }))
-            }, 300)
-            debouncedSetFilterBy()
-        }
-    }, [selectedRatings, distance, priceRange])
+        setFilterBy(prevState => ({ ...prevState, ratings: selectedRatings, distance }))
+    }, [selectedRatings, distance])
+
+    useEffect(() => {
+        debouncedSetPriceRange(priceRange)
+    }, [priceRange])
 
     const togglePriceModal = () => {
         setIsDistanceModalOpen(false)
@@ -150,6 +149,10 @@ export default function RestaurantPageFilters({ setFilterBy }: RestaurantPageFil
     const handleClearRating = () => {
         setSelectedRatings([])
     }
+
+    const debouncedSetPriceRange = useCallback(utilService.debounce((newValue: [number, number]) => {
+        setFilterBy(prevState => ({ ...prevState, priceRange: newValue }))
+    }, 300), [])
 
     return (
         <section className="restaurant-page-filters full">
