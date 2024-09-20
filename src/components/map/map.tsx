@@ -22,7 +22,7 @@ export default function Map({ restaurants, userLocation }: MapProps) {
 
     useEffect(() => {
         if (!userLocation) toggleLocationWarningPopup()
-    }, [userLocation])
+    }, [userLocation?.lat, userLocation?.lng])
 
     useEffect(() => {
         setCurrentRestaurants(restaurants)

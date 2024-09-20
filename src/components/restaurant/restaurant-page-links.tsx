@@ -22,10 +22,6 @@ export default function RestaurantPageLinks({ setFilterBy }: RestaurantPageLinks
         updateActiveClass()
     }, [location.pathname])
 
-    useEffect(() => {
-        updateActiveClass()
-    }, [swiperRef.current?.swiper as SwiperType])
-
     const links = [
         { to: '/restaurants', label: 'All' },
         { to: '/restaurants/new', label: 'New' },

@@ -139,7 +139,7 @@ export default function HomePage({ restaurants, chefs }: HomePageProps) {
                             </p>
                             <div className="btns">
                                 <button className="app-store-btn">
-                                    <span className="logo"></span>
+                                    <Image src="apple.svg" alt="" className="logo" />
                                     <p>Download on the <br /> <span>App Store</span></p>
                                 </button>
                                 <button className="google-store-btn">

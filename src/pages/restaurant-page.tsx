@@ -34,8 +34,10 @@ export default function RestaurantPage({ restaurants, setFilterBy }: RestaurantP
             setUserLocation(location)
         }
         fetchUserLocation()
-        if (!userLocation) toggleLocationWarningPopup()
-    }, [userLocation])
+        setTimeout(() => {
+            if (!userLocation) toggleLocationWarningPopup()
+        }, 1000);
+    }, [userLocation?.lat, userLocation?.lng])
 
     return (
         <>
