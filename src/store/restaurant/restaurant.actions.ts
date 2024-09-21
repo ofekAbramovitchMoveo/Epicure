@@ -13,12 +13,14 @@ export async function loadRestaurants(filterBy = {}): Promise<void> {
     }
 }
 
-export async function loadRestaurant(restaurantId: string): Promise<void> {
+export async function loadRestaurant(restaurantId: string): Promise<Restaurant | null> {
     try {
         const restaurant: Restaurant = await restaurantService.getById(restaurantId)
         store.dispatch({ type: SET_RESTAURANT, restaurant })
+        return restaurant
     } catch (err) {
         console.log('RestaurantActions: err in loadRestaurant', err)
+        return null
     }
 }
 
