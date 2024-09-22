@@ -6,27 +6,37 @@ import Map from "../components/map/map"
 import RestaurantList from "../components/restaurant/restaurant-list"
 import RestaurantPageFilters from "../components/restaurant/restaurant-page-filters"
 import RestaurantPageLinks from "../components/restaurant/restaurant-page-links"
-import { Restaurant } from "../types/restaurant.type"
-import { FilterBy } from "../types/filter-by.type"
-import { toggleLocationWarningPopup } from "../store/restaurant/restaurant.actions"
+import { loadRestaurants, toggleLocationWarningPopup } from "../store/restaurant/restaurant.actions"
 import { utilService } from "../services/util.service"
 import LocationWarningDialog from "../components/modals/location-warning-dialog"
-
-interface RestaurantPageProps {
-    restaurants: Restaurant[]
-    setFilterBy: (updater: (prevState: FilterBy) => FilterBy) => void
-}
+import { useSelector } from "react-redux"
+import { RootState } from "../store/store"
+import { loadChefs } from "../store/chef/chef.actions"
 
 export interface Coordinates {
     lat: number
     lng: number
 }
 
-export default function RestaurantPage({ restaurants, setFilterBy }: RestaurantPageProps) {
+export default function RestaurantPage() {
+    const restaurants = useSelector((storeState: RootState) => storeState.restaurantModule.restaurants)
+    const [filterBy, setFilterBy] = useState({})
     const [userLocation, setUserLocation] = useState<Coordinates | null>(null)
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const location = useLocation()
     const isMapView = location.pathname.includes('map')
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                await loadRestaurants(filterBy)
+                await loadChefs()
+            } catch (error) {
+                console.log('error loading restaurants or chefs', error)
+            }
+        }
+        fetchData()
+    }, [filterBy])
 
     useEffect(() => {
         async function fetchUserLocation() {
@@ -34,10 +44,8 @@ export default function RestaurantPage({ restaurants, setFilterBy }: RestaurantP
             setUserLocation(location)
         }
         fetchUserLocation()
-        setTimeout(() => {
-            if (!userLocation) toggleLocationWarningPopup()
-        }, 2000);
-    }, [userLocation?.lat, userLocation?.lng])
+        if (!userLocation) toggleLocationWarningPopup()
+    }, [userLocation])
 
     return (
         <>
@@ -48,7 +56,7 @@ export default function RestaurantPage({ restaurants, setFilterBy }: RestaurantP
                 <RestaurantPageLinks setFilterBy={setFilterBy} />
                 <RestaurantPageFilters setFilterBy={setFilterBy} />
                 {!isMapView ? (
-                    <RestaurantList restaurants={restaurants} isChefRestaurants={false} chefId={null} />
+                    <RestaurantList restaurants={restaurants} isChefRestaurants={false} />
                 ) : (
                     <Map restaurants={restaurants} userLocation={userLocation} />
                 )}

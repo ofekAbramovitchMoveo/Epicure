@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router'
 import { useSelector } from 'react-redux'
 import { useMediaQuery } from 'react-responsive'
@@ -8,8 +7,7 @@ import AppHeader from './components/app-header'
 import HomePage from './pages/home-page'
 import RestaurantDetails from './pages/restaurant-details'
 import RestaurantPage from './pages/restaurant-page'
-import { loadChefs } from './store/chef/chef.actions'
-import { clearBag, loadRestaurants, setWarningPopup, toggleBag } from './store/restaurant/restaurant.actions'
+import { clearBag, setWarningPopup, toggleBag } from './store/restaurant/restaurant.actions'
 import { RootState } from './store/store'
 import CheckoutPage from './pages/checkout-page'
 import CheckoutSuccessModal from './components/modals/checkout-success-modal'
@@ -18,38 +16,12 @@ import OrderHistory from './pages/order-history'
 import ChefPage from './pages/chef-page'
 
 export default function App() {
-    const restaurants = useSelector((storeState: RootState) => storeState.restaurantModule.restaurants)
-    const chefs = useSelector((storeState: RootState) => storeState.chefModule.chefs)
     const isCheckoutSuccessOpen = useSelector((storeState: RootState) => storeState.orderModule.isCheckoutSuccessOpen)
     const isWarningPopupOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isWarningPopupOpen)
     const isBagOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isBagOpen)
-    const [filterBy, setFilterBy] = useState({})
-    const [chefFilterBy, setChefFilterBy] = useState({ path: '' })
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const location = useLocation()
     const isCheckoutPage = location.pathname.includes('/checkout')
-
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                await loadChefs(chefFilterBy)
-            } catch (error) {
-                console.log('error loading chefs', error)
-            }
-        }
-        fetchData()
-    }, [chefFilterBy])
-
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                await loadRestaurants(filterBy)
-            } catch (error) {
-                console.log('error loading restaurants', error)
-            }
-        }
-        fetchData()
-    }, [filterBy])
 
     function onClearBag() {
         clearBag()
@@ -63,29 +35,20 @@ export default function App() {
                 <AppHeader />
                 <main className="main-container full">
                     <Routes>
-                        <Route path='/' element={<HomePage restaurants={restaurants} chefs={chefs} />} />
-                        <Route path='/restaurants' element={<RestaurantPage restaurants={restaurants}
-                            setFilterBy={setFilterBy}
-                        />} />
-                        <Route path='/restaurants/new' element={<RestaurantPage restaurants={restaurants}
-                            setFilterBy={setFilterBy}
-                        />} />
-                        <Route path='/restaurants/most-popular' element={<RestaurantPage restaurants={restaurants}
-                            setFilterBy={setFilterBy}
-                        />} />
-                        <Route path='/restaurants/open-now' element={<RestaurantPage restaurants={restaurants}
-                            setFilterBy={setFilterBy}
-                        />} />
-                        <Route path='/restaurants/map' element={<RestaurantPage restaurants={restaurants}
-                            setFilterBy={setFilterBy} />} />
+                        <Route path='/' element={<HomePage />} />
+                        <Route path='/restaurants' element={<RestaurantPage />} />
+                        <Route path='/restaurants/new' element={<RestaurantPage />} />
+                        <Route path='/restaurants/most-popular' element={<RestaurantPage />} />
+                        <Route path='/restaurants/open-now' element={<RestaurantPage />} />
+                        <Route path='/restaurants/map' element={<RestaurantPage />} />
                         <Route path='/restaurant/:restaurantId' element={<RestaurantDetails />} />
                         <Route path='/restaurant/:restaurantId/lunch' element={<RestaurantDetails />} />
                         <Route path='/restaurant/:restaurantId/dinner' element={<RestaurantDetails />} />
                         <Route path='/checkout' element={<CheckoutPage />} />
                         <Route path='/order-history' element={<OrderHistory />} />
-                        <Route path='/chefs' element={<ChefPage chefs={chefs} setChefFilterBy={setChefFilterBy} />} />
-                        <Route path='/chefs/new' element={<ChefPage chefs={chefs} setChefFilterBy={setChefFilterBy} />} />
-                        <Route path='/chefs/most-viewed' element={<ChefPage chefs={chefs} setChefFilterBy={setChefFilterBy} />} />
+                        <Route path='/chefs' element={<ChefPage />} />
+                        <Route path='/chefs/new' element={<ChefPage />} />
+                        <Route path='/chefs/most-viewed' element={<ChefPage />} />
                     </Routes>
                 </main>
                 {(!isCheckoutPage || (isCheckoutPage && !isMobile)) && <AppFooter />}

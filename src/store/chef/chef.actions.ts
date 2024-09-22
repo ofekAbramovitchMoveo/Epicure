@@ -2,7 +2,7 @@ import { chefService } from "../../services/chef.service"
 import { store } from "../store"
 import { SET_CHEF, SET_CHEFS } from "./chef.reducer"
 
-export async function loadChefs(filterBy: { path: string }) {
+export async function loadChefs(filterBy: { path: string } = { path: '' }) {
     try {
         const chefs = await chefService.query(filterBy)
         store.dispatch({ type: SET_CHEFS, chefs })

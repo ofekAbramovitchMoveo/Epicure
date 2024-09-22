@@ -7,16 +7,15 @@ import RestaurantList from "../components/restaurant/restaurant-list"
 import SearchSuggestions from "../components/search-suggestions"
 import { loadRestaurants } from '../store/restaurant/restaurant.actions'
 import { restaurantService } from '../services/restaurant.service'
-import { Restaurant, Suggestion } from '../types/restaurant.type'
-import { Chef } from '../types/chef.type'
+import { Suggestion } from '../types/restaurant.type'
 import Image from '../components/image'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store/store'
+import { loadChefs } from '../store/chef/chef.actions'
 
-interface HomePageProps {
-    restaurants: Restaurant[]
-    chefs: Chef[]
-}
-
-export default function HomePage({ restaurants, chefs }: HomePageProps) {
+export default function HomePage() {
+    const restaurants = useSelector((storeState: RootState) => storeState.restaurantModule.restaurants)
+    const chefs = useSelector((storeState: RootState) => storeState.chefModule.chefs)
     const [searchInput, setSearchInput] = useState("")
     const [suggestions, setSuggestions] = useState<Suggestion[]>([])
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -24,6 +23,7 @@ export default function HomePage({ restaurants, chefs }: HomePageProps) {
     useEffect(() => {
         async function fetchData() {
             await loadRestaurants()
+            await loadChefs()
         }
         fetchData()
 
