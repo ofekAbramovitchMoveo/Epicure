@@ -45,7 +45,7 @@ export default function RestaurantPage() {
         }
         fetchUserLocation()
         if (!userLocation) toggleLocationWarningPopup()
-    }, [userLocation])
+    }, [userLocation?.lat, userLocation?.lng])
 
     return (
         <>
