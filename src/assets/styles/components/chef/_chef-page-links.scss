@@ -1,0 +1,28 @@
+.chef-page-links {
+    margin-top: 24px;
+    display: flex;
+    gap: 21px;
+
+    a {
+        font-weight: 200;
+        font-size: 18px;
+        letter-spacing: 1.92px;
+
+        &.active {
+            font-weight: 400;
+            border-bottom: 1.8px solid rgba(222, 146, 0, 0.9);
+        }
+    }
+}
+
+@include for-normal-layout {
+    .chef-page-links {
+        margin-top: 48px;
+        justify-content: center;
+        gap: 40px;
+
+        a.active {
+            border-bottom: none;
+        }
+    }
+}

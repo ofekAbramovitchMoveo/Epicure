@@ -1,0 +1,33 @@
+.chef-preview {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .chef-info {
+        background-color: rgba(#fff, 0.8);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+            font-weight: 400;
+            font-size: 24px;
+            letter-spacing: 2.67px;
+        }
+    }
+}
+
+@include for-normal-layout {
+    .chef-preview {
+        
+        .chef-info {
+            
+            h3 {
+                font-size: 40px;
+            }
+        }
+    }
+}

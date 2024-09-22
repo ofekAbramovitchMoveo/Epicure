@@ -22,7 +22,7 @@ export default function MenuModal({ isMenuOpen, toggleMenu }: MenuModalProps) {
             <Image src="close.svg" alt="" onClick={toggleMenu} className="close-icon" />
             <nav className="menu-nav-links">
                 <NavLink to='/restaurants' onClick={toggleMenu}>Restaurants</NavLink>
-                <NavLink to='/chef' onClick={toggleMenu}>Chefs</NavLink>
+                <NavLink to='/chefs' onClick={toggleMenu}>Chefs</NavLink>
             </nav>
             <AppFooter />
         </HeaderModal>
