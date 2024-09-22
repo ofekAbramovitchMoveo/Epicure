@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLocation } from 'react-router'
 import { useMediaQuery } from 'react-responsive'
 import { Add, Remove } from '@mui/icons-material'
 import { IconButton, TextField } from '@mui/material'
@@ -15,6 +16,8 @@ interface BagDishPreviewProps {
 export default function BagDishPreview({ dish, onRemoveDish }: BagDishPreviewProps) {
     const [isExpanded, setIsExpanded] = useState(false)
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+    const location = useLocation()
+    const isCheckoutPage = location.pathname.includes('/checkout')
 
     const onQuantityClick = () => {
         if (!isMobile && !isExpanded) {
@@ -35,7 +38,7 @@ export default function BagDishPreview({ dish, onRemoveDish }: BagDishPreviewPro
 
     return (
         <section className="bag-dish-preview">
-            <div className="img-container">
+            <div className={`img-container ${isCheckoutPage ? 'checkout' : ''}`}>
                 <Image src={dish.imgUrl || ''} alt="" className="dish-img" />
             </div>
             <div className={`dish-info ${isExpanded ? 'expanded' : ''}`}>

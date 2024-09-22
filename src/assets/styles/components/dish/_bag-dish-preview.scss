@@ -5,6 +5,10 @@
     .img-container {
         width: 96px;
 
+        &.checkout {
+            width: 80px;
+        }
+
         .dish-img {
             height: 100%;
             width: 100%;
@@ -88,6 +92,13 @@
 
 @include for-normal-layout {
     .bag-dish-preview {
+
+        .img-container {
+
+            &.checkout {
+                width: 96px;
+            }
+        }
 
         .dish-info {
             transition: all 0.3s linear;
