@@ -7,24 +7,26 @@ import RestaurantList from "../components/restaurant/restaurant-list"
 import RestaurantPageFilters from "../components/restaurant/restaurant-page-filters"
 import RestaurantPageLinks from "../components/restaurant/restaurant-page-links"
 import { loadRestaurants, toggleLocationWarningPopup } from "../store/restaurant/restaurant.actions"
-import { utilService } from "../services/util.service"
 import LocationWarningDialog from "../components/modals/location-warning-dialog"
 import { useSelector } from "react-redux"
 import { RootState } from "../store/store"
 import { loadChefs } from "../store/chef/chef.actions"
+import { Coordinates } from "../App"
 
-export interface Coordinates {
-    lat: number
-    lng: number
+interface RestaurantPageProps {
+    userLocation: Coordinates | null
 }
 
-export default function RestaurantPage() {
+export default function RestaurantPage({ userLocation }: RestaurantPageProps) {
     const restaurants = useSelector((storeState: RootState) => storeState.restaurantModule.restaurants)
     const [filterBy, setFilterBy] = useState({})
-    const [userLocation, setUserLocation] = useState<Coordinates | null>(null)
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const location = useLocation()
     const isMapView = location.pathname.includes('map')
+
+    useEffect(() => {
+        if (!userLocation) toggleLocationWarningPopup()
+    }, [userLocation?.lat, userLocation?.lng])
 
     useEffect(() => {
         async function fetchData() {
@@ -37,15 +39,6 @@ export default function RestaurantPage() {
         }
         fetchData()
     }, [filterBy])
-
-    useEffect(() => {
-        async function fetchUserLocation() {
-            const location = await utilService.getUserLocation()
-            setUserLocation(location)
-        }
-        fetchUserLocation()
-        if (!userLocation) toggleLocationWarningPopup()
-    }, [userLocation?.lat, userLocation?.lng])
 
     return (
         <>

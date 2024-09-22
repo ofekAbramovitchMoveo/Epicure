@@ -5,7 +5,7 @@ import { GoogleMap, useJsApiLoader } from "@react-google-maps/api"
 import RestaurantMarker from "./restaurant-marker"
 import { Restaurant } from "../../types/restaurant.type"
 import LocationWarningDialog from "../modals/location-warning-dialog"
-import { Coordinates } from "../../pages/restaurant-page"
+import { Coordinates } from "../../App"
 import { toggleLocationWarningPopup } from "../../store/restaurant/restaurant.actions"
 
 interface MapProps {

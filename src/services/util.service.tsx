@@ -1,5 +1,5 @@
 import Image from '../components/image'
-import { Coordinates } from '../pages/restaurant-page'
+import { Coordinates } from '../App'
 
 export const utilService = {
     renderStars,

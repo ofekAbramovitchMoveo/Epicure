@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router'
 import { useSelector } from 'react-redux'
 import { useMediaQuery } from 'react-responsive'
@@ -14,14 +15,29 @@ import CheckoutSuccessModal from './components/modals/checkout-success-modal'
 import WarningDialog from './components/modals/warning-dialog'
 import OrderHistory from './pages/order-history'
 import ChefPage from './pages/chef-page'
+import { utilService } from './services/util.service'
+
+export interface Coordinates {
+    lat: number
+    lng: number
+}
 
 export default function App() {
     const isCheckoutSuccessOpen = useSelector((storeState: RootState) => storeState.orderModule.isCheckoutSuccessOpen)
     const isWarningPopupOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isWarningPopupOpen)
     const isBagOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isBagOpen)
+    const [userLocation, setUserLocation] = useState<Coordinates | null>(null)
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const location = useLocation()
     const isCheckoutPage = location.pathname.includes('/checkout')
+
+    useEffect(() => {
+        async function fetchUserLocation() {
+            const location = await utilService.getUserLocation()
+            setUserLocation(location)
+        }
+        fetchUserLocation()
+    }, [userLocation?.lat, userLocation?.lng])
 
     function onClearBag() {
         clearBag()
@@ -36,11 +52,11 @@ export default function App() {
                 <main className="main-container full">
                     <Routes>
                         <Route path='/' element={<HomePage />} />
-                        <Route path='/restaurants' element={<RestaurantPage />} />
-                        <Route path='/restaurants/new' element={<RestaurantPage />} />
-                        <Route path='/restaurants/most-popular' element={<RestaurantPage />} />
-                        <Route path='/restaurants/open-now' element={<RestaurantPage />} />
-                        <Route path='/restaurants/map' element={<RestaurantPage />} />
+                        <Route path='/restaurants' element={<RestaurantPage userLocation={userLocation} />} />
+                        <Route path='/restaurants/new' element={<RestaurantPage userLocation={userLocation} />} />
+                        <Route path='/restaurants/most-popular' element={<RestaurantPage userLocation={userLocation} />} />
+                        <Route path='/restaurants/open-now' element={<RestaurantPage userLocation={userLocation} />} />
+                        <Route path='/restaurants/map' element={<RestaurantPage userLocation={userLocation} />} />
                         <Route path='/restaurant/:restaurantId' element={<RestaurantDetails />} />
                         <Route path='/restaurant/:restaurantId/lunch' element={<RestaurantDetails />} />
                         <Route path='/restaurant/:restaurantId/dinner' element={<RestaurantDetails />} />
