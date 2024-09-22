@@ -99,7 +99,7 @@ export default function AppHeader() {
                     <nav>
                         <div className="nav-links">
                             <NavLink to='/restaurants'>Restaurants</NavLink>
-                            <NavLink to='/chef'>Chefs</NavLink>
+                            <NavLink to='/chefs'>Chefs</NavLink>
                         </div>
                         <div className="actions">
                             <button onClick={toggleSearch} className="search-icon"><Image src="search-icon.svg" alt="search-icon" /></button>

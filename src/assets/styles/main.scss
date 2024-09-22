@@ -14,6 +14,7 @@
 @import './pages/dish-order';
 @import './pages/checkout-page';
 @import './pages/order-history';
+@import './pages/chef-page';
 
 // Components
 @import './components/app-header';
@@ -33,3 +34,6 @@
 @import './components/restaurant/restaurant-details-skeleton';
 @import './components/sign-in-modal';
 @import './components/checkout-success-modal';
+@import './components/chef/chef-page-links';
+@import './components/chef/chef-preview';
+

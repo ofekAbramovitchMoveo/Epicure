@@ -1,0 +1,49 @@
+.chef-page {
+
+    h1 {
+        margin-top: 14px;
+        font-weight: 200;
+        font-size: 18px;
+        letter-spacing: 1.92px;
+    }
+
+    .chef-list-container {
+        margin-top: 32px;
+
+        .chef-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            row-gap: 24px;
+
+            li {
+                height: 338px;
+
+                .chef-preview {
+                    height: 100%;
+
+                    .chef-img {
+                        height: 100%;
+                    }
+
+                    .chef-info {
+                        height: 78px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include for-normal-layout {
+    .chef-page {
+
+        .chef-list-container {
+            margin-top: 40px;
+
+            .chef-list {
+                column-gap: 24px;
+                row-gap: 40px;
+            }
+        }
+    }
+}

@@ -13,6 +13,7 @@ import { Dish } from "../types/dish.type"
 import { loadChef } from "../store/chef/chef.actions"
 import { OpeningHours } from "../types/restaurant.type"
 import Image from "../components/image"
+import { chefService } from "../services/chef.service"
 
 export default function RestaurantDetails() {
     const restaurant = useSelector((storeState: RootState) => storeState.restaurantModule.restaurant)
@@ -20,6 +21,7 @@ export default function RestaurantDetails() {
     const [dishes, setDishes] = useState<Dish[]>([])
     const [isLoading, setIsLoading] = useState(true)
     const [isOpenNow, setIsOpenNow] = useState(false)
+    const [hasIncrementedView, setHasIncrementedView] = useState(false)
     const params = useParams()
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const location = useLocation()
@@ -28,8 +30,13 @@ export default function RestaurantDetails() {
     useEffect(() => {
         async function fetchRestaurant() {
             if (!restaurantId) return
+            setHasIncrementedView(false)
             try {
-                await loadRestaurant(restaurantId)
+                const loadedRestaurant = await loadRestaurant(restaurantId)
+                if (loadedRestaurant?.chefId && !hasIncrementedView) {
+                    await chefService.incrementViewCount(loadedRestaurant.chefId)
+                    setHasIncrementedView(true)
+                }
             } catch (err) {
                 console.log('err', err)
             }

@@ -15,6 +15,7 @@ import CheckoutPage from './pages/checkout-page'
 import CheckoutSuccessModal from './components/modals/checkout-success-modal'
 import WarningDialog from './components/modals/warning-dialog'
 import OrderHistory from './pages/order-history'
+import ChefPage from './pages/chef-page'
 
 export default function App() {
     const restaurants = useSelector((storeState: RootState) => storeState.restaurantModule.restaurants)
@@ -23,20 +24,24 @@ export default function App() {
     const isWarningPopupOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isWarningPopupOpen)
     const isBagOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isBagOpen)
     const [filterBy, setFilterBy] = useState({})
+    const [chefFilterBy, setChefFilterBy] = useState({ path: '' })
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const location = useLocation()
     const isCheckoutPage = location.pathname.includes('/checkout')
 
     useEffect(() => {
         async function fetchData() {
-            await loadChefs()
+            try {
+                await loadChefs(chefFilterBy)
+            } catch (error) {
+                console.log('error loading chefs', error)
+            }
         }
         fetchData()
-    }, [])
+    }, [chefFilterBy])
 
     useEffect(() => {
         async function fetchData() {
-
             try {
                 await loadRestaurants(filterBy)
             } catch (error) {
@@ -78,6 +83,9 @@ export default function App() {
                         <Route path='/restaurant/:restaurantId/dinner' element={<RestaurantDetails />} />
                         <Route path='/checkout' element={<CheckoutPage />} />
                         <Route path='/order-history' element={<OrderHistory />} />
+                        <Route path='/chefs' element={<ChefPage chefs={chefs} setChefFilterBy={setChefFilterBy} />} />
+                        <Route path='/chefs/new' element={<ChefPage chefs={chefs} setChefFilterBy={setChefFilterBy} />} />
+                        <Route path='/chefs/most-viewed' element={<ChefPage chefs={chefs} setChefFilterBy={setChefFilterBy} />} />
                     </Routes>
                 </main>
                 {(!isCheckoutPage || (isCheckoutPage && !isMobile)) && <AppFooter />}
