@@ -89,13 +89,25 @@ svg {}
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    svg {
-        width: 100px;
-        height: 100px;
-    }
+    width: 100px;
+    height: 100px;
+    animation: pulse 1.5s ease-in-out infinite;
 }
 
 .main-container {
     min-height: calc(100vh - 64px - 84px - 48px);
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.8);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
 }

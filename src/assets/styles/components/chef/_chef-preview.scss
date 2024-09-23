@@ -3,7 +3,7 @@
     flex-direction: column;
     position: relative;
 
-    .chef-info {
+    .name-overlay {
         background-color: rgba(#fff, 0.8);
         position: absolute;
         bottom: 0;
@@ -23,7 +23,7 @@
 @include for-normal-layout {
     .chef-preview {
         
-        .chef-info {
+        .name-overlay {
             
             h3 {
                 font-size: 40px;

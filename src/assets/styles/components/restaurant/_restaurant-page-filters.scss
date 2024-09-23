@@ -7,7 +7,7 @@
     height: 60px;
     justify-content: space-between;
 
-    button {
+    .filter-btn {
         background-color: transparent;
         border: none;
         display: flex;
@@ -128,6 +128,7 @@ button.clear-btn {
     display: block;
     opacity: 0;
     transition: opacity 0.3s;
+    background-color: #fff;
 
     &:hover {
         background-color: black;

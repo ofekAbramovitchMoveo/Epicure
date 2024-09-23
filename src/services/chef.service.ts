@@ -9,8 +9,8 @@ export const chefService = {
     incrementViewCount
 }
 
-function query(filterBy: { path: string }): Promise<Chef[]> {
-    const queryString = filterBy.path ? `?path=${filterBy.path}` : ''
+function query(filterBy: { sortBy: string | null, limit: string | null }): Promise<Chef[]> {
+    const queryString = filterBy.sortBy ? `?sortBy=${filterBy.sortBy}&limit=${filterBy.limit}` : ''
     return httpService.get(`${BASE_URL}${queryString}`)
 }
 

@@ -1,6 +1,6 @@
 import { toggleBag } from "../../store/restaurant/restaurant.actions"
 import { BagDish } from "../../types/dish.type"
-import ShoppingBag from "../shopping-bag"
+import ShoppingBag from "../dish/components/shopping-bag"
 import HeaderModal from "./header-modal"
 
 interface BagModalProps {

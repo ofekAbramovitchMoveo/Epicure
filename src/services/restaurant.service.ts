@@ -25,7 +25,7 @@ export const restaurantService = {
 
 async function query(filterBy: FilterBy = {}): Promise<Restaurant[]> {
     const queryParams = new URLSearchParams(Object.entries(filterBy).flatMap(([key, value]) => (
-        Array.isArray(value) ? value.map(val => [key, val.toString()]) : [[key, value.toString()]]
+        Array.isArray(value) ? value.map(val => [key, val.toString()]) : [[key, value?.toString() || '']]
     )))
 
     const userLocation = await utilService.getUserLocation()

@@ -1,6 +1,6 @@
 import { Box, Modal } from "@mui/material"
 
-import ShoppingBag from "../shopping-bag"
+import ShoppingBag from "../dish/components/shopping-bag"
 import { BagDish } from "../../types/dish.type"
 import Image from "../image"
 

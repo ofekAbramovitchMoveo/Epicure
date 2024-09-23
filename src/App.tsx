@@ -4,17 +4,17 @@ import { useSelector } from 'react-redux'
 import { useMediaQuery } from 'react-responsive'
 
 import AppFooter from './components/app-footer'
-import AppHeader from './components/app-header'
+import AppHeader from './components/header/components/app-header'
 import HomePage from './pages/home-page'
-import RestaurantDetails from './pages/restaurant-details'
-import RestaurantPage from './pages/restaurant-page'
+import RestaurantDetails from './components/restaurant/pages/restaurant-details'
+import RestaurantPage from './components/restaurant/pages/restaurant-page'
 import { clearBag, setWarningPopup, toggleBag } from './store/restaurant/restaurant.actions'
 import { RootState } from './store/store'
-import CheckoutPage from './pages/checkout-page'
+import CheckoutPage from './components/checkout/pages/checkout-page'
 import CheckoutSuccessModal from './components/modals/checkout-success-modal'
 import WarningDialog from './components/modals/warning-dialog'
-import OrderHistory from './pages/order-history'
-import ChefPage from './pages/chef-page'
+import OrderHistory from './components/order/pages/order-history'
+import ChefPage from './components/chef/pages/chef-page'
 import { utilService } from './services/util.service'
 
 export interface Coordinates {
@@ -53,8 +53,8 @@ export default function App() {
                     <Routes>
                         <Route path='/' element={<HomePage />} />
                         <Route path='/restaurants' element={<RestaurantPage userLocation={userLocation} />} />
-                        <Route path='/restaurants/new' element={<RestaurantPage userLocation={userLocation} />} />
-                        <Route path='/restaurants/most-popular' element={<RestaurantPage userLocation={userLocation} />} />
+                        <Route path='/restaurants?sortBy=createdAt' element={<RestaurantPage userLocation={userLocation} />} />
+                        <Route path='/restaurants?sortBy=rating' element={<RestaurantPage userLocation={userLocation} />} />
                         <Route path='/restaurants/open-now' element={<RestaurantPage userLocation={userLocation} />} />
                         <Route path='/restaurants/map' element={<RestaurantPage userLocation={userLocation} />} />
                         <Route path='/restaurant/:restaurantId' element={<RestaurantDetails />} />
@@ -63,8 +63,8 @@ export default function App() {
                         <Route path='/checkout' element={<CheckoutPage />} />
                         <Route path='/order-history' element={<OrderHistory />} />
                         <Route path='/chefs' element={<ChefPage />} />
-                        <Route path='/chefs/new' element={<ChefPage />} />
-                        <Route path='/chefs/most-viewed' element={<ChefPage />} />
+                        <Route path='/chefs?sortBy=createdAt&limit=6' element={<ChefPage />} />
+                        <Route path='/chefs?sortBy=views&limit=3' element={<ChefPage />} />
                     </Routes>
                 </main>
                 {(!isCheckoutPage || (isCheckoutPage && !isMobile)) && <AppFooter />}

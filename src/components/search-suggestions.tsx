@@ -20,12 +20,13 @@ export default function SearchSuggestions({ suggestions, toggleSearch }: SearchS
     }
 
     const groupedSuggestions = groupSuggestionsByType(suggestions)
+    const groupedSuggestionsKeys = Object.keys(groupedSuggestions)
 
     return (
         <>
-            {Object.keys(groupedSuggestions).length > 0 && (
+            {groupedSuggestionsKeys.length > 0 && (
                 <div className="suggestions">
-                    {Object.keys(groupedSuggestions).map((type, idx) => (
+                    {groupedSuggestionsKeys.map((type, idx) => (
                         <div key={idx} className="suggestion-group">
                             <h4 className="suggestion-title">{`${type}s:`}</h4>
                             <ul>

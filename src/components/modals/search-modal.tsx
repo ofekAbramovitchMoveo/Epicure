@@ -3,7 +3,6 @@ import Image from "../image"
 import SearchSuggestions from "../search-suggestions"
 import HeaderModal from "./header-modal"
 
-
 interface SearchModalProps {
     isSearchOpen: boolean
     toggleSearch: () => void
@@ -30,7 +29,7 @@ export default function SearchModal({ isSearchOpen, toggleSearch, searchInput, s
                 <div className="input-container">
                     <Image src="search-icon.svg" alt="" />
                     <input type="text"
-                        placeholder="Search for restaurant cuisine, chef"
+                        placeholder="Search for restaurants, cuisine, chef"
                         value={searchInput}
                         onChange={({ target }) => setSearchInput(target.value)} />
                 </div>
