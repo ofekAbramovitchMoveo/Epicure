@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
-import { Fade, Modal } from "@mui/material"
+import { Box, Fade, Modal } from "@mui/material"
 
 import { RootState } from "../../store/store"
 import { toggleCheckoutSuccess } from "../../store/order/order.actions"
@@ -35,7 +35,9 @@ export default function CheckoutSuccessModal() {
             }}
         >
             <Fade in={isCheckoutSuccessOpen} timeout={300} easing={{ enter: 'ease-in', exit: 'ease-out' }}>
-                <CheckoutSuccessBox toggleCheckoutSuccess={toggleCheckoutSuccess} order={order} />
+                <Box className="checkout-success-box">
+                    <CheckoutSuccessBox toggleCheckoutSuccess={toggleCheckoutSuccess} order={order} />
+                </Box>
             </Fade>
         </Modal>
     )

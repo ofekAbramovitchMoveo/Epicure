@@ -10,7 +10,7 @@ interface CheckoutSuccessBoxProps {
 
 export default function CheckoutSuccessBox({ toggleCheckoutSuccess, order }: CheckoutSuccessBoxProps) {
     return (
-        <Box className="checkout-success-box">
+        <>
             <Image src="close-white.svg" alt="close" className="close-icon" onClick={toggleCheckoutSuccess} />
             <Image src="check.svg" alt="check" />
             <div className="title-container">
@@ -31,6 +31,6 @@ export default function CheckoutSuccessBox({ toggleCheckoutSuccess, order }: Che
             <div className="total-price">
                 <p>TOTAL - <span>₪{order?.totalPrice}</span></p>
             </div>
-        </Box>
+        </>
     )
 }
