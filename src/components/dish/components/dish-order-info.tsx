@@ -7,7 +7,7 @@ import AddToBagBtn from "./add-to-bag-btn"
 
 interface DishOrderInfoProps {
     dish: Dish
-    setIsDishOrderOpen: (isDishOrderOpen: boolean) => void
+    toggleDishOrder: () => void
     selectedOptions: {
         sideDish: string;
         changes: string[];
@@ -21,7 +21,7 @@ interface DishOrderInfoProps {
     restaurant?: Restaurant | null
 }
 
-export default function DishOrderInfo({ dish, setIsDishOrderOpen, selectedOptions,
+export default function DishOrderInfo({ dish, toggleDishOrder, selectedOptions,
     setSelectedOptions, restaurant }: DishOrderInfoProps) {
 
     return (
@@ -32,7 +32,7 @@ export default function DishOrderInfo({ dish, setIsDishOrderOpen, selectedOption
             <DishPrice price={dish.price} />
             <DishOptions dish={dish} selectedOptions={selectedOptions} setSelectedOptions={setSelectedOptions} />
             <AddToBagBtn setSelectedOptions={setSelectedOptions}
-                restaurant={restaurant} setIsDishOrderOpen={setIsDishOrderOpen}
+                restaurant={restaurant} toggleDishOrder={toggleDishOrder}
                 selectedOptions={selectedOptions} dish={dish}
             />
         </div>

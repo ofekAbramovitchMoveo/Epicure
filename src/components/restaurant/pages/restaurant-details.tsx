@@ -15,7 +15,11 @@ import { OpeningHours } from "../../../types/restaurant.type"
 import Image from "../../image"
 import { chefService } from "../../../services/chef.service"
 
-export default function RestaurantDetails() {
+interface RestaurantDetailsProps {
+    toggleIsAnyDishOrderOpen: () => void
+}
+
+export default function RestaurantDetails({ toggleIsAnyDishOrderOpen }: RestaurantDetailsProps) {
     const restaurant = useSelector((storeState: RootState) => storeState.restaurantModule.restaurant)
     const chef = useSelector((storeState: RootState) => storeState.chefModule.chef)
     const [dishes, setDishes] = useState<Dish[]>([])
@@ -130,7 +134,8 @@ export default function RestaurantDetails() {
                         <NavLink to={`/restaurant/${restaurant?._id}/lunch`}>Lunch</NavLink>
                         <NavLink to={`/restaurant/${restaurant?._id}/dinner`}>Dinner</NavLink>
                     </div>
-                    <DishList dishes={getFilteredDishes()} isOpenNow={isOpenNow} restaurant={restaurant} />
+                    <DishList dishes={getFilteredDishes()} isOpenNow={isOpenNow} restaurant={restaurant}
+                        toggleIsAnyDishOrderOpen={toggleIsAnyDishOrderOpen} />
                 </>
             )}
         </section>

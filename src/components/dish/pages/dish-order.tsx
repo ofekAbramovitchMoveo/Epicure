@@ -4,7 +4,6 @@ import { useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
 import { Box, Modal } from "@mui/material"
 
-import { clearBag, setWarningPopup, toggleBag } from "../../../store/restaurant/restaurant.actions"
 import WarningDialog from "../../modals/warning-dialog"
 import { Dish } from "../../../types/dish.type"
 import { Restaurant } from "../../../types/restaurant.type"
@@ -13,13 +12,13 @@ import DishOrderBox from "../components/dish-order-box"
 
 interface DishOrderProps {
     dish: Dish
-    setIsDishOrderOpen: (isDishOrderOpen: boolean) => void
+    toggleDishOrder: () => void
     isDishOrderOpen: boolean
     isOpenNow: boolean
     restaurant?: Restaurant | null
 }
 
-export default function DishOrder({ dish, setIsDishOrderOpen, isDishOrderOpen, isOpenNow, restaurant }: DishOrderProps) {
+export default function DishOrder({ dish, toggleDishOrder, isDishOrderOpen, isOpenNow, restaurant }: DishOrderProps) {
     const isWarningPopupOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isWarningPopupOpen)
     const [selectedOptions, setSelectedOptions] = useState<{
         sideDish: string
@@ -47,19 +46,12 @@ export default function DishOrder({ dish, setIsDishOrderOpen, isDishOrderOpen, i
         })
     }
 
-    function onClearBag() {
-        clearBag()
-        setWarningPopup(false)
-        setIsDishOrderOpen(false)
-        toggleBag()
-    }
-
     return (
         <>
             <Modal
                 className="dish-order-modal"
                 open={isDishOrderOpen && isOpenNow && isRestaurantPage}
-                onClose={() => setIsDishOrderOpen(false)}
+                onClose={toggleDishOrder}
                 aria-labelledby="dish-order-title"
                 aria-describedby="dish-order-description"
                 disableAutoFocus
@@ -77,14 +69,14 @@ export default function DishOrder({ dish, setIsDishOrderOpen, isDishOrderOpen, i
                     position: 'relative', ...(isMobile && { height: '100vh', width: '100vw' })
                 }}>
 
-                    <DishOrderBox isMobile={isMobile} dish={dish} setIsDishOrderOpen={setIsDishOrderOpen}
+                    <DishOrderBox isMobile={isMobile} dish={dish} toggleDishOrder={toggleDishOrder}
                         selectedOptions={selectedOptions}
                         setSelectedOptions={setSelectedOptions}
                         restaurant={restaurant}
                     />
                 </Box>
             </Modal>
-            {isWarningPopupOpen && <WarningDialog onClearBag={onClearBag} />}
+            {isWarningPopupOpen && <WarningDialog toggleDishOrder={toggleDishOrder} />}
         </>
     )
 }
