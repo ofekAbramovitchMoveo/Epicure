@@ -18,12 +18,12 @@ interface AddToBagBtnProps {
         quantity: number
     }>>
     restaurant?: Restaurant | null
-    setIsDishOrderOpen: (isDishOrderOpen: boolean) => void
+    toggleDishOrder: () => void
     dish: Dish
 }
 
 
-export default function AddToBagBtn({ selectedOptions, setSelectedOptions, restaurant, setIsDishOrderOpen,
+export default function AddToBagBtn({ selectedOptions, setSelectedOptions, restaurant, toggleDishOrder,
     dish }: AddToBagBtnProps) {
     const bag = useSelector((storeState: RootState) => storeState.restaurantModule.bag)
     const isDisabled = !selectedOptions.sideDish || !selectedOptions.quantity
@@ -42,7 +42,7 @@ export default function AddToBagBtn({ selectedOptions, setSelectedOptions, resta
         } else {
             const dishToAdd: BagDish = { ...dish, ...selectedOptions, restaurantName: restaurant?.name }
             addToBag(dishToAdd)
-            setIsDishOrderOpen(false)
+            toggleDishOrder()
             clearDishOrder()
         }
     }

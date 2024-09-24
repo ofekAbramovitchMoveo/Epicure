@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 import { useMediaQuery } from "react-responsive"
+import { Swiper, SwiperSlide, SwiperRef } from "swiper/react"
 import 'swiper/css'
 import "swiper/css/bundle"
-import { Swiper, SwiperSlide, SwiperRef } from "swiper/react"
 
 import { FilterBy } from "../../../types/filter-by.type"
 
@@ -20,7 +20,6 @@ export default function RestaurantPageLinks({ setFilterBy }: RestaurantPageLinks
 
     useEffect(() => {
         setFilterBy((prevState) => ({ ...prevState, sortBy, path: location.pathname }))
-        updateActiveClass()
     }, [location.pathname, location.search])
 
     const links = [
@@ -30,19 +29,6 @@ export default function RestaurantPageLinks({ setFilterBy }: RestaurantPageLinks
         { to: '/restaurants/open-now', label: 'Open Now' },
         { to: '/restaurants/map', label: 'Map View' }
     ]
-
-    function updateActiveClass() {
-        if (!swiperRef.current?.swiper) return
-        const swiperSlides = Array.from(swiperRef.current?.swiper?.slides || [])
-        swiperSlides.forEach(slide => {
-            const navLink = slide.children[0] as HTMLElement
-            if (navLink?.classList.contains('active')) {
-                slide.classList.add('active')
-            } else {
-                slide.classList.remove('active')
-            }
-        })
-    }
 
     const checkIsActive = (to: string) => {
         const linkSearchParams = new URLSearchParams(to.split('?')[1])
@@ -56,7 +42,7 @@ export default function RestaurantPageLinks({ setFilterBy }: RestaurantPageLinks
             {isMobile ? (
                 <Swiper ref={swiperRef} spaceBetween={21} slidesPerView={'auto'}>
                     {links.map((link) => (
-                        <SwiperSlide key={link.to} style={{ width: 'auto', }}>
+                        <SwiperSlide key={link.to} style={{ width: 'auto', paddingBottom: '1.8px' }}>
                             <NavLink to={link.to} end className={({ isActive }) => isActive && checkIsActive(link.to) ? 'active' : ''}>
                                 {link.label}
                             </NavLink>

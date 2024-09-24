@@ -1,19 +1,27 @@
 import { useSelector } from "react-redux"
 import { Dialog, DialogContent } from "@mui/material"
 
-import { setWarningPopup } from "../../store/restaurant/restaurant.actions"
+import { clearBag, setWarningPopup, toggleBag } from "../../store/restaurant/restaurant.actions"
 import { RootState } from "../../store/store"
 import Image from "../image"
 
 interface WarningDialogProps {
-    onClearBag: () => void
+    toggleDishOrder?: () => void
 }
 
-export default function WarningDialog({ onClearBag }: WarningDialogProps) {
+export default function WarningDialog({ toggleDishOrder }: WarningDialogProps) {
     const isPopupOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isWarningPopupOpen)
+    const isBagOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isBagOpen)
 
     function onWarningPopupClose() {
         setWarningPopup(false)
+    }
+
+    function onClearBag() {
+        onWarningPopupClose()
+        toggleDishOrder && toggleDishOrder()
+        if (!isBagOpen) toggleBag()
+        clearBag()
     }
 
     return (

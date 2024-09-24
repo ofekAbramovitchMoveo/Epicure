@@ -7,7 +7,7 @@ import DishOrderInfo from "./dish-order-info"
 interface DishOrderBoxProps {
     isMobile: boolean
     dish: Dish
-    setIsDishOrderOpen: (isDishOrderOpen: boolean) => void
+    toggleDishOrder: () => void
     selectedOptions: {
         sideDish: string;
         changes: string[];
@@ -21,14 +21,14 @@ interface DishOrderBoxProps {
     restaurant?: Restaurant | null
 }
 
-export default function DishOrderBox({ isMobile, dish, setIsDishOrderOpen, selectedOptions,
+export default function DishOrderBox({ isMobile, dish, toggleDishOrder, selectedOptions,
     setSelectedOptions, restaurant }: DishOrderBoxProps) {
 
     return (
         <>
-            <Image src={isMobile ? "close.svg" : "close-white.svg"} alt="" onClick={() => setIsDishOrderOpen(false)} className="close-icon" />
+            <Image src={isMobile ? "close.svg" : "close-white.svg"} alt="" onClick={toggleDishOrder} className="close-icon" />
             <Image src={dish.imgUrl || ""} alt="" className="dish-img full" />
-            <DishOrderInfo dish={dish} setIsDishOrderOpen={setIsDishOrderOpen}
+            <DishOrderInfo dish={dish} toggleDishOrder={toggleDishOrder}
                 selectedOptions={selectedOptions} setSelectedOptions={setSelectedOptions}
                 restaurant={restaurant}
             />
