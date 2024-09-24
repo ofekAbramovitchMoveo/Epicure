@@ -156,11 +156,19 @@ export default function RestaurantPageFilters({ setFilterBy }: RestaurantPageFil
         setFilterBy(prevState => ({ ...prevState, priceRange: newValue }))
     }, 300), [])
 
+    const renderFilter = (filterName: string, filterContainerRef: React.MutableRefObject<null>,
+        toggleFilterModal: () => void, txt: string, isModalOpen: boolean, children: React.ReactNode) => {
+        return (
+            <RestaurantFilterWrapper filterName={filterName} filterContainerRef={filterContainerRef}
+                toggleFilterModal={toggleFilterModal} txt={txt} isModalOpen={isModalOpen}>
+                {children}
+            </RestaurantFilterWrapper>
+        )
+    }
+
     return (
         <section className="restaurant-page-filters full">
-            <RestaurantFilterWrapper filterName="price" filterContainerRef={priceContainerRef}
-                toggleFilterModal={togglePriceModal} txt="Price Range" isModalOpen={isPriceModalOpen}
-            >
+            {renderFilter('price', priceContainerRef, togglePriceModal, 'Price Range', isPriceModalOpen,
                 <PriceRangeModal
                     isPriceModalOpen={isPriceModalOpen}
                     togglePriceModal={togglePriceModal}
@@ -174,10 +182,8 @@ export default function RestaurantPageFilters({ setFilterBy }: RestaurantPageFil
                     getIsActiveClassMax={getIsActiveClassMax}
                     isMobile={isMobile}
                 />
-            </RestaurantFilterWrapper>
-            <RestaurantFilterWrapper filterName="distance" filterContainerRef={distanceContainerRef}
-                toggleFilterModal={toggleDistanceModal} txt="Distance" isModalOpen={isDistanceModalOpen}
-            >
+            )}
+            {renderFilter('distance', distanceContainerRef, toggleDistanceModal, 'Distance', isDistanceModalOpen,
                 <DistanceModal
                     isDistanceModalOpen={isDistanceModalOpen}
                     toggleDistanceModal={toggleDistanceModal}
@@ -191,10 +197,8 @@ export default function RestaurantPageFilters({ setFilterBy }: RestaurantPageFil
                     valueLabelFormat={valueLabelFormat}
                     isMobile={isMobile}
                 />
-            </RestaurantFilterWrapper>
-            <RestaurantFilterWrapper filterName="rating" filterContainerRef={ratingContainerRef}
-                toggleFilterModal={toggleRatingModal} txt="Rating" isModalOpen={isRatingModalOpen}
-            >
+            )}
+            {renderFilter('rating', ratingContainerRef, toggleRatingModal, 'Rating', isRatingModalOpen,
                 <RatingsModal
                     isRatingModalOpen={isRatingModalOpen}
                     toggleRatingModal={toggleRatingModal}
@@ -205,7 +209,7 @@ export default function RestaurantPageFilters({ setFilterBy }: RestaurantPageFil
                     handleRatingChange={handleRatingChange}
                     isMobile={isMobile}
                 />
-            </RestaurantFilterWrapper>
+            )}
         </section>
     )
 }
