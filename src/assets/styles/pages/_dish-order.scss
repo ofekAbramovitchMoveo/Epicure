@@ -73,6 +73,7 @@
 
                 &.disbaled {
                     cursor: not-allowed;
+                    background-color: $clr-primary-gray;
                 }
             }
         }
