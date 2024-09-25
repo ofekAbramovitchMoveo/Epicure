@@ -101,6 +101,15 @@
 @media (min-width: 376px) {
     .checkout-success-modal {
         .checkout-success-box {
+            width: 100%;
+
+        }
+    }
+}
+
+@include for-narrow-layout {
+    .checkout-success-modal {
+        .checkout-success-box {
             width: 376px;
             left: 50%;
             top: 50%;
