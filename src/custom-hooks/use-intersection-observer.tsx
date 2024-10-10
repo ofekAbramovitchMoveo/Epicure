@@ -39,7 +39,7 @@ export default function useIntersectionObserver<T, F>({ filterBy, loadItems }: U
     useEffect(() => {
         const options = {
             root: null,
-            threshold: 0.25
+            threshold: 0.4
         }
         observer.current = new IntersectionObserver(handleObserver, options)
 
