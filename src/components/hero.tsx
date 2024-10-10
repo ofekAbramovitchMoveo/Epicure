@@ -6,10 +6,9 @@ interface HeroProps {
     suggestions: Suggestion[]
     searchInput: string
     setSearchInput: (value: string) => void
-    isLoadingSuggestions: boolean
 }
 
-export default function Hero({ suggestions, searchInput, setSearchInput, isLoadingSuggestions }: HeroProps) {
+export default function Hero({ suggestions, searchInput, setSearchInput }: HeroProps) {
 
     const handleBlur = (ev: React.FocusEvent) => {
         if (!ev.relatedTarget || !ev.relatedTarget.closest('.suggestions'))
@@ -28,7 +27,7 @@ export default function Hero({ suggestions, searchInput, setSearchInput, isLoadi
                     <Image src="search-icon.svg" alt="" className="search-icon" />
                     <input type="text" placeholder="Search for restaurants" onBlur={handleBlur}
                         value={searchInput} onChange={({ target }) => setSearchInput(target.value)} />
-                    <SearchSuggestions suggestions={suggestions} isSearching={searchInput.length > 0} isLoading={isLoadingSuggestions} />
+                    <SearchSuggestions suggestions={suggestions} isSearching={searchInput.length > 0}  />
                 </div>
             </div>
         </div>

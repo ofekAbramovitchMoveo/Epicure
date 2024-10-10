@@ -9,10 +9,9 @@ interface SearchModalProps {
     searchInput: string
     setSearchInput: (value: string) => void
     suggestions: Suggestion[]
-    isLoadingSuggestions: boolean
 }
 
-export default function SearchModal({ isSearchOpen, toggleSearch, searchInput, setSearchInput, suggestions, isLoadingSuggestions }: SearchModalProps) {
+export default function SearchModal({ isSearchOpen, toggleSearch, searchInput, setSearchInput, suggestions }: SearchModalProps) {
     return (
         <HeaderModal open={isSearchOpen}
             onClose={toggleSearch}
@@ -34,7 +33,7 @@ export default function SearchModal({ isSearchOpen, toggleSearch, searchInput, s
                         value={searchInput}
                         onChange={({ target }) => setSearchInput(target.value)} />
                 </div>
-                <SearchSuggestions suggestions={suggestions} toggleSearch={toggleSearch} isSearching={searchInput.length > 0} isLoading={isLoadingSuggestions} />
+                <SearchSuggestions suggestions={suggestions} toggleSearch={toggleSearch} isSearching={searchInput.length > 0} />
             </div>
         </HeaderModal>
     )

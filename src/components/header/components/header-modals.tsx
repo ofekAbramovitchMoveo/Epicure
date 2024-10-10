@@ -28,12 +28,11 @@ interface HeaderModalsProps {
     setSearchInput: (value: string) => void
     suggestions: Suggestion[]
     loggedInUser: User
-    isLoadingSuggestions: boolean
 }
 
 export default function HeaderModals({ buttonPosition, bag, isMenuOpen, isSearchOpen,
     isLogoutModalOpen, isCheckoutPage, toggleMenu, toggleSearch, toggleSignInModal,
-    toggleLogoutModal, searchInput, setSearchInput, suggestions, loggedInUser, isLoadingSuggestions }: HeaderModalsProps) {
+    toggleLogoutModal, searchInput, setSearchInput, suggestions, loggedInUser }: HeaderModalsProps) {
     const isSignInModalOpen = useSelector((storeState: RootState) => storeState.userModule.isSignInModalOpen)
     const isBagOpen = useSelector((storeState: RootState) => storeState.restaurantModule.isBagOpen)
     const isHeader = useSelector((storeState: RootState) => storeState.userModule.isHeader)
@@ -45,7 +44,7 @@ export default function HeaderModals({ buttonPosition, bag, isMenuOpen, isSearch
             <MenuModal isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
             {isMobile && (
                 <SearchModal isSearchOpen={isSearchOpen} toggleSearch={toggleSearch}
-                    searchInput={searchInput} setSearchInput={setSearchInput} suggestions={suggestions} isLoadingSuggestions={isLoadingSuggestions} />
+                    searchInput={searchInput} setSearchInput={setSearchInput} suggestions={suggestions} />
             )}
             {isSignInModalOpen && !loggedInUser ? (
                 <SignInModal isOpen={isSignInModalOpen} toggleModal={toggleSignInModal} isHeader={isHeader} />

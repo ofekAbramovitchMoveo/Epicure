@@ -1,16 +1,14 @@
 import { Link } from "react-router-dom"
 
 import { Suggestion } from "../types/restaurant.type"
-import SuggestionSkeleton from "./skeletons/suggestion-skeleton"
 
 interface SearchSuggestionsProps {
     suggestions: Suggestion[]
     toggleSearch?: () => void
     isSearching?: boolean
-    isLoading?: boolean
 }
 
-export default function SearchSuggestions({ suggestions, toggleSearch, isSearching, isLoading }: SearchSuggestionsProps) {
+export default function SearchSuggestions({ suggestions, toggleSearch, isSearching }: SearchSuggestionsProps) {
 
     function groupSuggestionsByType(suggestions: Suggestion[]) {
         return suggestions.reduce((acc: Record<string, Suggestion[]>, suggestion: Suggestion) => {
@@ -37,13 +35,9 @@ export default function SearchSuggestions({ suggestions, toggleSearch, isSearchi
                                 <ul>
                                     {groupedSuggestions[type].map((suggestion, idx) => (
                                         <li key={idx} className="suggestion-item">
-                                            {isLoading ? (
-                                                <SuggestionSkeleton />
-                                            ) : (
-                                                <Link to={`/${suggestion.type}/${suggestion._id}`} onClick={toggleSearch}>
-                                                    {suggestion.name}
-                                                </Link>
-                                            )}
+                                            <Link to={`/${suggestion.type}/${suggestion._id}`} onClick={toggleSearch}>
+                                                {suggestion.name}
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
