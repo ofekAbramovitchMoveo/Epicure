@@ -1,4 +1,4 @@
-import { FormControl } from "@mui/material"
+import FormControl from "@mui/material/FormControl"
 
 import DishQuantityDisplay from "./dish-quantity-display"
 

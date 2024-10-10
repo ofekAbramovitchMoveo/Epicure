@@ -1,4 +1,6 @@
-import { Modal as MuiModal, Fade, Box } from '@mui/material'
+import Modal from "@mui/material/Modal"
+import Fade from "@mui/material/Fade"
+import Box from "@mui/material/Box"
 
 interface HeaderModalProps {
     children?: React.ReactNode
@@ -18,7 +20,7 @@ export default function HeaderModal({ children, open = false, onClose, container
     boxSx }: HeaderModalProps) {
 
     return (
-        <MuiModal
+        <Modal
             className={className}
             open={open}
             onClose={onClose}
@@ -47,6 +49,6 @@ export default function HeaderModal({ children, open = false, onClose, container
                     {children}
                 </Box>
             </Fade>
-        </MuiModal>
+        </Modal>
     )
 }

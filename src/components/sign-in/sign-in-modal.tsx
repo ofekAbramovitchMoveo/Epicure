@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { Box, Modal } from "@mui/material"
+import { Box } from "@mui/material"
+import Modal from "@mui/material/Modal"
 
 import { RootState } from "../../store/store"
 import { loadUsers } from "../../store/user/user.actions"

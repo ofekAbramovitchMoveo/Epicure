@@ -2,7 +2,6 @@ import { useState } from "react"
 import { useLocation, useNavigate } from "react-router"
 import { useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
-import { Box } from "@mui/material"
 
 import Image from "../image"
 import SignInForm from "./sign-in-form"

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { Tooltip } from "@mui/material"
+import Tooltip from "@mui/material/Tooltip"
 
 import { Restaurant } from "../../../types/restaurant.type"
 import { RootState } from "../../../store/store"

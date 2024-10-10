@@ -1,4 +1,6 @@
-import { Checkbox, FormControl, FormControlLabel } from "@mui/material"
+import Checkbox from "@mui/material/Checkbox"
+import FormControl from "@mui/material/FormControl"
+import FormControlLabel from "@mui/material/FormControlLabel"
 
 import { Dish } from "../../../types/dish.type"
 

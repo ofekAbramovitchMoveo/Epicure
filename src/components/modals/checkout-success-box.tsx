@@ -1,5 +1,3 @@
-import { Box } from "@mui/material"
-
 import Image from "../image"
 import { OrderDetails } from "../../types/order-details.type"
 

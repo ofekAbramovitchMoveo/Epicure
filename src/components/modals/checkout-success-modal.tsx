@@ -1,6 +1,8 @@
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
-import { Box, Fade, Modal } from "@mui/material"
+import Box from "@mui/material/Box"
+import Fade from "@mui/material/Fade"
+import Modal from "@mui/material/Modal"
 
 import { RootState } from "../../store/store"
 import { toggleCheckoutSuccess } from "../../store/order/order.actions"

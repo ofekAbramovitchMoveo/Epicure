@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
-import { Tooltip } from "@mui/material"
+import Tooltip from "@mui/material/Tooltip"
 
 import DishOrder from "../pages/dish-order"
 import { Dish } from "../../../types/dish.type"

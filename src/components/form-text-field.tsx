@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material"
+import TextField from "@mui/material/TextField"
 import { DeliveryDetails, PaymentDetails } from "../types/order-details.type"
 import { User } from "../types/user.type"
 

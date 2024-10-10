@@ -17,7 +17,7 @@ export default function Hero({ suggestions, searchInput, setSearchInput }: HeroP
 
     return (
         <div className="hero-container full main-layout">
-            <Image className="hero-img full" src="hero.png" alt="" />
+            <Image className="hero-img full" src="hero.webp" alt="" />
             <div className="hero-box">
                 <p className="hero-text">
                     Epicure works with the top <br />

@@ -1,5 +1,6 @@
-import { Add, Remove } from "@mui/icons-material"
-import { IconButton } from "@mui/material"
+import Add from "@mui/icons-material/Add"
+import Remove from "@mui/icons-material/Remove"
+import IconButton from "@mui/material/IconButton"
 
 import BagDishQuantityInput from "./bag-dish-quantity-input"
 

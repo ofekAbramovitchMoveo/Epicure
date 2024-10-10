@@ -1,4 +1,5 @@
-import { Modal as MuiModal, Box } from '@mui/material'
+import Modal from "@mui/material/Modal"
+import Box from "@mui/material/Box"
 
 interface FilterModalProps {
     children?: React.ReactNode
@@ -18,7 +19,7 @@ interface FilterModalProps {
 export default function FilterModal({ children, open = false, onClose, containerRef, className,
     ariaLabelledby, ariaDescribedby, sx, boxClassName, boxSx, height, handleClear }: FilterModalProps) {
     return (
-        <MuiModal
+        <Modal
             className={className}
             open={open}
             onClose={onClose}
@@ -47,6 +48,6 @@ export default function FilterModal({ children, open = false, onClose, container
                 {children}
                 <button className="clear-btn" onClick={handleClear}>CLEAR</button>
             </Box>
-        </MuiModal>
+        </Modal>
     )
 }

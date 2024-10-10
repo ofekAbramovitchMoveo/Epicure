@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
-import { Dialog, DialogContent } from "@mui/material"
+import Dialog from "@mui/material/Dialog"
+import DialogContent from "@mui/material/DialogContent"
 import LocationOffIcon from '@mui/icons-material/LocationOff'
 
 import { toggleLocationWarningPopup } from "../../store/restaurant/restaurant.actions"
