@@ -6,9 +6,10 @@ interface HeaderInputProps {
     setSearchInput: (value: string) => void
     suggestions: Suggestion[]
     toggleSearch: () => void
+    isLoadingSuggestions: boolean
 }
 
-export default function HeaderInput({ searchInput, setSearchInput, suggestions, toggleSearch }: HeaderInputProps) {
+export default function HeaderInput({ searchInput, setSearchInput, suggestions, toggleSearch, isLoadingSuggestions }: HeaderInputProps) {
 
     const handleBlur = (ev: React.FocusEvent) => {
         if (!ev.relatedTarget || !ev.relatedTarget.closest('.suggestions'))
@@ -23,7 +24,7 @@ export default function HeaderInput({ searchInput, setSearchInput, suggestions, 
                 onChange={({ target }) => setSearchInput(target.value)}
                 onBlur={handleBlur}
             />
-            <SearchSuggestions suggestions={suggestions} toggleSearch={toggleSearch} isSearching={searchInput.length > 0} />
+            <SearchSuggestions suggestions={suggestions} toggleSearch={toggleSearch} isSearching={searchInput.length > 0} isLoading={isLoadingSuggestions} />
         </>
     )
 }

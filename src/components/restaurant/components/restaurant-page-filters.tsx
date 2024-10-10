@@ -6,8 +6,6 @@ import PriceRangeModal from '../../modals/price-range-modal'
 import DistanceModal from '../../modals/distance-modal'
 import RatingsModal from '../../modals/ratings-modal'
 import { FilterBy } from '../../../types/filter-by.type'
-import Image from '../../image'
-import RestaurantFilterBtn from './restaurant-filter-btn'
 import RestaurantFilterWrapper from './restaurant-filter-wrapper'
 
 interface RestaurantPageFiltersProps {

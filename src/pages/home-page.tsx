@@ -19,6 +19,7 @@ export default function HomePage() {
     const chefs = useSelector((storeState: RootState) => storeState.chefModule.chefs)
     const [searchInput, setSearchInput] = useState("")
     const [suggestions, setSuggestions] = useState<Suggestion[]>([])
+    const [isLoadingSuggestions, setIsLoadingSuggestions] = useState(false)
 
     useEffect(() => {
         async function fetchData() {
@@ -34,8 +35,10 @@ export default function HomePage() {
 
     useEffect(() => {
         async function fetchSuggestions() {
+            setIsLoadingSuggestions(true)
             const suggestions = await restaurantService.getRestaurantSuggestions(searchInput)
             setSuggestions(suggestions)
+            setIsLoadingSuggestions(false)
         }
         fetchSuggestions()
     }, [searchInput])
@@ -62,7 +65,7 @@ export default function HomePage() {
     if (!restaurants || !restaurants.length) return (<Loader />)
     return (
         <section className="home-page main-layout">
-            <Hero suggestions={suggestions} searchInput={searchInput} setSearchInput={setSearchInput} />
+            <Hero suggestions={suggestions} searchInput={searchInput} setSearchInput={setSearchInput} isLoadingSuggestions={isLoadingSuggestions} />
             <div className="main-content full main-layout">
                 <RestaurantList restaurants={getTopRatedRestaurants()} />
                 <HomePageDishList getSignatureDishes={getSignatureDishes} />

@@ -9,9 +9,10 @@ interface SearchModalProps {
     searchInput: string
     setSearchInput: (value: string) => void
     suggestions: Suggestion[]
+    isLoadingSuggestions: boolean
 }
 
-export default function SearchModal({ isSearchOpen, toggleSearch, searchInput, setSearchInput, suggestions }: SearchModalProps) {
+export default function SearchModal({ isSearchOpen, toggleSearch, searchInput, setSearchInput, suggestions, isLoadingSuggestions }: SearchModalProps) {
     return (
         <HeaderModal open={isSearchOpen}
             onClose={toggleSearch}
@@ -29,11 +30,11 @@ export default function SearchModal({ isSearchOpen, toggleSearch, searchInput, s
                 <div className="input-container">
                     <Image src="search-icon.svg" alt="" />
                     <input type="text"
-                        placeholder="Search for restaurants, cuisine, chef"
+                        placeholder="Search for restaurants"
                         value={searchInput}
                         onChange={({ target }) => setSearchInput(target.value)} />
                 </div>
-                <SearchSuggestions suggestions={suggestions} toggleSearch={toggleSearch} isSearching={searchInput.length > 0} />
+                <SearchSuggestions suggestions={suggestions} toggleSearch={toggleSearch} isSearching={searchInput.length > 0} isLoading={isLoadingSuggestions} />
             </div>
         </HeaderModal>
     )

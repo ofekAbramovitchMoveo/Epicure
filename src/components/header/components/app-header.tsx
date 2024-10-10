@@ -22,6 +22,7 @@ export default function AppHeader() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     const [searchInput, setSearchInput] = useState("")
     const [suggestions, setSuggestions] = useState<Suggestion[]>([])
+    const [isLoadingSuggestions, setIsLoadingSuggestions] = useState(false)
     const location = useLocation()
     const navigate = useNavigate()
     const userIconRef = useRef<HTMLButtonElement>(null)
@@ -29,8 +30,10 @@ export default function AppHeader() {
 
     useEffect(() => {
         async function fetchSuggestions() {
+            setIsLoadingSuggestions(true)
             const suggestions = await restaurantService.getRestaurantSuggestions(searchInput)
             setSuggestions(suggestions)
+            setIsLoadingSuggestions(false)
         }
         fetchSuggestions()
     }, [searchInput])
@@ -89,7 +92,7 @@ export default function AppHeader() {
                 )}
                 {isSearchOpen && !isCheckoutPage && (
                     <HeaderInput searchInput={searchInput} setSearchInput={setSearchInput}
-                        suggestions={suggestions} toggleSearch={toggleSearch}
+                        suggestions={suggestions} toggleSearch={toggleSearch} isLoadingSuggestions={isLoadingSuggestions}
                     />
                 )}
             </div>
@@ -97,7 +100,7 @@ export default function AppHeader() {
                 isSearchOpen={isSearchOpen} isLogoutModalOpen={isLogoutModalOpen} isCheckoutPage={isCheckoutPage}
                 toggleMenu={toggleMenu} toggleSearch={toggleSearch} toggleSignInModal={toggleSignInModal}
                 toggleLogoutModal={toggleLogoutModal} searchInput={searchInput} setSearchInput={setSearchInput}
-                suggestions={suggestions} loggedInUser={loggedInUser}
+                suggestions={suggestions} loggedInUser={loggedInUser} isLoadingSuggestions={isLoadingSuggestions}
             />
         </header>
     )

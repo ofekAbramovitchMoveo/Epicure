@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom"
 
 import { Suggestion } from "../types/restaurant.type"
+import SuggestionSkeleton from "./skeletons/suggestion-skeleton"
 
 interface SearchSuggestionsProps {
     suggestions: Suggestion[]
     toggleSearch?: () => void
     isSearching?: boolean
+    isLoading?: boolean
 }
 
-export default function SearchSuggestions({ suggestions, toggleSearch, isSearching }: SearchSuggestionsProps) {
+export default function SearchSuggestions({ suggestions, toggleSearch, isSearching, isLoading }: SearchSuggestionsProps) {
 
     function groupSuggestionsByType(suggestions: Suggestion[]) {
         return suggestions.reduce((acc: Record<string, Suggestion[]>, suggestion: Suggestion) => {
@@ -26,7 +28,7 @@ export default function SearchSuggestions({ suggestions, toggleSearch, isSearchi
     if (!suggestions?.length && !isSearching) return null
     return (
         <div className="suggestions">
-            {(!suggestions?.length && isSearching) ? <div className="no-suggestions">No restaurants found</div> : (
+            {(!suggestions?.length && isSearching && !isLoading) ? <div className="no-suggestions">No restaurants found</div> : (
                 groupedSuggestionsKeys.length > 0 && (
                     <>
                         {groupedSuggestionsKeys.map((type, idx) => (
@@ -35,9 +37,13 @@ export default function SearchSuggestions({ suggestions, toggleSearch, isSearchi
                                 <ul>
                                     {groupedSuggestions[type].map((suggestion, idx) => (
                                         <li key={idx} className="suggestion-item">
-                                            <Link to={`/${suggestion.type}/${suggestion._id}`} onClick={toggleSearch}>
-                                                {suggestion.name}
-                                            </Link>
+                                            {isLoading ? (
+                                                <SuggestionSkeleton />
+                                            ) : (
+                                                <Link to={`/${suggestion.type}/${suggestion._id}`} onClick={toggleSearch}>
+                                                    {suggestion.name}
+                                                </Link>
+                                            )}
                                         </li>
                                     ))}
                                 </ul>
