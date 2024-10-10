@@ -28,7 +28,7 @@ export default function SearchSuggestions({ suggestions, toggleSearch, isSearchi
     if (!suggestions?.length && !isSearching) return null
     return (
         <div className="suggestions">
-            {(!suggestions?.length && isSearching && !isLoading) ? <div className="no-suggestions">No restaurants found</div> : (
+            {(!suggestions?.length && isSearching) ? <div className="no-suggestions">No restaurants found</div> : (
                 groupedSuggestionsKeys.length > 0 && (
                     <>
                         {groupedSuggestionsKeys.map((type, idx) => (
