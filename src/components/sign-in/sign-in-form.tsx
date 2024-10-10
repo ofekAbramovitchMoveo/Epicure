@@ -1,7 +1,7 @@
-import { TextField } from "@mui/material"
-
 import { User } from "../../types/user.type"
 import SignUpForm from "./sign-up-form"
+import FormTextField from "../form-text-field"
+import { DeliveryDetails, PaymentDetails } from "../../types/order-details.type"
 
 interface SignInFormProps {
     onSubmit: (ev: React.FormEvent<HTMLFormElement>, isSignUp: boolean) => void
@@ -18,30 +18,15 @@ export default function SignInForm({ onSubmit, isSignUp, credentials, setCredent
         setCredentials(prevState => ({ ...prevState, [field]: value }))
     }
 
-    function getError(field: keyof User) {
+    function getError(field: keyof User | keyof PaymentDetails | keyof DeliveryDetails) {
         return errors.find(error => error.toLowerCase().includes(field.toLowerCase()))
-    }
-
-    function renderTextField(label: string, name: keyof User, type: string = 'text') {
-        const error = getError(name)
-        return (
-            <TextField variant="standard" type={type}
-                label={label}
-                name={name}
-                value={credentials[name]}
-                onChange={handleChange}
-                required
-                error={!!error}
-                helperText={error}
-            />
-        )
     }
 
     return (
         <form className="inputs-container" onSubmit={ev => onSubmit(ev, isSignUp)}>
-            {isSignUp && <SignUpForm renderTextField={renderTextField} />}
-            {renderTextField('Email address', 'email', 'email')}
-            {renderTextField('Password', 'password', 'password')}
+            {isSignUp && <SignUpForm onChange={handleChange} getError={getError} />}
+            <FormTextField label="Email address" name="email" type="email" onChange={handleChange} getError={getError} />
+            <FormTextField label="Password" name="password" type="password" onChange={handleChange} getError={getError} />
         </form>
     )
 }

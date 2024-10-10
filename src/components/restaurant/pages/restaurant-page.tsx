@@ -12,6 +12,7 @@ import { useSelector } from "react-redux"
 import { RootState } from "../../../store/store"
 import { loadChefs } from "../../../store/chef/chef.actions"
 import { Coordinates } from "../../../App"
+import useIntersectionObserver from "../../../custom-hooks/use-intersection-observer"
 
 interface RestaurantPageProps {
     userLocation: Coordinates | null
@@ -22,16 +23,19 @@ export default function RestaurantPage({ userLocation }: RestaurantPageProps) {
     const [filterBy, setFilterBy] = useState({})
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const location = useLocation()
+
+    
+
+    const { targetRef, setPage, setTotalItems } = useIntersectionObserver({ filterBy, loadItems: loadRestaurants })
     const isMapView = location.pathname.includes('map')
 
     useEffect(() => {
-        if (!userLocation) toggleLocationWarningPopup()
-    }, [userLocation?.lat, userLocation?.lng])
+        setPage(1)
 
-    useEffect(() => {
         async function fetchData() {
             try {
-                await loadRestaurants(filterBy)
+                const res = await loadRestaurants({ ...filterBy, page: 1 })
+                setTotalItems(res?.totalCount || 0)
                 await loadChefs()
             } catch (error) {
                 console.log('error loading restaurants or chefs', error)
@@ -39,6 +43,10 @@ export default function RestaurantPage({ userLocation }: RestaurantPageProps) {
         }
         fetchData()
     }, [filterBy])
+
+    useEffect(() => {
+        if (!userLocation) toggleLocationWarningPopup()
+    }, [userLocation?.lat, userLocation?.lng])
 
     return (
         <>
@@ -49,7 +57,7 @@ export default function RestaurantPage({ userLocation }: RestaurantPageProps) {
                 <RestaurantPageLinks setFilterBy={setFilterBy} />
                 <RestaurantPageFilters setFilterBy={setFilterBy} />
                 {!isMapView ? (
-                    <RestaurantList restaurants={restaurants} isChefRestaurants={false} />
+                    <RestaurantList restaurants={restaurants} isChefRestaurants={false} lastRestaurantRef={targetRef} />
                 ) : (
                     <Map restaurants={restaurants} userLocation={userLocation} />
                 )}

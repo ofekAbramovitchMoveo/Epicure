@@ -6,7 +6,7 @@ import RestaurantMarker from "./restaurant-marker"
 import { Restaurant } from "../../types/restaurant.type"
 import LocationWarningDialog from "../modals/location-warning-dialog"
 import { Coordinates } from "../../App"
-import { toggleLocationWarningPopup } from "../../store/restaurant/restaurant.actions"
+import { loadRestaurants, toggleLocationWarningPopup } from "../../store/restaurant/restaurant.actions"
 
 interface MapProps {
     restaurants: Restaurant[]
@@ -19,6 +19,10 @@ export default function Map({ restaurants, userLocation }: MapProps) {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const mapRef = useRef<google.maps.Map | null>(null)
     const defaultLocation = { lat: 32.0853, lng: 34.7818 }
+
+    useEffect(() => {
+        loadRestaurants()
+    }, [])
 
     useEffect(() => {
         if (!userLocation) toggleLocationWarningPopup()
@@ -49,7 +53,6 @@ export default function Map({ restaurants, userLocation }: MapProps) {
         mapRef.current = null
     }, [])
 
-
     return isLoaded ? (
         <>
             <GoogleMap
@@ -73,7 +76,6 @@ export default function Map({ restaurants, userLocation }: MapProps) {
                             map={map}
                             title={restaurant.name} />
                     )
-
                 })}
                 {userLocation && <RestaurantMarker position={userLocation} map={map} title={`You`} />}
             </GoogleMap>

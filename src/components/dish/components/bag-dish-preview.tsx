@@ -17,7 +17,6 @@ export default function BagDishPreview({ dish, onRemoveDish }: BagDishPreviewPro
     const location = useLocation()
     const isCheckoutPage = location.pathname.includes('/checkout')
 
-
     return (
         <section className="bag-dish-preview">
             <div className={`img-container ${isCheckoutPage ? 'checkout' : ''}`}>

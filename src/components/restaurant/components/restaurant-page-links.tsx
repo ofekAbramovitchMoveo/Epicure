@@ -6,6 +6,7 @@ import 'swiper/css'
 import "swiper/css/bundle"
 
 import { FilterBy } from "../../../types/filter-by.type"
+import { resetRestaurants } from "../../../store/restaurant/restaurant.actions"
 
 interface RestaurantPageLinksProps {
     setFilterBy: (updater: (prevState: FilterBy) => FilterBy) => void
@@ -19,7 +20,8 @@ export default function RestaurantPageLinks({ setFilterBy }: RestaurantPageLinks
     const sortBy = searchParams.get('sortBy')
 
     useEffect(() => {
-        setFilterBy((prevState) => ({ ...prevState, sortBy, path: location.pathname }))
+        resetRestaurants()
+        setFilterBy((prevState) => ({ ...prevState, sortBy, isOpenNowPage: location.pathname === '/restaurants/open-now' }))
     }, [location.pathname, location.search])
 
     const links = [

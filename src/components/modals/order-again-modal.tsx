@@ -1,8 +1,8 @@
 import { Box, Modal } from "@mui/material"
 
-import ShoppingBag from "../dish/components/shopping-bag"
 import { BagDish } from "../../types/dish.type"
 import Image from "../image"
+import OrderAgainShoppingBag from "../shopping-bag/order-again-shopping-bag"
 
 interface OrderAgainModalProps {
     toggleOrderAgainModal: () => void
@@ -23,7 +23,7 @@ export default function OrderAgainModal({ toggleOrderAgainModal, isOrderAgainMod
         >
             <Box className="order-again-modal-box">
                 <Image src="close-white.svg" alt="close" onClick={toggleOrderAgainModal} className="close-icon" />
-                <ShoppingBag bag={bag} />
+                <OrderAgainShoppingBag bag={bag} />
             </Box>
         </Modal>
     )

@@ -1,15 +1,21 @@
 import { restaurantService } from "../../services/restaurant.service"
 import { BagDish } from "../../types/dish.type"
+import { FilterBy } from "../../types/filter-by.type"
 import { Restaurant } from "../../types/restaurant.type"
 import { store } from "../store"
-import { ADD_TO_BAG, CLEAR_BAG, REMOVE_FROM_BAG, SET_BAG, SET_RESTAURANT, SET_RESTAURANTS, SET_WARNING_POPUP, TOGGLE_BAG_MODAL, TOGGLE_LOCATION_WARNING_POPUP, UPDATE_DISH_QUANTITY } from "./restaurant.reducer"
+import { ADD_TO_BAG, APPEND_RESTAURANTS, CLEAR_BAG, REMOVE_FROM_BAG, RESET_RESTAURANTS, SET_BAG, SET_RESTAURANT, SET_RESTAURANTS, SET_WARNING_POPUP, TOGGLE_BAG_MODAL, TOGGLE_LOCATION_WARNING_POPUP, UPDATE_DISH_QUANTITY } from "./restaurant.reducer"
 
-export async function loadRestaurants(filterBy = {}): Promise<void> {
+export async function loadRestaurants(filterBy: FilterBy = {}): Promise<{ items: Restaurant[], totalCount: number } | undefined> {
     try {
-        const restaurants: Restaurant[] = await restaurantService.query(filterBy)
-        store.dispatch({ type: SET_RESTAURANTS, restaurants })
+        const { restaurants, totalCount } = await restaurantService.query(filterBy)
+        store.dispatch({
+            type: filterBy.page && filterBy.page > 1 ? APPEND_RESTAURANTS : SET_RESTAURANTS,
+            restaurants
+        })
+        return { items: restaurants, totalCount }
     } catch (err) {
         console.log('RestaurantActions: err in loadRestaurants', err)
+        return undefined
     }
 }
 
@@ -22,6 +28,10 @@ export async function loadRestaurant(restaurantId: string): Promise<Restaurant |
         console.log('RestaurantActions: err in loadRestaurant', err)
         return null
     }
+}
+
+export function resetRestaurants(): void {
+    store.dispatch({ type: RESET_RESTAURANTS })
 }
 
 export function loadBag(): void {

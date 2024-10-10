@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux"
 
-import ShoppingBag from "../../dish/components/shopping-bag"
 import { RootState } from "../../../store/store"
 import { DeliveryDetails, PaymentDetails } from "../../../types/order-details.type"
+import CheckoutShoppingBag from "../../shopping-bag/checkout-shopping-bag"
 
 interface OrderSummaryProps {
     isDisabled: boolean
@@ -16,7 +16,7 @@ export default function OrderSummary({ isDisabled, deliveryDetails, paymentDetai
 
     return (
         <section className="order-summary">
-            <ShoppingBag bag={bag} isDisabled={isDisabled}
+            <CheckoutShoppingBag bag={bag} isDisabled={isDisabled}
                 deliveryDetails={deliveryDetails}
                 paymentDetails={paymentDetails}
                 setErrors={setErrors}

@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { useMediaQuery } from "react-responsive"
@@ -7,14 +8,16 @@ import { Restaurant } from "../../../types/restaurant.type"
 import { RootState } from "../../../store/store"
 import RestaurantListTitle from "./restaurant-list-title"
 import RestaurantListSwiper from "./restaurant-list-swiper"
+import { loadChefs } from "../../../store/chef/chef.actions"
 
 interface RestaurantListProps {
     restaurants: Restaurant[]
     isChefRestaurants?: boolean | null
     chefId?: string | null
+    lastRestaurantRef?: React.MutableRefObject<HTMLLIElement | null>
 }
 
-export default function RestaurantList({ restaurants, isChefRestaurants, chefId }: RestaurantListProps) {
+export default function RestaurantList({ restaurants, isChefRestaurants, chefId, lastRestaurantRef }: RestaurantListProps) {
     const chefs = useSelector((storeState: RootState) => storeState.chefModule.chefs)
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const location = useLocation()
@@ -33,8 +36,8 @@ export default function RestaurantList({ restaurants, isChefRestaurants, chefId 
                 {isMobile && !isRestaurantPage ? (
                     <RestaurantListSwiper restaurants={restaurants} isChefRestaurants={isChefRestaurants || false} getChefName={getChefName} />
                 ) : (
-                    restaurants.map(restaurant => (
-                        <li key={restaurant._id}>
+                    restaurants.map((restaurant, idx) => (
+                        <li key={restaurant._id} ref={idx === restaurants.length - 1 ? lastRestaurantRef : null}>
                             <RestaurantPreview restaurant={restaurant} chefName={getChefName(restaurant.chefId) || ''} isChefRestaurants={isChefRestaurants || false} />
                         </li>
                     ))

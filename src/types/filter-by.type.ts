@@ -1,7 +1,8 @@
 export type FilterBy = {
     sortBy?: string | null
-    path?: string
+    isOpenNowPage?: boolean
     ratings?: number[]
     priceRange?: [number, number]
     distance?: [number, number]
+    page?: number
 }

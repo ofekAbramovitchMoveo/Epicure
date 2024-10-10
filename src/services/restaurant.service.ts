@@ -23,10 +23,15 @@ export const restaurantService = {
     updateDishQuantity
 }
 
-async function query(filterBy: FilterBy = {}): Promise<Restaurant[]> {
-    const queryParams = new URLSearchParams(Object.entries(filterBy).flatMap(([key, value]) => (
+async function query(filterBy: FilterBy = {}): Promise<{ restaurants: Restaurant[], totalCount: number }> {
+    const { page, ...restFilterBy } = filterBy
+    const queryParams = new URLSearchParams(Object.entries(restFilterBy).flatMap(([key, value]) => (
         Array.isArray(value) ? value.map(val => [key, val.toString()]) : [[key, value?.toString() || '']]
     )))
+
+    if (page) {
+        queryParams.append('page', page.toString())
+    }
 
     const userLocation = await utilService.getUserLocation()
     if (userLocation) {

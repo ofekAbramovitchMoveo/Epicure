@@ -36,6 +36,7 @@
                 letter-spacing: 1.97px;
                 margin-top: 14px;
                 line-height: 18px;
+                text-transform: capitalize;
             }
 
             .icon {
@@ -214,14 +215,13 @@
 
                 h1 {
                     text-align: center;
-                    font-size: 2.6vh;
+                    font-size: 24px;
                 }
 
                 p {
                     text-align: center;
                     margin: 0;
-                    font-size: 1.15vh;
-                    line-height: 1.48vh;
+                    font-size: 14px;
                 }
 
                 .icon {

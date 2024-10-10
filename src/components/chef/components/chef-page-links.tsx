@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 
 interface ChefPageLinksProps {
-    setChefFilterBy: (updater: (prevState: { sortBy: string | null, limit: string | null }) => { sortBy: string | null, limit: string | null }) => void
+    setChefFilterBy: (updater: (prevState: { sortBy: string | null, limit: string | null, page: number }) => { sortBy: string | null, limit: string | null, page: number }) => void
 }
 
 export default function ChefPageLinks({ setChefFilterBy }: ChefPageLinksProps) {

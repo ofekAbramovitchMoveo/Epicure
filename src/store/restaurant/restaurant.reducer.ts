@@ -14,6 +14,8 @@ export const UPDATE_DISH_QUANTITY = 'UPDATE_DISH_QUANTITY'
 export const SET_BAG = 'SET_BAG'
 export const SET_WARNING_POPUP = 'SET_WARNING_POPUP'
 export const TOGGLE_LOCATION_WARNING_POPUP = 'TOGGLE_LOCATION_WARNING_POPUP'
+export const APPEND_RESTAURANTS = 'APPEND_RESTAURANTS'
+export const RESET_RESTAURANTS = 'RESET_RESTAURANTS'
 
 type RestaurantAction = Action & {
     restaurants?: Restaurant[]
@@ -46,8 +48,12 @@ export function restaurantReducer(state = initialState, action: RestaurantAction
     switch (action.type) {
         case SET_RESTAURANTS:
             return { ...state, restaurants: action.restaurants }
+        case APPEND_RESTAURANTS:
+            return { ...state, restaurants: [...state.restaurants, ...(action.restaurants || [])] }
         case SET_RESTAURANT:
             return { ...state, restaurant: { ...action.restaurant } }
+        case RESET_RESTAURANTS:
+            return { ...state, restaurants: [] }
         case ADD_TO_BAG:
             const existingDishIndex = state.bag.findIndex(dish =>
                 dish._id === action.dish?._id &&

@@ -4,15 +4,19 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
 import { DateField } from '@mui/x-date-pickers/DateField'
 import dayjs from "dayjs"
 
-import { PaymentDetails } from "../../../types/order-details.type"
+import { DeliveryDetails, PaymentDetails } from "../../../types/order-details.type"
+import FormTextField from "../../form-text-field"
+import { User } from "../../../types/user.type"
 
 interface PaymentFormProps {
-    renderTextField: (label: string, name: keyof PaymentDetails, type: string, maxLength?: number) => React.ReactNode
     handleExpiryDateChange: (date: dayjs.Dayjs | null) => void
     setErrors: React.Dispatch<React.SetStateAction<string[]>>
+    paymentDetails: PaymentDetails
+    onChange: (ev: React.ChangeEvent<HTMLInputElement>) => void
+    getError: (field: keyof PaymentDetails | keyof DeliveryDetails | keyof User) => string | null | undefined
 }
 
-export default function PaymentForm({ renderTextField, handleExpiryDateChange, setErrors }: PaymentFormProps) {
+export default function PaymentForm({ handleExpiryDateChange, setErrors, paymentDetails, onChange, getError }: PaymentFormProps) {
     const [helperText, setHelperText] = useState('')
     const [dateError, setDateError] = useState<string | null>(null)
 
@@ -28,9 +32,9 @@ export default function PaymentForm({ renderTextField, handleExpiryDateChange, s
 
     return (
         <>
-            {renderTextField('Card Number', 'cardNumber', 'text', 19)}
-            {renderTextField('Name On Card', 'nameOnCard', 'text')}
-            {renderTextField('CVV', 'cvv', 'text', 3)}
+            <FormTextField label="Card Number" name="cardNumber" type="text" maxLength={19} onChange={onChange} getError={getError} paymentDetails={paymentDetails} />
+            <FormTextField label="Name On Card" name="nameOnCard" type="text" onChange={onChange} getError={getError} paymentDetails={paymentDetails} />
+            <FormTextField label="CVV" name="cvv" type="text" maxLength={3} onChange={onChange} getError={getError} paymentDetails={paymentDetails} />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DateField label="Expiry Date"
                     onChange={(date) => {

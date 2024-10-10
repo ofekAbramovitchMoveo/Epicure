@@ -1,15 +1,19 @@
-import { DeliveryDetails } from "../../types/order-details.type"
+import { DeliveryDetails, PaymentDetails } from "../../types/order-details.type"
+import { User } from "../../types/user.type"
+import FormTextField from "../form-text-field"
 
 interface SignUpFormProps {
-    renderTextField: (label: string, name: keyof DeliveryDetails, type?: string) => JSX.Element
+    deliveryDetails?: DeliveryDetails
+    onChange: (ev: React.ChangeEvent<HTMLInputElement>) => void
+    getError: (field: keyof DeliveryDetails | keyof PaymentDetails | keyof User) => string | null | undefined
 }
 
-export default function SignUpForm({ renderTextField }: SignUpFormProps) {
+export default function SignUpForm({ deliveryDetails, onChange, getError }: SignUpFormProps) {
     return (
         <>
-            {renderTextField('Full name', 'fullName')}
-            {renderTextField('Address', 'address')}
-            {renderTextField('Phone', 'phone', 'tel')}
+            <FormTextField label="Full name" name="fullName" onChange={onChange} getError={getError} deliveryDetails={deliveryDetails} />
+            <FormTextField label="Address" name="address" onChange={onChange} getError={getError} deliveryDetails={deliveryDetails} />
+            <FormTextField label="Phone" name="phone" type="tel" onChange={onChange} getError={getError} deliveryDetails={deliveryDetails} />
         </>
     )
 }

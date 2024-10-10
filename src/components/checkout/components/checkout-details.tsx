@@ -1,10 +1,10 @@
 import { useMediaQuery } from "react-responsive"
-import { TextField } from "@mui/material"
 import { Dayjs } from 'dayjs'
 
 import SignUpForm from "../../sign-in/sign-up-form"
 import PaymentForm from "./payment-form"
 import { DeliveryDetails, PaymentDetails } from "../../../types/order-details.type"
+import { User } from "../../../types/user.type"
 
 interface CheckoutDetailsProps {
     deliveryDetails: DeliveryDetails
@@ -39,7 +39,7 @@ export default function CheckoutDetails({ deliveryDetails, setDeliveryDetails, p
         setPaymentDetails(prevState => ({ ...prevState, expiryDate: date }))
     }
 
-    function getError(field: keyof DeliveryDetails | keyof PaymentDetails) {
+    function getError(field: keyof DeliveryDetails | keyof PaymentDetails | keyof User) {
         const fieldRegex = new RegExp(`${field}`, 'i')
         const errMsg = errors.find(error => {
             const errWithoutPrefix = error.substring(error.indexOf('.') + 1)
@@ -51,42 +51,15 @@ export default function CheckoutDetails({ deliveryDetails, setDeliveryDetails, p
         return null
     }
 
-    function renderTextField(label: string, name: keyof DeliveryDetails | keyof PaymentDetails,
-        type: string = 'text', maxLength?: number) {
-        const isPaymentField = name in paymentDetails
-        const isNumericField = name === 'cardNumber' || name === 'cvv' || name === 'expiryDate'
-        const value = isPaymentField ? paymentDetails[name as keyof PaymentDetails] : deliveryDetails[name as keyof DeliveryDetails]
-        const error = getError(name)
-
-        return (
-            <TextField variant="standard" type={type}
-                label={label}
-                name={name}
-                value={value}
-                onChange={isPaymentField ? handlePaymentChange : handleDeliveryChange}
-                required
-                inputProps={{
-                    inputMode: isNumericField ? 'numeric' : 'text',
-                    pattern: isNumericField ? '[0-9]*' : undefined,
-                    maxLength
-                }}
-                error={!!error}
-                helperText={error}
-            />
-        )
-    }
-
     return (
         <form className={`checkout-details ${isMobile ? 'main-layout' : ''}`}>
             <div className="delivery-details-container">
                 <h3>delivery details</h3>
-                <SignUpForm renderTextField={renderTextField} />
+                <SignUpForm deliveryDetails={deliveryDetails} onChange={handleDeliveryChange} getError={getError} />
             </div>
             <div className="payment-details-container" style={{ gap: errors.length >= 2 ? '18px' : '24px' }}>
                 <h3>payment details</h3>
-                <PaymentForm renderTextField={renderTextField} handleExpiryDateChange={handleExpiryDateChange}
-                    setErrors={setErrors}
-                />
+                <PaymentForm handleExpiryDateChange={handleExpiryDateChange} setErrors={setErrors} paymentDetails={paymentDetails} onChange={handlePaymentChange} getError={getError} />
             </div>
         </form>
     )

@@ -1,4 +1,5 @@
 import { BagDish } from "../../../types/dish.type"
+import TitledP from "../../titled-p"
 import BagDishQuantity from "./bag-dish-quantity"
 
 interface BagDishInfoProps {
@@ -10,6 +11,8 @@ interface BagDishInfoProps {
 }
 
 export default function BagDishInfo({ dish, isExpanded, setIsExpanded, onRemoveDish, isMobile }: BagDishInfoProps) {
+    const totalDishPrice = (dish.price || 0) * (dish.quantity || 1)
+    const dishChangesStr = dish.changes?.length ? dish.changes?.join(', ') : 'No changes'
 
     return (
         <div className={`dish-info ${isExpanded ? 'expanded' : ''}`}>
@@ -21,15 +24,15 @@ export default function BagDishInfo({ dish, isExpanded, setIsExpanded, onRemoveD
                         onRemoveDish={onRemoveDish}
                     />
                     <div className="container">
-                        <h3 className="dish-name">{dish.name}</h3>
+                        <h3 className="dish-name" title={dish.name}>{dish.name}</h3>
                         <p>₪{(dish.price || 0).toFixed(2)}</p>
                     </div>
                 </div>
                 <div className={`dish-options-order ${isExpanded && !isMobile ? 'expanded' : ''}`}>
-                    <p>{dish.sideDish} | {dish.changes?.length ? dish.changes?.join(', ') : 'No changes'}</p>
+                    <TitledP title={dishChangesStr}>{dish.sideDish} | {dishChangesStr}</TitledP>
                 </div>
             </div>
-            <span className="price">₪{dish.price}</span>
+            <span className="price">₪{totalDishPrice}</span>
         </div>
     )
 }

@@ -33,7 +33,7 @@ export default function SearchModal({ isSearchOpen, toggleSearch, searchInput, s
                         value={searchInput}
                         onChange={({ target }) => setSearchInput(target.value)} />
                 </div>
-                <SearchSuggestions suggestions={suggestions} toggleSearch={toggleSearch} />
+                <SearchSuggestions suggestions={suggestions} toggleSearch={toggleSearch} isSearching={searchInput.length > 0} />
             </div>
         </HeaderModal>
     )
